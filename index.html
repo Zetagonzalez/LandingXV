@@ -356,53 +356,97 @@
     .portafolio-header .section-title { color: var(--white); }
     .portafolio-header .section-eyebrow { color: var(--gold); }
 
-    /* CARRUSEL */
-    .carousel-wrap {
-      position: relative;
+    /* ===== MASONRY GALERÍA ===== */
+    .masonry-wrap {
+      padding: 0 4px;
+    }
+    .masonry-grid {
+      column-count: 3;
+      column-gap: 4px;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 4px;
       overflow: hidden;
-      user-select: none;
-    }
-    .carousel-track {
-      display: flex;
-      gap: 4px;
-      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      will-change: transform;
-      cursor: grab;
-    }
-    .carousel-track.dragging {
-      transition: none;
-      cursor: grabbing;
-    }
-    .carousel-slide {
-      flex: 0 0 calc(33.333% - 3px);
-      overflow: hidden;
+      cursor: zoom-in;
       position: relative;
     }
-    .carousel-slide img {
+    .masonry-item img {
       width: 100%;
-      height: 480px;
-      object-fit: cover;
-      object-position: center top;
+      height: auto;
       display: block;
-      transition: transform 0.5s ease, filter 0.3s;
-      filter: grayscale(10%);
-      pointer-events: none;
+      transition: transform 0.45s ease, filter 0.3s;
+      filter: grayscale(8%);
     }
-    .carousel-slide:hover img {
+    .masonry-item:hover img {
       transform: scale(1.03);
       filter: grayscale(0%);
     }
-
-    /* Flechas */
-    .carousel-btn {
+    .masonry-item::after {
+      content: '';
       position: absolute;
+      inset: 0;
+      background: rgba(13,13,13,0);
+      transition: background 0.3s;
+      pointer-events: none;
+    }
+    .masonry-item:hover::after {
+      background: rgba(13,13,13,0.12);
+    }
+
+    @media (max-width: 600px) {
+      .masonry-grid { column-count: 2; }
+    }
+    @media (min-width: 601px) and (max-width: 900px) {
+      .masonry-grid { column-count: 2; }
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lb-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(8,8,8,0.96);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .lb-overlay.open {
+      display: flex;
+    }
+    .lb-img-wrap {
+      position: relative;
+      max-width: 92vw;
+      max-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lb-img-wrap img {
+      max-width: 92vw;
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border: none;
+      user-select: none;
+      transition: opacity 0.22s ease;
+    }
+    .lb-img-wrap img.fading {
+      opacity: 0;
+    }
+    .lb-btn {
+      position: fixed;
       top: 50%;
       transform: translateY(-50%);
-      z-index: 10;
+      z-index: 1010;
       width: 52px;
       height: 52px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(13,13,13,0.6);
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(13,13,13,0.55);
       backdrop-filter: blur(8px);
       color: var(--white);
       cursor: pointer;
@@ -411,41 +455,44 @@
       justify-content: center;
       transition: background 0.2s, border-color 0.2s;
     }
-    .carousel-btn:hover {
-      background: var(--burgundy);
-      border-color: var(--burgundy);
-    }
-    .carousel-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
-    .carousel-btn.prev { left: 20px; }
-    .carousel-btn.next { right: 20px; }
-
-    /* Dots */
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 32px;
-    }
-    .carousel-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
+    .lb-btn:hover { background: var(--burgundy); border-color: var(--burgundy); }
+    .lb-btn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .lb-prev { left: 16px; }
+    .lb-next { right: 16px; }
+    .lb-close {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 1010;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(13,13,13,0.55);
+      backdrop-filter: blur(8px);
+      color: var(--white);
       cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
     }
-    .carousel-dot.active {
-      background: var(--gold);
-      transform: scale(1.4);
+    .lb-close:hover { background: var(--burgundy); }
+    .lb-close svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .lb-counter {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.4);
+      font-family: var(--font-body);
     }
 
     @media (max-width: 767px) {
-      .carousel-slide { flex: 0 0 calc(80% - 2px); }
-      .carousel-slide img { height: 320px; }
-      .carousel-btn { width: 40px; height: 40px; }
-    }
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .carousel-slide { flex: 0 0 calc(50% - 2px); }
+      .lb-btn { width: 40px; height: 40px; }
+      .lb-prev { left: 8px; }
+      .lb-next { right: 8px; }
     }
 
     /* ===== SOBRE MI ===== */
@@ -639,7 +686,7 @@
     <div class="hero-right">
       <div class="hero-overlay"></div>
       <img
-        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226846/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.png"
+        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782334683/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.jpg"
         alt="Fotografía de XV años Zeta"
         loading="eager"
       />
@@ -737,50 +784,60 @@
       <h2 class="section-title" style="color: var(--white);">El trabajo habla solo</h2>
     </div>
 
-    <div class="carousel-wrap">
-      <button class="carousel-btn prev" aria-label="Anterior">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="carousel-btn next" aria-label="Siguiente">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide">
+    <div class="masonry-wrap">
+      <div class="masonry-grid" id="masonryGrid">
+        <div class="masonry-item" data-index="0">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Quinceañera fotografía" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="1">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="XV años foto" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="2">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Sesión de XV" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="3">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía quinceañera" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="4">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotos de XV años" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="5">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="XV años Zeta Fotografía" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="6">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Sesión quinceañera" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="7">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía XV años Paraguay" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="8">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotos quinceañera" loading="lazy" />
         </div>
-        <div class="carousel-slide">
+        <div class="masonry-item" data-index="9">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Zeta fotografía eventos" loading="lazy" />
         </div>
       </div>
     </div>
-
-    <div class="carousel-dots" id="carouselDots"></div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Anterior">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lb-img-wrap" id="lbImgWrap">
+      <img id="lbImg" src="" alt="" />
+    </div>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+
+  <!-- placeholder closing tag replaced below -->
 
   <!-- CTA FINAL -->
   <section class="cta-final" id="cta">
@@ -823,105 +880,66 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // ===== CARRUSEL =====
+    // ===== LIGHTBOX =====
     (function() {
-      const track     = document.getElementById('carouselTrack');
-      const dotsWrap  = document.getElementById('carouselDots');
-      const slides    = Array.from(track.querySelectorAll('.carousel-slide'));
-      const prevBtn   = document.querySelector('.carousel-btn.prev');
-      const nextBtn   = document.querySelector('.carousel-btn.next');
+      const overlay  = document.getElementById('lbOverlay');
+      const lbImg    = document.getElementById('lbImg');
+      const lbPrev   = document.getElementById('lbPrev');
+      const lbNext   = document.getElementById('lbNext');
+      const lbClose  = document.getElementById('lbClose');
+      const counter  = document.getElementById('lbCounter');
+      const items    = Array.from(document.querySelectorAll('.masonry-item'));
+      const srcs     = items.map(el => el.querySelector('img').src);
+      const alts     = items.map(el => el.querySelector('img').alt);
+      let current    = 0;
 
-      let current   = 0;
-      let isDragging = false;
-      let startX    = 0;
-      let startTranslate = 0;
-      let currentTranslate = 0;
-
-      // Cuántos slides se ven a la vez según ancho
-      function visibleCount() {
-        const w = window.innerWidth;
-        if (w < 768) return 1;
-        if (w < 1024) return 2;
-        return 3;
+      function show(index) {
+        current = (index + srcs.length) % srcs.length;
+        lbImg.classList.add('fading');
+        setTimeout(() => {
+          lbImg.src = srcs[current];
+          lbImg.alt = alts[current];
+          lbImg.classList.remove('fading');
+        }, 180);
+        counter.textContent = `${current + 1} / ${srcs.length}`;
       }
 
-      const total = slides.length;
-
-      // Crear dots
-      function buildDots() {
-        dotsWrap.innerHTML = '';
-        const pages = total - visibleCount() + 1;
-        for (let i = 0; i < pages; i++) {
-          const d = document.createElement('button');
-          d.className = 'carousel-dot' + (i === current ? ' active' : '');
-          d.setAttribute('aria-label', `Foto ${i + 1}`);
-          d.addEventListener('click', () => goTo(i));
-          dotsWrap.appendChild(d);
-        }
+      function open(index) {
+        show(index);
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
       }
 
-      function updateDots() {
-        const dots = dotsWrap.querySelectorAll('.carousel-dot');
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      function close() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
       }
 
-      function getSlideWidth() {
-        return slides[0].getBoundingClientRect().width + 4; // +gap
-      }
+      items.forEach((item, i) => item.addEventListener('click', () => open(i)));
+      lbClose.addEventListener('click', close);
+      lbPrev.addEventListener('click', (e) => { e.stopPropagation(); show(current - 1); });
+      lbNext.addEventListener('click', (e) => { e.stopPropagation(); show(current + 1); });
 
-      function goTo(index) {
-        const pages = total - visibleCount() + 1;
-        current = Math.max(0, Math.min(index, pages - 1));
-        currentTranslate = -(current * getSlideWidth());
-        track.style.transform = `translateX(${currentTranslate}px)`;
-        updateDots();
-      }
-
-      prevBtn.addEventListener('click', () => goTo(current - 1));
-      nextBtn.addEventListener('click', () => goTo(current + 1));
-
-      // Keyboard
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') goTo(current - 1);
-        if (e.key === 'ArrowRight') goTo(current + 1);
+      // Click fuera de la imagen cierra
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay || e.target === document.getElementById('lbImgWrap')) close();
       });
 
-      // Touch / Mouse drag
-      function dragStart(x) {
-        isDragging = true;
-        startX = x;
-        startTranslate = currentTranslate;
-        track.classList.add('dragging');
-      }
-      function dragMove(x) {
-        if (!isDragging) return;
-        const diff = x - startX;
-        track.style.transform = `translateX(${startTranslate + diff}px)`;
-      }
-      function dragEnd(x) {
-        if (!isDragging) return;
-        isDragging = false;
-        track.classList.remove('dragging');
-        const diff = x - startX;
-        if (Math.abs(diff) > 60) {
-          goTo(diff < 0 ? current + 1 : current - 1);
-        } else {
-          goTo(current); // snap back
-        }
-      }
+      // Teclado
+      document.addEventListener('keydown', (e) => {
+        if (!overlay.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft')  show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+        if (e.key === 'Escape')     close();
+      });
 
-      track.addEventListener('mousedown',  e => dragStart(e.clientX));
-      track.addEventListener('mousemove',  e => dragMove(e.clientX));
-      track.addEventListener('mouseup',    e => dragEnd(e.clientX));
-      track.addEventListener('mouseleave', e => { if (isDragging) dragEnd(e.clientX); });
-
-      track.addEventListener('touchstart', e => dragStart(e.touches[0].clientX), { passive: true });
-      track.addEventListener('touchmove',  e => dragMove(e.touches[0].clientX),  { passive: true });
-      track.addEventListener('touchend',   e => dragEnd(e.changedTouches[0].clientX));
-
-      // Init + resize
-      buildDots();
-      window.addEventListener('resize', () => { buildDots(); goTo(current); });
+      // Swipe táctil
+      let touchStartX = 0;
+      overlay.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      overlay.addEventListener('touchend', e => {
+        const diff = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(diff) > 50) show(diff < 0 ? current + 1 : current - 1);
+      });
     })();
   </script>
 
