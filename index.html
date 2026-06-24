@@ -64,7 +64,7 @@
       backdrop-filter: blur(8px);
     }
     .nav-logo img {
-      height: 40px;
+      height: 56px;
       width: auto;
       filter: brightness(0) invert(1);
     }
@@ -356,48 +356,97 @@
     .portafolio-header .section-title { color: var(--white); }
     .portafolio-header .section-eyebrow { color: var(--gold); }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: auto auto;
-      gap: 3px;
-      padding: 0 3px;
+    /* CARRUSEL */
+    .carousel-wrap {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
     }
-    .gallery-grid .g-item {
+    .carousel-track {
+      display: flex;
+      gap: 4px;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+      cursor: grab;
+    }
+    .carousel-track.dragging {
+      transition: none;
+      cursor: grabbing;
+    }
+    .carousel-slide {
+      flex: 0 0 calc(33.333% - 3px);
       overflow: hidden;
       position: relative;
     }
-    .gallery-grid .g-item img {
+    .carousel-slide img {
       width: 100%;
-      height: 280px;
+      height: 480px;
       object-fit: cover;
+      object-position: center top;
+      display: block;
       transition: transform 0.5s ease, filter 0.3s;
-      filter: grayscale(15%);
+      filter: grayscale(10%);
+      pointer-events: none;
     }
-    .gallery-grid .g-item:hover img {
-      transform: scale(1.04);
+    .carousel-slide:hover img {
+      transform: scale(1.03);
       filter: grayscale(0%);
     }
-    .gallery-grid .g-item.tall img { height: 420px; }
-    .gallery-grid .g-item.wide {
-      grid-column: span 2;
-    }
-    .gallery-grid .g-item.wide img { height: 280px; }
 
-    /* second row */
-    .gallery-row2 {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 3px;
-      padding: 3px 3px 0;
+    /* Flechas */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(13,13,13,0.6);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
     }
-    .gallery-row2 .g-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
+    .carousel-btn:hover {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
     }
-    .gallery-row2 .g-item:hover img { transform: scale(1.04); }
+    .carousel-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .carousel-btn.prev { left: 20px; }
+    .carousel-btn.next { right: 20px; }
+
+    /* Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .carousel-dot.active {
+      background: var(--gold);
+      transform: scale(1.4);
+    }
+
+    @media (max-width: 767px) {
+      .carousel-slide { flex: 0 0 calc(80% - 2px); }
+      .carousel-slide img { height: 320px; }
+      .carousel-btn { width: 40px; height: 40px; }
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .carousel-slide { flex: 0 0 calc(50% - 2px); }
+    }
 
     /* ===== SOBRE MI ===== */
     .sobre-mi {
@@ -497,7 +546,7 @@
     /* ===== MOBILE ===== */
     @media (max-width: 767px) {
       nav { padding: 16px 20px; }
-      .nav-logo img { height: 32px; }
+      .nav-logo img { height: 44px; }
       .nav-cta { font-size: 11px; padding: 8px 16px; }
 
       .hero {
@@ -601,11 +650,9 @@
   <div class="since-band">
     <span class="since-text">Fotografía de XV años</span>
     <span class="since-dot"></span>
-    <span class="since-text">Bodas &amp; Eventos</span>
+    <span class="since-text">Sesión de Pre XV</span>
     <span class="since-dot"></span>
-    <span class="since-text">Hohenau · Paraguay</span>
-    <span class="since-dot"></span>
-    <span class="since-text">Fotos que duran toda la vida</span>
+    <span class="since-text">Hohenau Itapúa Paraguay</span>
   </div>
 
   <!-- PROBLEMA -->
@@ -663,50 +710,6 @@
     <p class="promesa-sub reveal">Porque dentro de 20 años, cuando tu hija abra esa carpeta, lo que va a sentir depende de lo que pasó ese día frente a la cámara.</p>
   </section>
 
-  <!-- PORTAFOLIO -->
-  <section class="portafolio" id="portafolio">
-    <div class="portafolio-header reveal">
-      <p class="section-eyebrow">Portafolio</p>
-      <h2 class="section-title" style="color: var(--white);">El trabajo habla solo</h2>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Quinceañera fotografía" loading="lazy" />
-      </div>
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="XV años foto" loading="lazy" />
-      </div>
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Sesión de XV" loading="lazy" />
-      </div>
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía quinceañera" loading="lazy" />
-      </div>
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotos de XV años" loading="lazy" />
-      </div>
-    </div>
-
-    <div class="gallery-row2">
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="XV años Zeta Fotografía" loading="lazy" />
-      </div>
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Sesión quinceañera" loading="lazy" />
-      </div>
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía XV años Paraguay" loading="lazy" />
-      </div>
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotos quinceañera" loading="lazy" />
-      </div>
-      <div class="g-item">
-        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Zeta fotografía eventos" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
   <!-- SOBRE MÍ -->
   <section class="sobre-mi" id="sobre-mi">
     <div class="sobre-mi-content reveal">
@@ -720,11 +723,63 @@
     </div>
     <div class="sobre-mi-img">
       <img
-        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg"
+        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226846/WhatsApp_Image_2026-06-23_at_10.32.31_1_ilkbha.jpg"
         alt="Zeta Fotografía perfil"
         loading="lazy"
       />
     </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section class="portafolio" id="portafolio">
+    <div class="portafolio-header reveal">
+      <p class="section-eyebrow">Portafolio</p>
+      <h2 class="section-title" style="color: var(--white);">El trabajo habla solo</h2>
+    </div>
+
+    <div class="carousel-wrap">
+      <button class="carousel-btn prev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="carousel-btn next" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Quinceañera fotografía" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="XV años foto" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Sesión de XV" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía quinceañera" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotos de XV años" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="XV años Zeta Fotografía" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Sesión quinceañera" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía XV años Paraguay" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotos quinceañera" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Zeta fotografía eventos" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots"></div>
   </section>
 
   <!-- CTA FINAL -->
@@ -732,10 +787,9 @@
     <span class="section-eyebrow">Próximos pasos</span>
     <h2 class="section-title">Los cupos son limitados.<br>Hablemos antes de que se agende tu fecha.</h2>
     <p class="section-body">Una reunión rápida — sin compromiso — para entender qué necesitás y contarte cómo trabajo. Si encajamos, arrancamos. Si no, al menos te fui honesto/a.</p>
-    <a class="btn-primary" href="https://wa.me/595TUNUMERO?text=Hola%20Zeta%2C%20quiero%20consultar%20sobre%20fotograf%C3%ADa%20de%20XV%20a%C3%B1os" target="_blank" rel="noopener">
+    <a class="btn-primary" href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener">
       Agenda tu reunión por WhatsApp
     </a>
-    <!-- REEMPLAZÁ 595TUNUMERO por tu número con código de país sin + ni espacios, ej: 595971123456 -->
     <p class="cta-microcopy">Sin spam · Solo te contactamos si vos nos escribís primero</p>
   </section>
 
@@ -743,7 +797,7 @@
   <footer>
     <img class="footer-logo" src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía" />
     <div class="footer-links">
-      <a href="https://instagram.com/zeta.fotografia" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.instagram.com/_zetaphoto?igsh=eW00MTBieTNwY2p5" target="_blank" rel="noopener">Instagram</a>
       <a href="#portafolio">Portafolio</a>
       <a href="#cta">Contacto</a>
     </div>
@@ -768,6 +822,107 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
+
+    // ===== CARRUSEL =====
+    (function() {
+      const track     = document.getElementById('carouselTrack');
+      const dotsWrap  = document.getElementById('carouselDots');
+      const slides    = Array.from(track.querySelectorAll('.carousel-slide'));
+      const prevBtn   = document.querySelector('.carousel-btn.prev');
+      const nextBtn   = document.querySelector('.carousel-btn.next');
+
+      let current   = 0;
+      let isDragging = false;
+      let startX    = 0;
+      let startTranslate = 0;
+      let currentTranslate = 0;
+
+      // Cuántos slides se ven a la vez según ancho
+      function visibleCount() {
+        const w = window.innerWidth;
+        if (w < 768) return 1;
+        if (w < 1024) return 2;
+        return 3;
+      }
+
+      const total = slides.length;
+
+      // Crear dots
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        const pages = total - visibleCount() + 1;
+        for (let i = 0; i < pages; i++) {
+          const d = document.createElement('button');
+          d.className = 'carousel-dot' + (i === current ? ' active' : '');
+          d.setAttribute('aria-label', `Foto ${i + 1}`);
+          d.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(d);
+        }
+      }
+
+      function updateDots() {
+        const dots = dotsWrap.querySelectorAll('.carousel-dot');
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      }
+
+      function getSlideWidth() {
+        return slides[0].getBoundingClientRect().width + 4; // +gap
+      }
+
+      function goTo(index) {
+        const pages = total - visibleCount() + 1;
+        current = Math.max(0, Math.min(index, pages - 1));
+        currentTranslate = -(current * getSlideWidth());
+        track.style.transform = `translateX(${currentTranslate}px)`;
+        updateDots();
+      }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      // Keyboard
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
+      });
+
+      // Touch / Mouse drag
+      function dragStart(x) {
+        isDragging = true;
+        startX = x;
+        startTranslate = currentTranslate;
+        track.classList.add('dragging');
+      }
+      function dragMove(x) {
+        if (!isDragging) return;
+        const diff = x - startX;
+        track.style.transform = `translateX(${startTranslate + diff}px)`;
+      }
+      function dragEnd(x) {
+        if (!isDragging) return;
+        isDragging = false;
+        track.classList.remove('dragging');
+        const diff = x - startX;
+        if (Math.abs(diff) > 60) {
+          goTo(diff < 0 ? current + 1 : current - 1);
+        } else {
+          goTo(current); // snap back
+        }
+      }
+
+      track.addEventListener('mousedown',  e => dragStart(e.clientX));
+      track.addEventListener('mousemove',  e => dragMove(e.clientX));
+      track.addEventListener('mouseup',    e => dragEnd(e.clientX));
+      track.addEventListener('mouseleave', e => { if (isDragging) dragEnd(e.clientX); });
+
+      track.addEventListener('touchstart', e => dragStart(e.touches[0].clientX), { passive: true });
+      track.addEventListener('touchmove',  e => dragMove(e.touches[0].clientX),  { passive: true });
+      track.addEventListener('touchend',   e => dragEnd(e.changedTouches[0].clientX));
+
+      // Init + resize
+      buildDots();
+      window.addEventListener('resize', () => { buildDots(); goTo(current); });
+    })();
   </script>
 
 </body>
