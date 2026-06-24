@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeta Fotografía — Fotografía de XV Años en Hohenau, Paraguay</title>
+  <meta name="description" content="Fotografía de XV años que captura lo que realmente importa. Poses reales, momentos reales, recuerdos para siempre. Hohenau, Paraguay." />
+  <meta property="og:title" content="Zeta Fotografía — Fotografía de XV Años" />
+  <meta property="og:description" content="Dentro de 20 años, tu hija va a abrir esas fotos. ¿Qué va a sentir?" />
+  <meta property="og:image" content="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226846/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.png" />
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226843/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_p8f8jn.png" />
+
+  <!-- META PIXEL: pega aquí tu código de Meta Pixel -->
+  <!-- GOOGLE TAG: pega aquí tu Google Tag (GA4) -->
+  <!-- TIKTOK PIXEL: pega aquí tu TikTok Pixel -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== TOKENS ===== */
+    :root {
+      --burgundy:   #6E000F;
+      --burgundy-light: #8B0012;
+      --cream:      #F5F0E8;
+      --cream-dark: #EDE8DF;
+      --ink:        #0D0D0D;
+      --ink-soft:   #1A1A1A;
+      --gold:       #C9A96E;
+      --white:      #FFFFFF;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      background: transparent;
+      transition: background 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 10px 24px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--ink);
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 120px 48px 72px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 5.5vw, 90px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 8px;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.6vw, 22px);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+      margin-bottom: 48px;
+      max-width: 400px;
+    }
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--burgundy);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 18px 36px;
+      width: fit-content;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--burgundy-light); transform: translateY(-1px); }
+    .hero-microcopy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+    }
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.85;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--ink) 0%, transparent 40%);
+    }
+
+    /* ===== SINCE BADGE ===== */
+    .since-band {
+      background: var(--burgundy);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      overflow: hidden;
+    }
+    .since-text {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+    .since-dot {
+      width: 4px;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ===== PROBLEMA ===== */
+    .problema {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 70vh;
+    }
+    .problema-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .problema-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .problema-content {
+      background: var(--cream);
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .section-eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+    .section-body {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #3a3a3a;
+      max-width: 480px;
+    }
+    .section-body p + p { margin-top: 16px; }
+
+    /* ===== PROCESO ===== */
+    .proceso {
+      background: var(--ink-soft);
+      padding: 100px 64px;
+    }
+    .proceso-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .proceso-header .section-title {
+      color: var(--white);
+    }
+    .proceso-header .section-eyebrow {
+      color: var(--gold);
+    }
+    .proceso-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .proceso-item {
+      background: var(--ink-soft);
+      padding: 48px 40px;
+      position: relative;
+    }
+    .proceso-num {
+      font-family: var(--font-display);
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--burgundy);
+      opacity: 0.35;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .proceso-item-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .proceso-item-body {
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ===== PROMESA ===== */
+    .promesa {
+      background: var(--cream-dark);
+      padding: 120px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .promesa::before {
+      content: '"';
+      font-family: var(--font-display);
+      font-size: 400px;
+      color: rgba(110,0,15,0.05);
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .promesa-quote {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 38px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.45;
+      max-width: 780px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+    .promesa-sub {
+      font-size: 15px;
+      color: #6a6a6a;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .gold-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 32px auto;
+    }
+
+    /* ===== PORTAFOLIO ===== */
+    .portafolio {
+      background: var(--ink);
+      padding: 100px 0;
+    }
+    .portafolio-header {
+      text-align: center;
+      padding: 0 32px;
+      margin-bottom: 56px;
+    }
+    .portafolio-header .section-title { color: var(--white); }
+    .portafolio-header .section-eyebrow { color: var(--gold); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto auto;
+      gap: 3px;
+      padding: 0 3px;
+    }
+    .gallery-grid .g-item {
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-grid .g-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.5s ease, filter 0.3s;
+      filter: grayscale(15%);
+    }
+    .gallery-grid .g-item:hover img {
+      transform: scale(1.04);
+      filter: grayscale(0%);
+    }
+    .gallery-grid .g-item.tall img { height: 420px; }
+    .gallery-grid .g-item.wide {
+      grid-column: span 2;
+    }
+    .gallery-grid .g-item.wide img { height: 280px; }
+
+    /* second row */
+    .gallery-row2 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3px;
+      padding: 3px 3px 0;
+    }
+    .gallery-row2 .g-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-row2 .g-item:hover img { transform: scale(1.04); }
+
+    /* ===== SOBRE MI ===== */
+    .sobre-mi {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .sobre-mi-content {
+      background: var(--burgundy);
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .sobre-mi-content .section-eyebrow { color: rgba(255,255,255,0.5); }
+    .sobre-mi-content .section-title { color: var(--white); }
+    .sobre-mi-body {
+      font-size: 16px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.75);
+      max-width: 480px;
+    }
+    .sobre-mi-img {
+      overflow: hidden;
+      position: relative;
+    }
+    .sobre-mi-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* ===== CTA FINAL ===== */
+    .cta-final {
+      background: var(--cream);
+      padding: 120px 32px;
+      text-align: center;
+    }
+    .cta-final .section-eyebrow {
+      display: block;
+      margin-bottom: 20px;
+    }
+    .cta-final .section-title {
+      margin-bottom: 20px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-final .section-body {
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+    .cta-final .btn-primary {
+      margin: 0 auto;
+      font-size: 14px;
+      padding: 20px 48px;
+    }
+    .cta-microcopy {
+      font-size: 12px;
+      color: #999;
+      margin-top: 16px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--ink);
+      padding: 48px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    footer img.footer-logo {
+      height: 36px;
+      filter: brightness(0) invert(1);
+      opacity: 0.6;
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-legal {
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 767px) {
+      nav { padding: 16px 20px; }
+      .nav-logo img { height: 32px; }
+      .nav-cta { font-size: 11px; padding: 8px 16px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: 100svh;
+      }
+      .hero-left {
+        padding: 100px 24px 48px;
+        order: 2;
+      }
+      .hero-right {
+        order: 1;
+        height: 50svh;
+      }
+      .hero-overlay {
+        background: linear-gradient(to bottom, transparent 50%, var(--ink) 100%);
+      }
+      .hero-subtitle { max-width: 100%; }
+
+      .since-band { gap: 16px; flex-wrap: wrap; justify-content: center; padding: 12px 20px; }
+
+      .problema { grid-template-columns: 1fr; }
+      .problema-img { height: 300px; }
+      .problema-content { padding: 56px 24px; }
+      .section-body { max-width: 100%; }
+
+      .proceso { padding: 72px 24px; }
+      .proceso-grid { grid-template-columns: 1fr; }
+
+      .promesa { padding: 80px 24px; }
+      .promesa::before { font-size: 200px; }
+
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid .g-item img { height: 180px; }
+      .gallery-grid .g-item.tall img { height: 260px; }
+      .gallery-grid .g-item.wide { grid-column: span 1; }
+      .gallery-grid .g-item.wide img { height: 180px; }
+      .gallery-row2 { grid-template-columns: repeat(2, 1fr); }
+      .gallery-row2 .g-item img { height: 160px; }
+
+      .sobre-mi { grid-template-columns: 1fr; }
+      .sobre-mi-img { height: 320px; order: -1; }
+      .sobre-mi-content { padding: 56px 24px; }
+
+      .cta-final { padding: 80px 24px; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-grid .g-item.wide { grid-column: span 1; }
+      .gallery-row2 { grid-template-columns: repeat(3, 1fr); }
+      .proceso-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a class="nav-logo" href="#hero">
+      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía" />
+    </a>
+    <a class="nav-cta" href="#cta">Hablemos</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Fotografía de XV Años — Hohenau, Paraguay</p>
+      <h1 class="hero-title">
+        Fotografía<br><em>de XV Años</em>
+      </h1>
+      <p class="hero-subtitle">Dentro de 20 años, tu hija va a abrir esas fotos. ¿Qué va a sentir?</p>
+      <div class="hero-cta-wrap">
+        <a class="btn-primary" href="#cta">Hablemos antes de que se agenden tus fechas</a>
+        <span class="hero-microcopy">Sin compromiso · Solo contamos los cupos disponibles</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-overlay"></div>
+      <img
+        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226846/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.png"
+        alt="Fotografía de XV años Zeta"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- SINCE BAND -->
+  <div class="since-band">
+    <span class="since-text">Fotografía de XV años</span>
+    <span class="since-dot"></span>
+    <span class="since-text">Bodas &amp; Eventos</span>
+    <span class="since-dot"></span>
+    <span class="since-text">Hohenau · Paraguay</span>
+    <span class="since-dot"></span>
+    <span class="since-text">Fotos que duran toda la vida</span>
+  </div>
+
+  <!-- PROBLEMA -->
+  <section class="problema" id="problema">
+    <div class="problema-img">
+      <img
+        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg"
+        alt="Fotografía de quinceañera"
+        loading="lazy"
+      />
+    </div>
+    <div class="problema-content reveal">
+      <p class="section-eyebrow">El problema real</p>
+      <h2 class="section-title">Las fotos llegan y algo no está bien</h2>
+      <div class="section-body">
+        <p>Muchas mamás terminan el evento felices, pero semanas después, cuando llegan las fotos, sienten que algo no está bien.</p>
+        <p>Las poses se ven forzadas. Los momentos más importantes no fueron capturados.</p>
+        <p>Y lo peor: no hay nada que se pueda hacer. <strong>Ese día no vuelve.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="proceso" id="proceso">
+    <div class="proceso-header reveal">
+      <p class="section-eyebrow">Cómo trabajo</p>
+      <h2 class="section-title" style="color: var(--white);">Un proceso pensado<br><em style="color: var(--gold);">para que nada quede afuera</em></h2>
+    </div>
+    <div class="proceso-grid">
+      <div class="proceso-item reveal">
+        <div class="proceso-num">01</div>
+        <h3 class="proceso-item-title">La reunión previa</h3>
+        <p class="proceso-item-body">Antes del evento me tomo el tiempo de conocerlas — a la quinceañera y a vos — para entender qué momentos no pueden faltar y para que ella llegue al día sin nervios ni vergüenza frente a la cámara.</p>
+      </div>
+      <div class="proceso-item reveal">
+        <div class="proceso-num">02</div>
+        <h3 class="proceso-item-title">El día del evento</h3>
+        <p class="proceso-item-body">No interrumpo, no genero caos, no armo poses robóticas. Capturo lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.</p>
+      </div>
+      <div class="proceso-item reveal">
+        <div class="proceso-num">03</div>
+        <h3 class="proceso-item-title">La edición</h3>
+        <p class="proceso-item-body">Cada foto pasa por un proceso de edición cuidadosa para que el resultado final esté a la altura de lo que ese día significó — porque un recuerdo así merece tiempo y dedicación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMESA -->
+  <section class="promesa" id="promesa">
+    <div class="gold-line"></div>
+    <p class="promesa-quote reveal">
+      "No solo fotos bonitas. El recuerdo completo de uno de los momentos más importantes de su vida — guardado para siempre, con la calidad que ese momento merece."
+    </p>
+    <div class="gold-line"></div>
+    <p class="promesa-sub reveal">Porque dentro de 20 años, cuando tu hija abra esa carpeta, lo que va a sentir depende de lo que pasó ese día frente a la cámara.</p>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section class="portafolio" id="portafolio">
+    <div class="portafolio-header reveal">
+      <p class="section-eyebrow">Portafolio</p>
+      <h2 class="section-title" style="color: var(--white);">El trabajo habla solo</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Quinceañera fotografía" loading="lazy" />
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="XV años foto" loading="lazy" />
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Sesión de XV" loading="lazy" />
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía quinceañera" loading="lazy" />
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotos de XV años" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="gallery-row2">
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="XV años Zeta Fotografía" loading="lazy" />
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Sesión quinceañera" loading="lazy" />
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía XV años Paraguay" loading="lazy" />
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotos quinceañera" loading="lazy" />
+      </div>
+      <div class="g-item">
+        <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Zeta fotografía eventos" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section class="sobre-mi" id="sobre-mi">
+    <div class="sobre-mi-content reveal">
+      <p class="section-eyebrow">Sobre mí</p>
+      <h2 class="section-title" style="color: var(--white);">Mi mejor presentación<br>es mi portafolio</h2>
+      <p class="sobre-mi-body">En todas las páginas siempre hay un bloque enorme de texto donde el fotógrafo presume sus títulos o años de experiencia, pero nadie los lee. ¿Sabés por qué? Porque a nadie le importa.</p>
+      <p class="sobre-mi-body" style="margin-top: 16px;">Vos querés resultados para los XV de tu hija. Mi mejor carta de presentación es mi portafolio, porque eso es exactamente lo que te puedo ofrecer.</p>
+      <div style="margin-top: 40px;">
+        <a class="btn-primary" style="background: var(--white); color: var(--burgundy);" href="#cta">Hablemos</a>
+      </div>
+    </div>
+    <div class="sobre-mi-img">
+      <img
+        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg"
+        alt="Zeta Fotografía perfil"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="cta">
+    <span class="section-eyebrow">Próximos pasos</span>
+    <h2 class="section-title">Los cupos son limitados.<br>Hablemos antes de que se agende tu fecha.</h2>
+    <p class="section-body">Una reunión rápida — sin compromiso — para entender qué necesitás y contarte cómo trabajo. Si encajamos, arrancamos. Si no, al menos te fui honesto/a.</p>
+    <a class="btn-primary" href="https://wa.me/595TUNUMERO?text=Hola%20Zeta%2C%20quiero%20consultar%20sobre%20fotograf%C3%ADa%20de%20XV%20a%C3%B1os" target="_blank" rel="noopener">
+      Agenda tu reunión por WhatsApp
+    </a>
+    <!-- REEMPLAZÁ 595TUNUMERO por tu número con código de país sin + ni espacios, ej: 595971123456 -->
+    <p class="cta-microcopy">Sin spam · Solo te contactamos si vos nos escribís primero</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img class="footer-logo" src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía" />
+    <div class="footer-links">
+      <a href="https://instagram.com/zeta.fotografia" target="_blank" rel="noopener">Instagram</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#cta">Contacto</a>
+    </div>
+    <p class="footer-legal">© 2024 Zeta Fotografía · Hohenau, Paraguay · Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
