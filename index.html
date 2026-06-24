@@ -356,49 +356,114 @@
     .portafolio-header .section-title { color: var(--white); }
     .portafolio-header .section-eyebrow { color: var(--gold); }
 
-    /* ===== MASONRY GALERÍA ===== */
-    .masonry-wrap {
-      padding: 0 4px;
-    }
-    .masonry-grid {
-      column-count: 3;
-      column-gap: 4px;
-    }
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 4px;
-      overflow: hidden;
-      cursor: zoom-in;
+    /* ===== CARRUSEL PROPORCIONAL ===== */
+    .carousel-outer {
       position: relative;
+      overflow: hidden;
+      user-select: none;
     }
-    .masonry-item img {
-      width: 100%;
+    .carousel-track {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+      cursor: grab;
+      padding: 0 calc(50% - 340px); /* centra el slide activo en desktop */
+    }
+    .carousel-track.dragging {
+      transition: none;
+      cursor: grabbing;
+    }
+    .carousel-slide {
+      flex: 0 0 680px;
+      max-width: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.35s, transform 0.35s;
+      opacity: 0.45;
+      transform: scale(0.93);
+    }
+    .carousel-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .carousel-slide img {
+      width: auto;
       height: auto;
+      max-width: 680px;
+      max-height: 75vh;
       display: block;
-      transition: transform 0.45s ease, filter 0.3s;
+      object-fit: contain;
       filter: grayscale(8%);
-    }
-    .masonry-item:hover img {
-      transform: scale(1.03);
-      filter: grayscale(0%);
-    }
-    .masonry-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(13,13,13,0);
-      transition: background 0.3s;
+      transition: filter 0.3s;
       pointer-events: none;
     }
-    .masonry-item:hover::after {
-      background: rgba(13,13,13,0.12);
+    .carousel-slide.active img {
+      filter: grayscale(0%);
+      cursor: zoom-in;
     }
 
-    @media (max-width: 600px) {
-      .masonry-grid { column-count: 2; }
+    /* Flechas */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(13,13,13,0.6);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
     }
-    @media (min-width: 601px) and (max-width: 900px) {
-      .masonry-grid { column-count: 2; }
+    .carousel-btn:hover { background: var(--burgundy); border-color: var(--burgundy); }
+    .carousel-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+    .carousel-btn.prev { left: 20px; }
+    .carousel-btn.next { right: 20px; }
+
+    /* Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 32px;
+      padding-bottom: 8px;
+    }
+    .carousel-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .carousel-dot.active {
+      background: var(--gold);
+      transform: scale(1.5);
+    }
+
+    @media (max-width: 767px) {
+      .carousel-track {
+        padding: 0 calc(50% - 160px);
+        gap: 8px;
+      }
+      .carousel-slide { flex: 0 0 320px; max-width: 320px; }
+      .carousel-slide img { max-width: 320px; max-height: 65vh; }
+      .carousel-btn { width: 40px; height: 40px; }
+      .carousel-btn.prev { left: 8px; }
+      .carousel-btn.next { right: 8px; }
+    }
+    @media (min-width: 768px) and (max-width: 1100px) {
+      .carousel-track { padding: 0 calc(50% - 260px); }
+      .carousel-slide { flex: 0 0 520px; max-width: 520px; }
+      .carousel-slide img { max-width: 520px; }
     }
 
     /* ===== LIGHTBOX ===== */
@@ -784,40 +849,49 @@
       <h2 class="section-title" style="color: var(--white);">El trabajo habla solo</h2>
     </div>
 
-    <div class="masonry-wrap">
-      <div class="masonry-grid" id="masonryGrid">
-        <div class="masonry-item" data-index="0">
+    <div class="carousel-outer">
+      <button class="carousel-btn prev" id="cPrev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="carousel-btn next" id="cNext" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <div class="carousel-track" id="cTrack">
+        <div class="carousel-slide active" data-index="0">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Quinceañera fotografía" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="1">
+        <div class="carousel-slide" data-index="1">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="XV años foto" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="2">
+        <div class="carousel-slide" data-index="2">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Sesión de XV" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="3">
+        <div class="carousel-slide" data-index="3">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía quinceañera" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="4">
+        <div class="carousel-slide" data-index="4">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotos de XV años" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="5">
+        <div class="carousel-slide" data-index="5">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="XV años Zeta Fotografía" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="6">
+        <div class="carousel-slide" data-index="6">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Sesión quinceañera" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="7">
+        <div class="carousel-slide" data-index="7">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía XV años Paraguay" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="8">
+        <div class="carousel-slide" data-index="8">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotos quinceañera" loading="lazy" />
         </div>
-        <div class="masonry-item" data-index="9">
+        <div class="carousel-slide" data-index="9">
           <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Zeta fotografía eventos" loading="lazy" />
         </div>
       </div>
     </div>
+
+    <div class="carousel-dots" id="cDots"></div>
   </section>
 
   <!-- LIGHTBOX -->
@@ -836,8 +910,6 @@
     </button>
     <div class="lb-counter" id="lbCounter"></div>
   </div>
-
-  <!-- placeholder closing tag replaced below -->
 
   <!-- CTA FINAL -->
   <section class="cta-final" id="cta">
@@ -880,65 +952,129 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // ===== LIGHTBOX =====
+    // ===== CARRUSEL PROPORCIONAL =====
     (function() {
-      const overlay  = document.getElementById('lbOverlay');
-      const lbImg    = document.getElementById('lbImg');
-      const lbPrev   = document.getElementById('lbPrev');
-      const lbNext   = document.getElementById('lbNext');
-      const lbClose  = document.getElementById('lbClose');
-      const counter  = document.getElementById('lbCounter');
-      const items    = Array.from(document.querySelectorAll('.masonry-item'));
-      const srcs     = items.map(el => el.querySelector('img').src);
-      const alts     = items.map(el => el.querySelector('img').alt);
-      let current    = 0;
+      const track   = document.getElementById('cTrack');
+      const dotsWrap= document.getElementById('cDots');
+      const slides  = Array.from(track.querySelectorAll('.carousel-slide'));
+      const total   = slides.length;
+      let current   = 0;
 
-      function show(index) {
-        current = (index + srcs.length) % srcs.length;
-        lbImg.classList.add('fading');
-        setTimeout(() => {
-          lbImg.src = srcs[current];
-          lbImg.alt = alts[current];
-          lbImg.classList.remove('fading');
-        }, 180);
-        counter.textContent = `${current + 1} / ${srcs.length}`;
+      // --- Dots ---
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', `Foto ${i + 1}`);
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+      });
+
+      function updateDots() {
+        dotsWrap.querySelectorAll('.carousel-dot')
+          .forEach((d, i) => d.classList.toggle('active', i === current));
       }
 
-      function open(index) {
-        show(index);
+      function slideWidth() {
+        return slides[0].getBoundingClientRect().width + parseInt(getComputedStyle(track).gap || 12);
+      }
+
+      function goTo(index) {
+        current = (index + total) % total;
+        slides.forEach((s, i) => s.classList.toggle('active', i === current));
+        track.style.transform = `translateX(-${current * slideWidth()}px)`;
+        updateDots();
+      }
+
+      document.getElementById('cPrev').addEventListener('click', () => goTo(current - 1));
+      document.getElementById('cNext').addEventListener('click', () => goTo(current + 1));
+
+      // Click en slide activo → lightbox
+      slides.forEach((slide, i) => {
+        slide.addEventListener('click', () => {
+          if (slide.classList.contains('active')) {
+            lbOpen(i);
+          } else {
+            goTo(i);
+          }
+        });
+      });
+
+      // Teclado carrusel
+      document.addEventListener('keydown', (e) => {
+        if (lbIsOpen()) return;
+        if (e.key === 'ArrowLeft')  goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
+      });
+
+      // Swipe carrusel
+      let touchX = 0;
+      track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend',   e => {
+        const diff = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(diff) > 50) goTo(diff < 0 ? current + 1 : current - 1);
+      });
+
+      // Drag mouse
+      let isDrag = false, dragStartX = 0;
+      track.addEventListener('mousedown',  e => { isDrag = true;  dragStartX = e.clientX; track.classList.add('dragging'); });
+      track.addEventListener('mousemove',  e => { if (!isDrag) return; });
+      track.addEventListener('mouseup',    e => { if (!isDrag) return; isDrag = false; track.classList.remove('dragging'); const diff = e.clientX - dragStartX; if (Math.abs(diff) > 50) goTo(diff < 0 ? current + 1 : current - 1); });
+      track.addEventListener('mouseleave', e => { if (isDrag) { isDrag = false; track.classList.remove('dragging'); } });
+
+      window.addEventListener('resize', () => goTo(current));
+
+      // ===== LIGHTBOX =====
+      const overlay  = document.getElementById('lbOverlay');
+      const lbImg    = document.getElementById('lbImg');
+      const counter  = document.getElementById('lbCounter');
+      const srcs     = slides.map(s => s.querySelector('img').src);
+      const alts     = slides.map(s => s.querySelector('img').alt);
+      let lbCurrent  = 0;
+
+      function lbIsOpen() { return overlay.classList.contains('open'); }
+
+      function lbShow(index) {
+        lbCurrent = (index + total) % total;
+        lbImg.classList.add('fading');
+        setTimeout(() => {
+          lbImg.src = srcs[lbCurrent];
+          lbImg.alt = alts[lbCurrent];
+          lbImg.classList.remove('fading');
+        }, 180);
+        counter.textContent = `${lbCurrent + 1} / ${total}`;
+      }
+
+      function lbOpen(index) {
+        lbShow(index);
         overlay.classList.add('open');
         document.body.style.overflow = 'hidden';
       }
 
-      function close() {
+      function lbClose() {
         overlay.classList.remove('open');
         document.body.style.overflow = '';
       }
 
-      items.forEach((item, i) => item.addEventListener('click', () => open(i)));
-      lbClose.addEventListener('click', close);
-      lbPrev.addEventListener('click', (e) => { e.stopPropagation(); show(current - 1); });
-      lbNext.addEventListener('click', (e) => { e.stopPropagation(); show(current + 1); });
+      document.getElementById('lbClose').addEventListener('click', lbClose);
+      document.getElementById('lbPrev').addEventListener('click', (e) => { e.stopPropagation(); lbShow(lbCurrent - 1); });
+      document.getElementById('lbNext').addEventListener('click', (e) => { e.stopPropagation(); lbShow(lbCurrent + 1); });
 
-      // Click fuera de la imagen cierra
       overlay.addEventListener('click', (e) => {
-        if (e.target === overlay || e.target === document.getElementById('lbImgWrap')) close();
+        if (e.target === overlay) lbClose();
       });
 
-      // Teclado
       document.addEventListener('keydown', (e) => {
-        if (!overlay.classList.contains('open')) return;
-        if (e.key === 'ArrowLeft')  show(current - 1);
-        if (e.key === 'ArrowRight') show(current + 1);
-        if (e.key === 'Escape')     close();
+        if (!lbIsOpen()) return;
+        if (e.key === 'ArrowLeft')  lbShow(lbCurrent - 1);
+        if (e.key === 'ArrowRight') lbShow(lbCurrent + 1);
+        if (e.key === 'Escape')     lbClose();
       });
 
-      // Swipe táctil
-      let touchStartX = 0;
-      overlay.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-      overlay.addEventListener('touchend', e => {
-        const diff = e.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(diff) > 50) show(diff < 0 ? current + 1 : current - 1);
+      let lbTouchX = 0;
+      overlay.addEventListener('touchstart', e => { lbTouchX = e.touches[0].clientX; }, { passive: true });
+      overlay.addEventListener('touchend',   e => {
+        const diff = e.changedTouches[0].clientX - lbTouchX;
+        if (Math.abs(diff) > 50) lbShow(diff < 0 ? lbCurrent + 1 : lbCurrent - 1);
       });
     })();
   </script>
