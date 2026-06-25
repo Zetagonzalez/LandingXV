@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zeta Fotografía — Fotografía de XV Años en Hohenau, Paraguay</title>
-  <meta name="description" content="Fotografía de XV años que captura lo que realmente importa. Poses reales, momentos reales, recuerdos para siempre. Hohenau, Paraguay." />
-  <meta property="og:title" content="Zeta Fotografía — Fotografía de XV Años" />
-  <meta property="og:description" content="Dentro de 20 años, tu hija va a abrir esas fotos. ¿Qué va a sentir?" />
-  <meta property="og:image" content="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226846/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.png" />
-  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226843/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_p8f8jn.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeta Fotografía | Fotografía de XV Años en Hohenau, Itapúa</title>
+  <meta name="description" content="Fotografía de XV años en Hohenau, Itapúa. No entrego rápido, entrego bien. Cada foto es el recuerdo completo de uno de los momentos más importantes de su vida.">
+  <meta property="og:title" content="Zeta Fotografía | XV Años">
+  <meta property="og:description" content="Fotografía de XV años que captura lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.">
+  <meta property="og:image" content="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782334683/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.jpg">
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226843/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_p8f8jn.png">
+
+  <!-- Google Fonts: Playfair Display + Josefin Sans (Old Money pairing) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- META PIXEL: pega aquí tu código de Meta Pixel -->
-  <!-- GOOGLE TAG: pega aquí tu Google Tag (GA4) -->
+  <!-- GOOGLE TAG: pega aquí tu Google Tag -->
   <!-- TIKTOK PIXEL: pega aquí tu TikTok Pixel -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-
   <style>
-    /* ===== TOKENS ===== */
-    :root {
-      --burgundy:   #6E000F;
-      --burgundy-light: #8B0012;
-      --cream:      #F5F0E8;
-      --cream-dark: #EDE8DF;
-      --ink:        #0D0D0D;
-      --ink-soft:   #1A1A1A;
-      --gold:       #C9A96E;
-      --white:      #FFFFFF;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body:    'Inter', system-ui, sans-serif;
-    }
-
-    /* ===== RESET ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      background: var(--cream);
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
 
-    /* ===== NAV ===== */
+    :root {
+      --crimson:    #6E000F;
+      --crimson-lt: #9081C;
+      --ivory:      #F5F0E8;
+      --charcoal:   #1A1210;
+      --warm-gray:  #8C8078;
+      --gold:       #C8A96E;
+      --off-white:  #FAF7F3;
+
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body:    'Josefin Sans', sans-serif;
+
+      --ease-silk: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--charcoal);
+      color: var(--ivory);
+      font-family: var(--ff-body);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -55,1056 +56,884 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 32px;
-      background: transparent;
-      transition: background 0.3s;
+      padding: 20px 24px;
+      background: linear-gradient(to bottom, rgba(26,18,16,0.95), transparent);
+      transition: background 0.4s var(--ease-silk);
     }
-    nav.scrolled {
-      background: rgba(13,13,13,0.95);
-      backdrop-filter: blur(8px);
-    }
+    nav.scrolled { background: rgba(26,18,16,0.97); }
+
     .nav-logo img {
-      height: 56px;
+      height: 48px;
       width: auto;
       filter: brightness(0) invert(1);
     }
-    .nav-cta {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.4);
-      padding: 10px 24px;
-      transition: background 0.2s, border-color 0.2s;
+
+    .nav-links {
+      display: none;
+      gap: 32px;
+      list-style: none;
     }
-    .nav-cta:hover {
-      background: var(--burgundy);
-      border-color: var(--burgundy);
+    .nav-links a {
+      color: var(--ivory);
+      text-decoration: none;
+      font-family: var(--ff-body);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    @media (min-width: 768px) {
+      nav { padding: 24px 48px; }
+      .nav-links { display: flex; }
     }
 
-    /* ===== HERO ===== */
+    /* ── HERO ── */
     .hero {
       position: relative;
-      min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background: var(--ink);
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
       overflow: hidden;
     }
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 120px 48px 72px;
-      position: relative;
-      z-index: 2;
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://res.cloudinary.com/dicfjqcoc/image/upload/v1782334683/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.jpg');
+      background-size: cover;
+      background-position: center top;
+      transform: scale(1.04);
+      transition: transform 8s var(--ease-silk);
     }
-    .hero-eyebrow {
-      font-family: var(--font-body);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
-    }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(48px, 5.5vw, 90px);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.0;
-      margin-bottom: 8px;
-    }
-    .hero-title em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold);
-    }
-    .hero-subtitle {
-      font-family: var(--font-display);
-      font-size: clamp(16px, 1.6vw, 22px);
-      font-style: italic;
-      font-weight: 400;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.5;
-      margin-bottom: 48px;
-      max-width: 400px;
-    }
-    .hero-cta-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: var(--burgundy);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 18px 36px;
-      width: fit-content;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-primary:hover { background: var(--burgundy-light); transform: translateY(-1px); }
-    .hero-microcopy {
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.04em;
-    }
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      opacity: 0.85;
-    }
+    .hero-bg.loaded { transform: scale(1); }
+
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, var(--ink) 0%, transparent 40%);
+      background: linear-gradient(
+        to top,
+        rgba(26,18,16,0.92) 0%,
+        rgba(26,18,16,0.45) 50%,
+        rgba(26,18,16,0.15) 100%
+      );
     }
 
-    /* ===== SINCE BADGE ===== */
-    .since-band {
-      background: var(--burgundy);
-      padding: 14px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      overflow: hidden;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px 56px;
+      max-width: 780px;
     }
-    .since-text {
-      font-family: var(--font-display);
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.8s 0.3s var(--ease-silk) forwards;
+    }
+
+    .hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(36px, 8vw, 80px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.9s 0.5s var(--ease-silk) forwards;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.75);
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.9s 0.7s var(--ease-silk) forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--crimson);
+      color: var(--ivory);
+      text-decoration: none;
+      font-family: var(--ff-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.9s var(--ease-silk) forwards;
+    }
+    .btn-primary:hover { background: #8B0015; transform: translateY(-1px); }
+    .btn-primary svg { width: 14px; height: 14px; }
+
+    .hero-microcopy {
+      display: block;
+      font-size: 11px;
+      color: rgba(245,240,232,0.45);
+      margin-top: 12px;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      animation: fadeUp 0.9s 1.1s var(--ease-silk) forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 768px) {
+      .hero-content { padding: 0 64px 80px; }
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--crimson);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 22s linear infinite;
+      font-family: var(--ff-body);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.8);
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 72px 24px; }
+    @media (min-width: 768px) { section { padding: 100px 64px; } }
+
+    .section-label {
+      font-family: var(--ff-body);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+    }
+
+    h2 em { font-style: italic; color: var(--gold); }
+
+    /* ── PROBLEMA ── */
+    .problema {
+      background: var(--off-white);
+      color: var(--charcoal);
+    }
+
+    .problema-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .problema h2 { margin-bottom: 28px; }
+
+    .problema p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #4A3E38;
+      max-width: 640px;
+    }
+
+    .problema-quote {
+      margin-top: 40px;
+      padding-left: 24px;
+      border-left: 3px solid var(--crimson);
+    }
+
+    .problema-quote p {
+      font-family: var(--ff-display);
+      font-size: clamp(18px, 3vw, 26px);
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+
+    /* ── PROCESO ── */
+    .proceso { background: var(--charcoal); }
+
+    .proceso-inner { max-width: 900px; margin: 0 auto; }
+
+    .proceso h2 { margin-bottom: 52px; }
+
+    .proceso-steps {
+      display: grid;
+      gap: 48px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 24px;
+      align-items: start;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s var(--ease-silk), transform 0.6s var(--ease-silk);
+    }
+    .step.visible { opacity: 1; transform: translateY(0); }
+
+    .step-num {
+      font-family: var(--ff-display);
       font-size: 13px;
       font-style: italic;
-      color: rgba(255,255,255,0.7);
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-    }
-    .since-dot {
-      width: 4px;
-      height: 4px;
-      background: rgba(255,255,255,0.3);
-      border-radius: 50%;
-      flex-shrink: 0;
+      color: var(--gold);
+      padding-top: 4px;
     }
 
-    /* ===== PROBLEMA ===== */
-    .problema {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 70vh;
+    .step h3 {
+      font-family: var(--ff-display);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--ivory);
     }
-    .problema-img {
+
+    .step p {
+      font-size: 15px;
+      color: rgba(245,240,232,0.65);
+      line-height: 1.75;
+    }
+
+    @media (min-width: 768px) {
+      .proceso-steps { grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+      .step { grid-template-columns: 1fr; }
+      .step-num { margin-bottom: 8px; }
+    }
+
+    /* ── PORTAFOLIO ── */
+    .portafolio { 
+      background: #120D0B; 
+      padding-left: 0; 
+      padding-right: 0; 
+    }
+
+    .portafolio-header {
+      padding: 0 24px 40px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .portafolio-header { padding: 0 64px 48px; }
+    }
+
+    .carousel-wrapper {
       position: relative;
       overflow: hidden;
     }
-    .problema-img img {
+
+    .carousel-track {
+      display: flex;
+      gap: 12px;
+      padding: 0 24px;
+      cursor: grab;
+      user-select: none;
+      transition: none;
+      will-change: transform;
+    }
+    .carousel-track:active { cursor: grabbing; }
+
+    @media (min-width: 768px) {
+      .carousel-track { padding: 0 64px; gap: 16px; }
+    }
+
+    .carousel-slide {
+      flex: 0 0 auto;
+      width: 72vw;
+      max-width: 420px;
+      aspect-ratio: 3/4;
+      border-radius: 0;
+      overflow: hidden;
+      transition: transform 0.4s var(--ease-silk), opacity 0.4s var(--ease-silk), box-shadow 0.4s;
+      transform: scale(0.9);
+      opacity: 0.5;
+    }
+
+    .carousel-slide.active {
+      transform: scale(1);
+      opacity: 1;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+    }
+
+    .carousel-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
-    }
-    .problema-content {
-      background: var(--cream);
-      padding: 80px 64px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .section-eyebrow {
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--burgundy);
-      margin-bottom: 20px;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 3.5vw, 52px);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--ink);
-      margin-bottom: 28px;
-    }
-    .section-body {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #3a3a3a;
-      max-width: 480px;
-    }
-    .section-body p + p { margin-top: 16px; }
-
-    /* ===== PROCESO ===== */
-    .proceso {
-      background: var(--ink-soft);
-      padding: 100px 64px;
-    }
-    .proceso-header {
-      text-align: center;
-      margin-bottom: 72px;
-    }
-    .proceso-header .section-title {
-      color: var(--white);
-    }
-    .proceso-header .section-eyebrow {
-      color: var(--gold);
-    }
-    .proceso-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,0.08);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .proceso-item {
-      background: var(--ink-soft);
-      padding: 48px 40px;
-      position: relative;
-    }
-    .proceso-num {
-      font-family: var(--font-display);
-      font-size: 64px;
-      font-weight: 700;
-      color: var(--burgundy);
-      opacity: 0.35;
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-    .proceso-item-title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-    .proceso-item-body {
-      font-size: 15px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.55);
-    }
-
-    /* ===== PROMESA ===== */
-    .promesa {
-      background: var(--cream-dark);
-      padding: 120px 64px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .promesa::before {
-      content: '"';
-      font-family: var(--font-display);
-      font-size: 400px;
-      color: rgba(110,0,15,0.05);
-      position: absolute;
-      top: -80px;
-      left: 50%;
-      transform: translateX(-50%);
-      line-height: 1;
       pointer-events: none;
-    }
-    .promesa-quote {
-      font-family: var(--font-display);
-      font-size: clamp(22px, 3vw, 38px);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--ink);
-      line-height: 1.45;
-      max-width: 780px;
-      margin: 0 auto 40px;
-      position: relative;
-    }
-    .promesa-sub {
-      font-size: 15px;
-      color: #6a6a6a;
-      max-width: 480px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-    .gold-line {
-      width: 60px;
-      height: 2px;
-      background: var(--gold);
-      margin: 32px auto;
-    }
-
-    /* ===== PORTAFOLIO ===== */
-    .portafolio {
-      background: var(--ink);
-      padding: 100px 0;
-    }
-    .portafolio-header {
-      text-align: center;
-      padding: 0 32px;
-      margin-bottom: 56px;
-    }
-    .portafolio-header .section-title { color: var(--white); }
-    .portafolio-header .section-eyebrow { color: var(--gold); }
-
-    /* ===== CARRUSEL PROPORCIONAL ===== */
-    .carousel-outer {
-      position: relative;
-      overflow: hidden;
-      user-select: none;
-    }
-    .carousel-track {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      will-change: transform;
-      cursor: grab;
-      padding: 0 calc(50% - 340px); /* centra el slide activo en desktop */
-    }
-    .carousel-track.dragging {
-      transition: none;
-      cursor: grabbing;
-    }
-    .carousel-slide {
-      flex: 0 0 680px;
-      max-width: 680px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.35s, transform 0.35s;
-      opacity: 0.45;
-      transform: scale(0.93);
-    }
-    .carousel-slide.active {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .carousel-slide img {
-      width: auto;
-      height: auto;
-      max-width: 680px;
-      max-height: 75vh;
       display: block;
-      object-fit: contain;
-      filter: grayscale(8%);
-      transition: filter 0.3s;
-      pointer-events: none;
-    }
-    .carousel-slide.active img {
-      filter: grayscale(0%);
-      cursor: zoom-in;
     }
 
-    /* Flechas */
+    @media (min-width: 768px) {
+      .carousel-slide { width: 380px; }
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 32px 24px 0;
+    }
+
+    @media (min-width: 768px) {
+      .carousel-controls { padding: 40px 64px 0; }
+    }
+
     .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-      width: 52px;
-      height: 52px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(13,13,13,0.6);
-      backdrop-filter: blur(8px);
-      color: var(--white);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .carousel-btn:hover { background: var(--burgundy); border-color: var(--burgundy); }
-    .carousel-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.5; }
-    .carousel-btn.prev { left: 20px; }
-    .carousel-btn.next { right: 20px; }
-
-    /* Dots */
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 32px;
-      padding-bottom: 8px;
-    }
-    .carousel-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      cursor: pointer;
-      border: none;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .carousel-dot.active {
-      background: var(--gold);
-      transform: scale(1.5);
-    }
-
-    @media (max-width: 767px) {
-      .carousel-track {
-        padding: 0 calc(50% - 160px);
-        gap: 8px;
-      }
-      .carousel-slide { flex: 0 0 320px; max-width: 320px; }
-      .carousel-slide img { max-width: 320px; max-height: 65vh; }
-      .carousel-btn { width: 40px; height: 40px; }
-      .carousel-btn.prev { left: 8px; }
-      .carousel-btn.next { right: 8px; }
-    }
-    @media (min-width: 768px) and (max-width: 1100px) {
-      .carousel-track { padding: 0 calc(50% - 260px); }
-      .carousel-slide { flex: 0 0 520px; max-width: 520px; }
-      .carousel-slide img { max-width: 520px; }
-    }
-
-    /* ===== LIGHTBOX ===== */
-    .lb-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(8,8,8,0.96);
-      backdrop-filter: blur(6px);
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .lb-overlay.open {
-      display: flex;
-    }
-    .lb-img-wrap {
-      position: relative;
-      max-width: 92vw;
-      max-height: 88vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .lb-img-wrap img {
-      max-width: 92vw;
-      max-height: 88vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      border: none;
-      user-select: none;
-      transition: opacity 0.22s ease;
-    }
-    .lb-img-wrap img.fading {
-      opacity: 0;
-    }
-    .lb-btn {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1010;
-      width: 52px;
-      height: 52px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(13,13,13,0.55);
-      backdrop-filter: blur(8px);
-      color: var(--white);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .lb-btn:hover { background: var(--burgundy); border-color: var(--burgundy); }
-    .lb-btn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.5; }
-    .lb-prev { left: 16px; }
-    .lb-next { right: 16px; }
-    .lb-close {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      z-index: 1010;
       width: 44px;
       height: 44px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(13,13,13,0.55);
-      backdrop-filter: blur(8px);
-      color: var(--white);
+      border: 1px solid rgba(245,240,232,0.25);
+      background: transparent;
+      color: var(--ivory);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.2s;
+      transition: border-color 0.2s, background 0.2s;
     }
-    .lb-close:hover { background: var(--burgundy); }
-    .lb-close svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; }
-    .lb-counter {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.4);
-      font-family: var(--font-body);
-    }
+    .carousel-btn:hover { border-color: var(--gold); background: rgba(200,169,110,0.1); }
+    .carousel-btn svg { width: 18px; height: 18px; }
 
-    @media (max-width: 767px) {
-      .lb-btn { width: 40px; height: 40px; }
-      .lb-prev { left: 8px; }
-      .lb-next { right: 8px; }
-    }
-
-    /* ===== SOBRE MI ===== */
-    .sobre-mi {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .sobre-mi-content {
-      background: var(--burgundy);
-      padding: 80px 64px;
+    .carousel-dots {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      gap: 6px;
+      margin-left: 8px;
     }
-    .sobre-mi-content .section-eyebrow { color: rgba(255,255,255,0.5); }
-    .sobre-mi-content .section-title { color: var(--white); }
-    .sobre-mi-body {
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(245,240,232,0.25);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .dot.active { background: var(--gold); transform: scale(1.5); }
+
+    /* ── PROMESA ── */
+    .promesa {
+      background: var(--crimson);
+      text-align: center;
+    }
+
+    .promesa-inner { max-width: 680px; margin: 0 auto; }
+
+    .promesa h2 {
+      color: var(--ivory);
+      margin-bottom: 20px;
+      font-size: clamp(26px, 4.5vw, 48px);
+    }
+
+    .promesa p {
       font-size: 16px;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.75);
-      max-width: 480px;
+      color: rgba(245,240,232,0.8);
+      line-height: 1.75;
+      margin-bottom: 36px;
     }
-    .sobre-mi-img {
-      overflow: hidden;
+
+    /* ── SOBRE MÍ ── */
+    .sobre-mi { background: var(--off-white); color: var(--charcoal); }
+
+    .sobre-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (min-width: 768px) {
+      .sobre-inner { grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; }
+    }
+
+    .sobre-img-wrap {
       position: relative;
     }
-    .sobre-mi-img img {
+
+    .sobre-img-wrap img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 3/4;
       object-fit: cover;
-      object-position: center top;
-    }
-
-    /* ===== CTA FINAL ===== */
-    .cta-final {
-      background: var(--cream);
-      padding: 120px 32px;
-      text-align: center;
-    }
-    .cta-final .section-eyebrow {
       display: block;
-      margin-bottom: 20px;
-    }
-    .cta-final .section-title {
-      margin-bottom: 20px;
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-final .section-body {
-      margin: 0 auto 48px;
-      text-align: center;
-    }
-    .cta-final .btn-primary {
-      margin: 0 auto;
-      font-size: 14px;
-      padding: 20px 48px;
-    }
-    .cta-microcopy {
-      font-size: 12px;
-      color: #999;
-      margin-top: 16px;
-      letter-spacing: 0.04em;
     }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--ink);
-      padding: 48px 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
+    .sobre-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      width: 60%;
+      height: 60%;
+      border: 2px solid var(--crimson);
+      z-index: -1;
     }
-    footer img.footer-logo {
-      height: 36px;
+
+    .sobre-text .section-label { color: var(--crimson); }
+
+    .sobre-text h2 { color: var(--charcoal); margin-bottom: 20px; }
+
+    .sobre-text p {
+      font-size: 15px;
+      color: #5A4A44;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: var(--off-white);
+      color: var(--charcoal);
+      text-align: center;
+    }
+
+    .cta-inner { max-width: 620px; margin: 0 auto; }
+
+    .cta-inner h2 { color: var(--charcoal); margin-bottom: 16px; }
+
+    .cta-inner p {
+      font-size: 15px;
+      color: #5A4A44;
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+
+    .btn-primary.dark {
+      background: var(--charcoal);
+      animation: none;
+      opacity: 1;
+    }
+    .btn-primary.dark:hover { background: #2E2220; }
+
+    .cta-microcopy {
+      display: block;
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--warm-gray);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0E0908;
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    footer img {
+      height: 40px;
       filter: brightness(0) invert(1);
       opacity: 0.6;
+      margin-bottom: 20px;
     }
+
     .footer-links {
       display: flex;
+      justify-content: center;
       gap: 28px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
     }
+
     .footer-links a {
-      font-size: 11px;
-      letter-spacing: 0.15em;
+      color: rgba(245,240,232,0.4);
+      text-decoration: none;
+      font-size: 10px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--gold); }
-    .footer-legal {
+
+    footer p {
       font-size: 11px;
-      color: rgba(255,255,255,0.2);
+      color: rgba(245,240,232,0.25);
       letter-spacing: 0.05em;
     }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 767px) {
-      nav { padding: 16px 20px; }
-      .nav-logo img { height: 44px; }
-      .nav-cta { font-size: 11px; padding: 8px 16px; }
-
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: 100svh;
-      }
-      .hero-left {
-        padding: 100px 24px 48px;
-        order: 2;
-      }
-      .hero-right {
-        order: 1;
-        height: 50svh;
-      }
-      .hero-overlay {
-        background: linear-gradient(to bottom, transparent 50%, var(--ink) 100%);
-      }
-      .hero-subtitle { max-width: 100%; }
-
-      .since-band { gap: 16px; flex-wrap: wrap; justify-content: center; padding: 12px 20px; }
-
-      .problema { grid-template-columns: 1fr; }
-      .problema-img { height: 300px; }
-      .problema-content { padding: 56px 24px; }
-      .section-body { max-width: 100%; }
-
-      .proceso { padding: 72px 24px; }
-      .proceso-grid { grid-template-columns: 1fr; }
-
-      .promesa { padding: 80px 24px; }
-      .promesa::before { font-size: 200px; }
-
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid .g-item img { height: 180px; }
-      .gallery-grid .g-item.tall img { height: 260px; }
-      .gallery-grid .g-item.wide { grid-column: span 1; }
-      .gallery-grid .g-item.wide img { height: 180px; }
-      .gallery-row2 { grid-template-columns: repeat(2, 1fr); }
-      .gallery-row2 .g-item img { height: 160px; }
-
-      .sobre-mi { grid-template-columns: 1fr; }
-      .sobre-mi-img { height: 320px; order: -1; }
-      .sobre-mi-content { padding: 56px 24px; }
-
-      .cta-final { padding: 80px 24px; }
-    }
-
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-      .gallery-grid .g-item.wide { grid-column: span 1; }
-      .gallery-row2 { grid-template-columns: repeat(3, 1fr); }
-      .proceso-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    /* ===== SCROLL REVEAL ===== */
+    /* ── SCROLL REVEAL ── */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(28px);
+      transition: opacity 0.7s var(--ease-silk), transform 0.7s var(--ease-silk);
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99;
+      background: #25D366;
+      color: #fff;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+    .wa-float svg { width: 26px; height: 26px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <a class="nav-logo" href="#hero">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía" />
-    </a>
-    <a class="nav-cta" href="#cta">Hablemos</a>
-  </nav>
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#sobre-mi">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Fotografía de XV Años — Hohenau, Paraguay</p>
-      <h1 class="hero-title">
-        Fotografía<br><em>de XV Años</em>
-      </h1>
-      <p class="hero-subtitle">Dentro de 20 años, tu hija va a abrir esas fotos. ¿Qué va a sentir?</p>
-      <div class="hero-cta-wrap">
-        <a class="btn-primary" href="#cta">Hablemos antes de que se agenden tus fechas</a>
-        <span class="hero-microcopy">Sin compromiso · Solo contamos los cupos disponibles</span>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Zeta Fotografía · XV Años</span>
+    <h1>Revivé la emoción de sus XV<br>cada vez que <em>mires</em> las fotos</h1>
+    <p class="hero-sub">Dentro de 20 años, tu hija va a abrir esas fotos. ¿Qué va a sentir?</p>
+    <a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="btn-primary">
+      Hablemos antes de que se agenden tus fechas
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <span class="hero-microcopy">Sin compromiso · Solo una charla sobre el día más especial de tu hija</span>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <span class="ticker-inner">
+    Fotografía de XV Años &nbsp;·&nbsp; Hohenau, Itapúa &nbsp;·&nbsp; Zeta Fotografía &nbsp;·&nbsp; Momentos que no vuelven &nbsp;·&nbsp; Fotos que duran toda la vida &nbsp;·&nbsp;
+    Fotografía de XV Años &nbsp;·&nbsp; Hohenau, Itapúa &nbsp;·&nbsp; Zeta Fotografía &nbsp;·&nbsp; Momentos que no vuelven &nbsp;·&nbsp; Fotos que duran toda la vida &nbsp;·&nbsp;
+  </span>
+</div>
+
+<!-- PROBLEMA -->
+<section class="problema" id="problema">
+  <div class="problema-inner reveal">
+    <div class="section-label">El problema real</div>
+    <h2>Muchas mamás terminan el evento felices.<br><em>Pero después llegan las fotos.</em></h2>
+    <p style="margin-top: 28px;">Semanas después del evento, cuando llegan las fotos, algo no está bien. Las poses se ven forzadas. Los momentos más importantes no fueron capturados. Y lo peor: no hay nada que se pueda hacer.</p>
+    <div class="problema-quote">
+      <p>"Ese día no vuelve. Y las fotos son lo único que queda."</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="proceso-inner">
+    <div class="section-label reveal">Cómo trabajo</div>
+    <h2 class="reveal">Un proceso pensado para<br><em>capturar lo real</em></h2>
+
+    <div class="proceso-steps" style="margin-top: 52px;">
+      <div class="step">
+        <span class="step-num">I</span>
+        <div>
+          <h3>Antes del evento</h3>
+          <p>Me tomo el tiempo de conocerlas — a la quinceañera y a vos — para entender qué momentos no pueden faltar y para que ella llegue al día sin nervios ni vergüenza frente a la cámara.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">II</span>
+        <div>
+          <h3>Durante el evento</h3>
+          <p>No interrumpo, no genero caos, no armo poses robóticas. Capturo lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">III</span>
+        <div>
+          <h3>La edición final</h3>
+          <p>Cada foto pasa por un proceso de edición cuidadosa para que el resultado final esté a la altura de lo que ese día significó — porque un recuerdo así merece tiempo y dedicación.</p>
+        </div>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-overlay"></div>
-      <img
-        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782334683/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.jpg"
-        alt="Fotografía de XV años Zeta"
-        loading="eager"
-      />
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SINCE BAND -->
-  <div class="since-band">
-    <span class="since-text">Fotografía de XV años</span>
-    <span class="since-dot"></span>
-    <span class="since-text">Sesión de Pre XV</span>
-    <span class="since-dot"></span>
-    <span class="since-text">Hohenau Itapúa Paraguay</span>
+<!-- PORTAFOLIO -->
+<section class="portafolio" id="portafolio">
+  <div class="portafolio-header">
+    <div>
+      <div class="section-label">El trabajo habla solo</div>
+      <h2>Portafolio</h2>
+    </div>
   </div>
 
-  <!-- PROBLEMA -->
-  <section class="problema" id="problema">
-    <div class="problema-img">
-      <img
-        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg"
-        alt="Fotografía de quinceañera"
-        loading="lazy"
-      />
+  <div class="carousel-wrapper" id="carouselWrapper">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782417943/DSC_2641_wuuyex.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782417412/DSC_3429_p9fbdo.jpg" alt="Fotografía XV años" loading="lazy"></div>
+      <div class="carousel-slide"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.33_wkmz3y.jpg" alt="Fotografía XV años" loading="lazy"></div>
     </div>
-    <div class="problema-content reveal">
-      <p class="section-eyebrow">El problema real</p>
-      <h2 class="section-title">Las fotos llegan y algo no está bien</h2>
-      <div class="section-body">
-        <p>Muchas mamás terminan el evento felices, pero semanas después, cuando llegan las fotos, sienten que algo no está bien.</p>
-        <p>Las poses se ven forzadas. Los momentos más importantes no fueron capturados.</p>
-        <p>Y lo peor: no hay nada que se pueda hacer. <strong>Ese día no vuelve.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO -->
-  <section class="proceso" id="proceso">
-    <div class="proceso-header reveal">
-      <p class="section-eyebrow">Cómo trabajo</p>
-      <h2 class="section-title" style="color: var(--white);">Un proceso pensado<br><em style="color: var(--gold);">para que nada quede afuera</em></h2>
-    </div>
-    <div class="proceso-grid">
-      <div class="proceso-item reveal">
-        <div class="proceso-num">01</div>
-        <h3 class="proceso-item-title">La reunión previa</h3>
-        <p class="proceso-item-body">Antes del evento me tomo el tiempo de conocerlas — a la quinceañera y a vos — para entender qué momentos no pueden faltar y para que ella llegue al día sin nervios ni vergüenza frente a la cámara.</p>
-      </div>
-      <div class="proceso-item reveal">
-        <div class="proceso-num">02</div>
-        <h3 class="proceso-item-title">El día del evento</h3>
-        <p class="proceso-item-body">No interrumpo, no genero caos, no armo poses robóticas. Capturo lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.</p>
-      </div>
-      <div class="proceso-item reveal">
-        <div class="proceso-num">03</div>
-        <h3 class="proceso-item-title">La edición</h3>
-        <p class="proceso-item-body">Cada foto pasa por un proceso de edición cuidadosa para que el resultado final esté a la altura de lo que ese día significó — porque un recuerdo así merece tiempo y dedicación.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROMESA -->
-  <section class="promesa" id="promesa">
-    <div class="gold-line"></div>
-    <p class="promesa-quote reveal">
-      "No solo fotos bonitas. El recuerdo completo de uno de los momentos más importantes de su vida — guardado para siempre, con la calidad que ese momento merece."
-    </p>
-    <div class="gold-line"></div>
-    <p class="promesa-sub reveal">Porque dentro de 20 años, cuando tu hija abra esa carpeta, lo que va a sentir depende de lo que pasó ese día frente a la cámara.</p>
-  </section>
-
-  <!-- SOBRE MÍ -->
-  <section class="sobre-mi" id="sobre-mi">
-    <div class="sobre-mi-content reveal">
-      <p class="section-eyebrow">Sobre mí</p>
-      <h2 class="section-title" style="color: var(--white);">Mi mejor presentación<br>es mi portafolio</h2>
-      <p class="sobre-mi-body">En todas las páginas siempre hay un bloque enorme de texto donde el fotógrafo presume sus títulos o años de experiencia, pero nadie los lee. ¿Sabés por qué? Porque a nadie le importa.</p>
-      <p class="sobre-mi-body" style="margin-top: 16px;">Vos querés resultados para los XV de tu hija. Mi mejor carta de presentación es mi portafolio, porque eso es exactamente lo que te puedo ofrecer.</p>
-      <div style="margin-top: 40px;">
-        <a class="btn-primary" style="background: var(--white); color: var(--burgundy);" href="#cta">Hablemos</a>
-      </div>
-    </div>
-    <div class="sobre-mi-img">
-      <img
-        src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226846/WhatsApp_Image_2026-06-23_at_10.32.31_1_ilkbha.jpg"
-        alt="Zeta Fotografía perfil"
-        loading="lazy"
-      />
-    </div>
-  </section>
-
-  <!-- PORTAFOLIO -->
-  <section class="portafolio" id="portafolio">
-    <div class="portafolio-header reveal">
-      <p class="section-eyebrow">Portafolio</p>
-      <h2 class="section-title" style="color: var(--white);">El trabajo habla solo</h2>
-    </div>
-
-    <div class="carousel-outer">
-      <button class="carousel-btn prev" id="cPrev" aria-label="Anterior">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="carousel-btn next" id="cNext" aria-label="Siguiente">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-
-      <div class="carousel-track" id="cTrack">
-        <div class="carousel-slide active" data-index="0">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Quinceañera fotografía" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="XV años foto" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="2">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Sesión de XV" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="3">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía quinceañera" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="4">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotos de XV años" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="5">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="XV años Zeta Fotografía" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="6">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Sesión quinceañera" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="7">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía XV años Paraguay" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="8">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotos quinceañera" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="9">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Zeta fotografía eventos" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="10">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782416340/WhatsApp_Image_2026-06-23_at_11.36.54_wdhhhk.jpg" alt="Sesión de XV años" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="11">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782415807/WhatsApp_Image_2026-06-23_at_11.36.53_blosjf.jpg" alt="Fotografía quinceañera" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="12">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782415038/WhatsApp_Image_2026-06-23_at_11.37.01_1_kwfhcz.jpg" alt="XV años Hohenau" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="13">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782415317/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Quinceañera Paraguay" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="14">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782331971/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Sesión fotográfica XV" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="15">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.33_wkmz3y.jpg" alt="Zeta fotografía quinceañera" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="16">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782417412/DSC_3429_p9fbdo.jpg" alt="Fotografía profesional XV años" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="17">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782417941/DSC_3353_bc0qdy.jpg" alt="Sesión Pre XV Hohenau" loading="lazy" />
-        </div>
-        <div class="carousel-slide" data-index="18">
-          <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782417941/DSC_3173_o17bug.jpg" alt="Portafolio Zeta Fotografía" loading="lazy" />
-        </div>
-      </div>
-    </div>
-
-    <div class="carousel-dots" id="cDots"></div>
-  </section>
-
-  <!-- LIGHTBOX -->
-  <div class="lb-overlay" id="lbOverlay" role="dialog" aria-modal="true">
-    <button class="lb-close" id="lbClose" aria-label="Cerrar">
-      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Anterior">
-      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <div class="lb-img-wrap" id="lbImgWrap">
-      <img id="lbImg" src="" alt="" />
-    </div>
-    <button class="lb-btn lb-next" id="lbNext" aria-label="Siguiente">
-      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="lb-counter" id="lbCounter"></div>
   </div>
 
-  <!-- CTA FINAL -->
-  <section class="cta-final" id="cta">
-    <span class="section-eyebrow">Próximos pasos</span>
-    <h2 class="section-title">Los cupos son limitados.<br>Hablemos antes de que se agende tu fecha.</h2>
-    <p class="section-body">Una reunión rápida — sin compromiso — para entender qué necesitás y contarte cómo trabajo. Si encajamos, arrancamos. Si no, al menos te fui honesto/a.</p>
-    <a class="btn-primary" href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener">
-      Agenda tu reunión por WhatsApp
+  <div class="carousel-controls">
+    <button class="carousel-btn" id="prevBtn" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- PROMESA -->
+<section class="promesa">
+  <div class="promesa-inner reveal">
+    <div class="section-label" style="color: rgba(245,240,232,0.6)">La promesa</div>
+    <h2>No solo serán fotos bonitas.<br>Será el recuerdo <em style="color: var(--ivory); text-decoration: underline; text-decoration-color: rgba(245,240,232,0.3);">completo</em></h2>
+    <p>El recuerdo completo de uno de los momentos más importantes de su vida, guardado para siempre con la calidad que ese momento merece.</p>
+    <a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="btn-primary" style="animation: none; opacity: 1; background: var(--ivory); color: var(--crimson);">
+      Hablemos sobre los XV de tu hija
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-    <p class="cta-microcopy">Sin spam · Solo te contactamos si vos nos escribís primero</p>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <img class="footer-logo" src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía" />
-    <div class="footer-links">
-      <a href="https://www.instagram.com/_zetaphoto?igsh=eW00MTBieTNwY2p5" target="_blank" rel="noopener">Instagram</a>
-      <a href="#portafolio">Portafolio</a>
-      <a href="#cta">Contacto</a>
+<!-- SOBRE MÍ -->
+<section class="sobre-mi" id="sobre-mi">
+  <div class="sobre-inner">
+    <div class="sobre-img-wrap reveal">
+      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226846/WhatsApp_Image_2026-06-23_at_10.32.31_1_ilkbha.jpg" alt="Ezequiel - Zeta Fotografía" loading="lazy">
     </div>
-    <p class="footer-legal">© 2024 Zeta Fotografía · Hohenau, Paraguay · Todos los derechos reservados</p>
-  </footer>
+    <div class="sobre-text reveal">
+      <div class="section-label">Sobre mí</div>
+      <h2 style="color: var(--charcoal);">Mi mejor carta de presentación <em style="color: var(--crimson);">es el portafolio</em></h2>
+      <p style="margin-top: 20px;">En todas las páginas hay un bloque enorme de texto donde el fotógrafo presume sus títulos o años de experiencia. Pero nadie los lee. ¿Sabés por qué? Porque a nadie le importa.</p>
+      <p>Lo que a vos te importa es saber qué vas a obtener para los XV de tu hija. Y eso está arriba: en cada foto.</p>
+      <p>Lo que sí puedo decirte: trabajo en Hohenau, Itapúa, con dedicación real a cada sesión. Porque un recuerdo así no se entrega apurado.</p>
+      <a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="btn-primary" style="animation: none; opacity: 1; margin-top: 12px;">
+        Agenda tu reunión
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Nav scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contacto">
+  <div class="cta-inner reveal">
+    <div class="section-label" style="color: var(--crimson);">Próximos pasos</div>
+    <h2>¿Listo para hablar sobre<br><em style="color: var(--crimson);">los XV de tu hija?</em></h2>
+    <p>Las fechas se agendan con tiempo. Escribime hoy y coordinamos una charla sin compromiso para entender lo que soñás para ese día.</p>
+    <a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="btn-primary dark">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escribime por WhatsApp
+    </a>
+    <span class="cta-microcopy">Respondés en minutos · Sin compromiso</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía">
+  <div class="footer-links">
+    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <p>© 2026 Zeta Fotografía · Hohenau, Itapúa, Paraguay · Todos los derechos reservados</p>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // NAV SCROLL
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // HERO BG LOAD
+  const heroBg = document.getElementById('heroBg');
+  const img = new Image();
+  img.onload = () => heroBg.classList.add('loaded');
+  img.src = heroBg.style.backgroundImage.replace(/url\(['"]?/, '').replace(/['"]?\)/, '');
+  setTimeout(() => heroBg.classList.add('loaded'), 100);
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal, .step');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.classList.contains('step') ?
+          Array.from(document.querySelectorAll('.step')).indexOf(entry.target) * 120 : 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // CAROUSEL
+  (function() {
+    const track = document.getElementById('carouselTrack');
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const total = slides.length;
+    let current = 0;
+    let isDragging = false;
+    let startX = 0;
+    let scrollStart = 0;
+    let animFrame = null;
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
     });
 
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
+    function getSlideCenter(index) {
+      const slide = slides[index];
+      const trackRect = track.parentElement.getBoundingClientRect();
+      const slideRect = slide.getBoundingClientRect();
+      // We need the offset within track
+      return slide.offsetLeft - (track.parentElement.offsetWidth / 2 - slide.offsetWidth / 2);
+    }
+
+    function updateSlides() {
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === current);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => observer.observe(el));
+      const dots = dotsContainer.querySelectorAll('.dot');
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
 
-    // ===== CARRUSEL PROPORCIONAL =====
-    (function() {
-      const track   = document.getElementById('cTrack');
-      const dotsWrap= document.getElementById('cDots');
-      const slides  = Array.from(track.querySelectorAll('.carousel-slide'));
-      const total   = slides.length;
-      let current   = 0;
-
-      // --- Dots ---
-      slides.forEach((_, i) => {
-        const d = document.createElement('button');
-        d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        d.setAttribute('aria-label', `Foto ${i + 1}`);
-        d.addEventListener('click', () => goTo(i));
-        dotsWrap.appendChild(d);
-      });
-
-      function updateDots() {
-        dotsWrap.querySelectorAll('.carousel-dot')
-          .forEach((d, i) => d.classList.toggle('active', i === current));
+    function scrollToSlide(index, smooth = true) {
+      current = Math.max(0, Math.min(total - 1, index));
+      const target = getSlideCenter(current);
+      if (smooth) {
+        track.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
+      } else {
+        track.style.transition = 'none';
       }
+      track.style.transform = `translateX(${-target}px)`;
+      updateSlides();
+    }
 
-      function slideWidth() {
-        return slides[0].getBoundingClientRect().width + parseInt(getComputedStyle(track).gap || 12);
-      }
+    prevBtn.addEventListener('click', () => scrollToSlide(current - 1));
+    nextBtn.addEventListener('click', () => scrollToSlide(current + 1));
 
-      function goTo(index) {
-        current = (index + total) % total;
-        slides.forEach((s, i) => s.classList.toggle('active', i === current));
-        track.style.transform = `translateX(-${current * slideWidth()}px)`;
-        updateDots();
-      }
+    // DRAG / TOUCH
+    function pointerDown(e) {
+      isDragging = true;
+      startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+      const match = (track.style.transform || 'translateX(0)').match(/-?[\d.]+/);
+      scrollStart = match ? parseFloat(match[0]) : 0;
+      track.style.transition = 'none';
+      e.type !== 'touchstart' && e.preventDefault();
+    }
 
-      document.getElementById('cPrev').addEventListener('click', () => goTo(current - 1));
-      document.getElementById('cNext').addEventListener('click', () => goTo(current + 1));
+    function pointerMove(e) {
+      if (!isDragging) return;
+      const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+      const dx = clientX - startX;
+      track.style.transform = `translateX(${scrollStart + dx}px)`;
+    }
 
-      // Click en slide activo → lightbox
-      slides.forEach((slide, i) => {
-        slide.addEventListener('click', () => {
-          if (slide.classList.contains('active')) {
-            lbOpen(i);
-          } else {
-            goTo(i);
-          }
-        });
-      });
+    function pointerUp(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      const clientX = e.type === 'touchend' ? (e.changedTouches[0]?.clientX || startX) : e.clientX;
+      const dx = clientX - startX;
+      const threshold = 60;
+      if (dx < -threshold) scrollToSlide(current + 1);
+      else if (dx > threshold) scrollToSlide(current - 1);
+      else scrollToSlide(current);
+    }
 
-      // Teclado carrusel
-      document.addEventListener('keydown', (e) => {
-        if (lbIsOpen()) return;
-        if (e.key === 'ArrowLeft')  goTo(current - 1);
-        if (e.key === 'ArrowRight') goTo(current + 1);
-      });
+    track.addEventListener('mousedown', pointerDown);
+    track.addEventListener('touchstart', pointerDown, { passive: true });
+    window.addEventListener('mousemove', pointerMove);
+    window.addEventListener('touchmove', pointerMove, { passive: true });
+    window.addEventListener('mouseup', pointerUp);
+    window.addEventListener('touchend', pointerUp);
 
-      // Swipe carrusel
-      let touchX = 0;
-      track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchend',   e => {
-        const diff = e.changedTouches[0].clientX - touchX;
-        if (Math.abs(diff) > 50) goTo(diff < 0 ? current + 1 : current - 1);
-      });
-
-      // Drag mouse
-      let isDrag = false, dragStartX = 0;
-      track.addEventListener('mousedown',  e => { isDrag = true;  dragStartX = e.clientX; track.classList.add('dragging'); });
-      track.addEventListener('mousemove',  e => { if (!isDrag) return; });
-      track.addEventListener('mouseup',    e => { if (!isDrag) return; isDrag = false; track.classList.remove('dragging'); const diff = e.clientX - dragStartX; if (Math.abs(diff) > 50) goTo(diff < 0 ? current + 1 : current - 1); });
-      track.addEventListener('mouseleave', e => { if (isDrag) { isDrag = false; track.classList.remove('dragging'); } });
-
-      window.addEventListener('resize', () => goTo(current));
-
-      // ===== LIGHTBOX =====
-      const overlay  = document.getElementById('lbOverlay');
-      const lbImg    = document.getElementById('lbImg');
-      const counter  = document.getElementById('lbCounter');
-      const srcs     = slides.map(s => s.querySelector('img').src);
-      const alts     = slides.map(s => s.querySelector('img').alt);
-      let lbCurrent  = 0;
-
-      function lbIsOpen() { return overlay.classList.contains('open'); }
-
-      function lbShow(index) {
-        lbCurrent = (index + total) % total;
-        lbImg.classList.add('fading');
-        setTimeout(() => {
-          lbImg.src = srcs[lbCurrent];
-          lbImg.alt = alts[lbCurrent];
-          lbImg.classList.remove('fading');
-        }, 180);
-        counter.textContent = `${lbCurrent + 1} / ${total}`;
-      }
-
-      function lbOpen(index) {
-        lbShow(index);
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function lbClose() {
-        overlay.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-
-      document.getElementById('lbClose').addEventListener('click', lbClose);
-      document.getElementById('lbPrev').addEventListener('click', (e) => { e.stopPropagation(); lbShow(lbCurrent - 1); });
-      document.getElementById('lbNext').addEventListener('click', (e) => { e.stopPropagation(); lbShow(lbCurrent + 1); });
-
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) lbClose();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (!lbIsOpen()) return;
-        if (e.key === 'ArrowLeft')  lbShow(lbCurrent - 1);
-        if (e.key === 'ArrowRight') lbShow(lbCurrent + 1);
-        if (e.key === 'Escape')     lbClose();
-      });
-
-      let lbTouchX = 0;
-      overlay.addEventListener('touchstart', e => { lbTouchX = e.touches[0].clientX; }, { passive: true });
-      overlay.addEventListener('touchend',   e => {
-        const diff = e.changedTouches[0].clientX - lbTouchX;
-        if (Math.abs(diff) > 50) lbShow(diff < 0 ? lbCurrent + 1 : lbCurrent - 1);
-      });
-    })();
-  </script>
-
+    // Init
+    scrollToSlide(0, false);
+    window.addEventListener('resize', () => scrollToSlide(current, false));
+  })();
+</script>
 </body>
 </html>
