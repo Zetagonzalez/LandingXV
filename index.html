@@ -5,347 +5,567 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zeta Fotografía | Fotografía de XV Años en Hohenau, Itapúa</title>
   <meta name="description" content="Fotografía de XV años en Hohenau, Itapúa. No entrego rápido, entrego bien. Cada foto es el recuerdo completo de uno de los momentos más importantes de su vida.">
+  <link rel="canonical" href="https://zeta-fotografia.netlify.app/">
+  <meta name="theme-color" content="#470606">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zeta Fotografía">
+  <meta property="og:locale" content="es_PY">
+  <meta property="og:url" content="https://zeta-fotografia.netlify.app/">
   <meta property="og:title" content="Zeta Fotografía | XV Años">
   <meta property="og:description" content="Fotografía de XV años que captura lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.">
-  <meta property="og:image" content="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782334683/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.jpg">
+  <meta property="og:image" content="https://res.cloudinary.com/dicfjqcoc/image/upload/f_jpg,q_auto,w_1200,h_630,c_fill,g_auto/v1782417412/DSC_3429_p9fbdo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226843/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_p8f8jn.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Photographer",
+    "name": "Zeta Fotografía",
+    "description": "Fotografía de XV años en Hohenau, Itapúa. Fotos que capturan lo real: la emoción, las risas y las miradas del día.",
+    "url": "https://zeta-fotografia.netlify.app/",
+    "telephone": "+595985170540",
+    "image": "https://res.cloudinary.com/dicfjqcoc/image/upload/f_jpg,q_auto,w_1200/v1782417412/DSC_3429_p9fbdo.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Hohenau", "addressRegion": "Itapúa", "addressCountry": "PY" },
+    "areaServed": ["Hohenau", "Itapúa"],
+    "sameAs": ["https://instagram.com/_zetaphoto"]
+  }
+  </script>
   <!-- META PIXEL: pega aquí tu código de Meta Pixel -->
   <!-- GOOGLE TAG: pega aquí tu Google Tag -->
   <!-- TIKTOK PIXEL: pega aquí tu TikTok Pixel -->
-
+  <noscript><style>.rv{opacity:1!important}</style></noscript>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* =====================================================================
+   Zeta Fotografía · Landing XV
+   Tokens del sistema de diseño "Zeta Fotografía". Mobile-first:
+   todo lo de escritorio va en @media (min-width: 900px).
+   El contenido es visible por defecto; el JS "arma" las animaciones.
+   ===================================================================== */
+:root{
+  --primary:#470606; --on-primary:#ffffff;
+  --surface:#ffffff; --ink:#1f2937; --muted:#6b7280; --hair:#e5e7eb;
+  --accent:#b88700; --accent-deep:#8f6a00; --on-accent:#ffffff;
+  --r:4px; --r-md:14px; --r-pill:999px;
+  --ff-d:Georgia,'Times New Roman',serif;
+  --ff-b:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --gutter:clamp(20px,5vw,72px);
+  --pad:56px;
+}
+@media(min-width:900px){:root{--pad:72px}}
 
-    :root {
-      --crimson:   #6E000F;
-      --ivory:     #F5F0E8;
-      --charcoal:  #1A1210;
-      --warm-gray: #8C8078;
-      --gold:      #C8A96E;
-      --off-white: #FAF7F3;
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body:    'Josefin Sans', sans-serif;
-      --ease-silk: cubic-bezier(0.4, 0, 0.2, 1);
-    }
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--surface);color:var(--ink);font:400 16px/1.65 var(--ff-b);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+h1,h2,h3{font-family:var(--ff-d);font-weight:400;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+h3{font-weight:700;line-height:1.2}
+p{text-wrap:pretty}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
-    html { scroll-behavior: smooth; }
+.wrap{max-width:1200px;margin:0 auto;padding-inline:var(--gutter)}
+section{position:relative;isolation:isolate;overflow:clip;padding-block:var(--pad)}
+.s-light{background:var(--surface);color:var(--ink)}
+.s-primary{background:var(--primary);color:var(--on-primary)}
+.s-primary+.s-primary{border-top:1px solid rgba(255,255,255,.08)}
+.h2{font-size:clamp(30px,4.6vw,50px);max-width:22ch}
+.lead{font-size:clamp(17px,1.6vw,19px);line-height:1.6;color:var(--muted);max-width:60ch;margin-top:16px}
+.s-primary .lead{color:rgba(255,255,255,.78)}
+.center{text-align:center}
+.center .h2,.center .lead{margin-inline:auto}
 
-    body {
-      background: var(--charcoal);
-      color: var(--ivory);
-      font-family: var(--ff-body);
-      font-weight: 300;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+/* Palabra clave (~~así~~): título en itálica y color de acento */
+.kw{font-family:var(--ff-d);font-style:italic;color:var(--accent)}
+.kw-glow{color:var(--accent);text-shadow:0 0 18px rgba(184,135,0,.55),0 0 2px rgba(184,135,0,.4)}
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 24px;
-      background: linear-gradient(to bottom, rgba(26,18,16,0.95), transparent);
-      transition: background 0.4s var(--ease-silk);
-    }
-    nav.scrolled { background: rgba(26,18,16,0.97); }
-    .nav-logo img { height: 48px; width: auto; filter: brightness(0) invert(1); }
-    .nav-links { display: none; gap: 32px; list-style: none; }
-    .nav-links a {
-      color: var(--ivory); text-decoration: none; font-family: var(--ff-body);
-      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-      opacity: 0.75; transition: opacity 0.2s;
-    }
-    .nav-links a:hover { opacity: 1; }
-    @media (min-width: 768px) {
-      nav { padding: 24px 48px; }
-      .nav-links { display: flex; }
-    }
+/* Grano de película y foco de luz */
+.grain::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.08;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.s-light.grain::after{mix-blend-mode:multiply;opacity:.06}
+.spot{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(420px circle at var(--sx,70%) var(--sy,30%),rgba(184,135,0,.16),transparent 65%);opacity:var(--so,0);transition:opacity .6s}
+.s-primary .spot{background:radial-gradient(420px circle at var(--sx,70%) var(--sy,30%),rgba(232,190,80,.18),transparent 65%)}
 
-    /* HERO */
-    .hero {
-      position: relative; height: 100svh; min-height: 600px;
-      display: flex; align-items: flex-end; overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('https://res.cloudinary.com/dicfjqcoc/image/upload/v1782334683/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.jpg');
-      background-size: cover; background-position: center top;
-      transform: scale(1.04); transition: transform 8s var(--ease-silk);
-    }
-    .hero-bg.loaded { transform: scale(1); }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(26,18,16,0.92) 0%, rgba(26,18,16,0.45) 50%, rgba(26,18,16,0.15) 100%);
-    }
-    .hero-content { position: relative; z-index: 2; padding: 0 24px 56px; max-width: 780px; }
-    .hero-eyebrow {
-      display: inline-block; font-size: 10px; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
-      opacity: 0; transform: translateY(16px);
-      animation: fadeUp 0.8s 0.3s var(--ease-silk) forwards;
-    }
-    .hero h1 {
-      font-family: var(--ff-display); font-size: clamp(36px, 8vw, 80px);
-      font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; margin-bottom: 20px;
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.9s 0.5s var(--ease-silk) forwards;
-    }
-    .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero-sub {
-      font-size: 15px; font-weight: 300; color: rgba(245,240,232,0.75);
-      max-width: 480px; margin-bottom: 36px; line-height: 1.7;
-      opacity: 0; transform: translateY(16px);
-      animation: fadeUp 0.9s 0.7s var(--ease-silk) forwards;
-    }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 12px;
-      background: var(--crimson); color: var(--ivory); text-decoration: none;
-      font-family: var(--ff-body); font-size: 11px; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      padding: 16px 32px; border: none; cursor: pointer;
-      transition: background 0.25s, transform 0.2s;
-      opacity: 0; animation: fadeUp 0.9s 0.9s var(--ease-silk) forwards;
-    }
-    .btn-primary:hover { background: #8B0015; transform: translateY(-1px); }
-    .btn-primary svg { width: 14px; height: 14px; flex-shrink: 0; }
-    .hero-microcopy {
-      display: block; font-size: 11px; color: rgba(245,240,232,0.45);
-      margin-top: 12px; letter-spacing: 0.05em;
-      opacity: 0; animation: fadeUp 0.9s 1.1s var(--ease-silk) forwards;
-    }
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-    @media (min-width: 768px) { .hero-content { padding: 0 64px 80px; } }
+/* ---------- Revelado al hacer scroll (el JS agrega .is-armed) ---------- */
+.rv.is-armed{opacity:0;filter:blur(8px);transform:translateY(24px);transition:opacity .9s var(--ease) var(--d,0ms),transform .9s var(--ease) var(--d,0ms),filter .9s var(--ease) var(--d,0ms)}
+.rv-fade.is-armed{transform:none;filter:none}
+.rv.is-armed.is-seen{opacity:1;filter:none;transform:none}
 
-    /* TICKER */
-    .ticker { background: var(--crimson); overflow: hidden; white-space: nowrap; padding: 10px 0; }
-    .ticker-inner {
-      display: inline-block; animation: ticker 22s linear infinite;
-      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,240,232,0.8);
-    }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* ---------- Botones: relleno que sube ---------- */
+.btn{--bg:var(--accent);--tx:var(--on-accent);--bd:var(--accent);--sw:var(--accent-deep);--hv:var(--on-accent);
+  position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 26px;border:1.5px solid var(--bd);border-radius:var(--r);background:var(--bg);color:var(--tx);
+  font:700 17px/1.15 var(--ff-b);text-decoration:none;text-align:center;
+  translate:var(--mx2,0px) var(--my2,0px);transition:color .35s var(--ease),translate .3s var(--ease),transform .2s var(--ease),border-color .35s}
+.btn::before{content:"";position:absolute;inset:-2px;z-index:-1;background:var(--sw);transform:translateY(101%);border-radius:50% 50% 0 0/60% 60% 0 0;transition:transform .55s var(--ease),border-radius .55s var(--ease)}
+.btn:hover::before,.btn:focus-visible::before{transform:none;border-radius:0}
+.btn:hover,.btn:focus-visible{color:var(--hv)}
+.btn:active{transform:scale(.97)}
+.btn svg{flex:none;transition:transform .45s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn--outline{--bg:transparent;--tx:var(--ink);--sw:var(--accent);--hv:var(--on-accent)}
+.s-primary .btn--outline{--tx:var(--on-primary)}
+.btn--ink{--bg:var(--primary);--bd:var(--primary);--tx:var(--on-primary);--sw:var(--ink);--hv:var(--on-primary)}
+.btn--block{display:flex;width:100%}
+.micro{display:block;font-size:13px;color:var(--muted);margin-top:12px}
+.s-primary .micro{color:rgba(255,255,255,.72)}
+.link{font-weight:600;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:5px;transition:text-underline-offset .4s var(--ease)}
+.link:hover{text-underline-offset:9px}
 
-    /* SECTIONS */
-    section { padding: 72px 24px; }
-    @media (min-width: 768px) { section { padding: 100px 64px; } }
-    .section-label {
-      font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 16px;
-    }
-    h2 {
-      font-family: var(--ff-display); font-size: clamp(28px, 5vw, 52px);
-      font-weight: 600; line-height: 1.12; letter-spacing: -0.01em;
-    }
-    h2 em { font-style: italic; color: var(--gold); }
+/* ---------- Placeholders de foto ---------- */
+.ph-note{position:absolute;z-index:3;top:12px;right:12px;padding:5px 10px;border-radius:var(--r);background:rgba(0,0,0,.55);color:#fff;font:600 11px/1 var(--ff-b);letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
 
-    /* PROBLEMA */
-    .problema { background: var(--off-white); color: var(--charcoal); }
-    .problema-inner { max-width: 860px; margin: 0 auto; }
-    .problema h2 { margin-bottom: 28px; }
-    .problema p { font-size: 16px; line-height: 1.8; color: #4A3E38; max-width: 640px; }
-    .problema-quote { margin-top: 40px; padding-left: 24px; border-left: 3px solid var(--crimson); }
-    .problema-quote p {
-      font-family: var(--ff-display); font-size: clamp(18px, 3vw, 26px);
-      font-style: italic; color: var(--charcoal); line-height: 1.5;
-    }
+/* =====================================================================
+   1. HERO CON CARRUSEL
+   ===================================================================== */
+.hero{padding-top:clamp(40px,7vw,96px)}
+.hero-grid{display:grid;gap:44px;align-items:center}
+.hero h1{font-size:clamp(38px,5vw,60px);line-height:1.04;max-width:16ch}
+.hero .lead{margin-top:20px;max-width:46ch}
+.cta-row{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:32px;max-width:520px}
+.stats li{border-top:1px solid var(--hair);padding-top:12px}
+.stats strong{display:block;font:400 clamp(26px,3.4vw,38px)/1 var(--ff-d);color:var(--primary);font-variant-numeric:tabular-nums}
+.stats span{display:block;font-size:12.5px;line-height:1.35;color:var(--muted);margin-top:6px}
+.mark{background:linear-gradient(var(--accent),var(--accent)) 0 96%/100% .08em no-repeat;padding-bottom:.04em}
+.hero h1 .mark{animation:markDraw 1s var(--ease) var(--md,1100ms) both}
+@keyframes markDraw{from{background-size:0% .08em}}
+.w{display:inline-block;animation:wordIn 1s var(--ease) backwards;animation-delay:calc(var(--i,0)*65ms + 120ms)}
+@keyframes wordIn{from{opacity:0;transform:translateY(.45em);filter:blur(8px)}}
 
-    /* PROCESO */
-    .proceso { background: var(--charcoal); }
-    .proceso-inner { max-width: 900px; margin: 0 auto; }
-    .proceso h2 { margin-bottom: 52px; }
-    .proceso-steps { display: grid; gap: 48px; }
-    .step {
-      display: grid; grid-template-columns: 40px 1fr; gap: 24px; align-items: start;
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.6s var(--ease-silk), transform 0.6s var(--ease-silk);
-    }
-    .step.visible { opacity: 1; transform: translateY(0); }
-    .step-num { font-family: var(--ff-display); font-size: 13px; font-style: italic; color: var(--gold); padding-top: 4px; }
-    .step h3 { font-family: var(--ff-display); font-size: 20px; font-weight: 600; margin-bottom: 10px; color: var(--ivory); }
-    .step p { font-size: 15px; color: rgba(245,240,232,0.65); line-height: 1.75; }
-    @media (min-width: 768px) {
-      .proceso-steps { grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-      .step { grid-template-columns: 1fr; }
-      .step-num { margin-bottom: 8px; }
-    }
+.plate-wrap{perspective:1200px;width:100%;max-width:440px;justify-self:center}
+.plate{--rx:0deg;--ry:0deg;--tx:0px;--ty:0px;background:#fff;border:1px solid var(--hair);border-radius:var(--r-md);overflow:hidden;touch-action:pan-y;
+  transform:translate3d(var(--tx),var(--ty),0) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .45s var(--ease);
+  box-shadow:0 40px 70px -34px rgba(71,6,6,.55),0 10px 24px -14px rgba(31,41,55,.25)}
+.ig-top{display:flex;align-items:center;gap:10px;padding:12px 14px}
+.ig-av{width:34px;height:34px;border-radius:50%;padding:2px;background:conic-gradient(from 210deg,var(--accent),var(--primary),var(--accent))}
+.ig-av i{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--primary);border:2px solid #fff;color:#fff;font:italic 400 14px/1 var(--ff-d)}
+.ig-name{font-weight:600;font-size:14px;line-height:1.2}
+.ig-name small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+.ig-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#2a0303}
+.slides{position:absolute;inset:0;display:flex;transition:transform .75s var(--ease)}
+.slides img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.ig-count{position:absolute;top:12px;right:12px;padding:5px 10px;border-radius:var(--r-pill);background:rgba(0,0,0,.6);color:#fff;font:600 12px/1 var(--ff-b);font-variant-numeric:tabular-nums}
+.ig-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 14px}
+.ig-icons{display:flex;gap:14px;color:var(--ink)}
+.ig-dots{display:flex;gap:5px}
+.ig-dots i{width:6px;height:6px;border-radius:50%;background:var(--hair);transition:background .3s,transform .3s}
+.ig-dots i.on{background:var(--accent);transform:scale(1.2)}
+.ig-cap{padding:0 14px 16px;font-size:13.5px;line-height:1.5}
+.ig-cap b{font-weight:600}
 
-    /* PORTAFOLIO */
-    .portafolio { background: #120D0B; }
-    .portafolio-header { padding-bottom: 40px; }
+@media(min-width:600px){.cta-row{flex-direction:row;flex-wrap:wrap}}
+@media(min-width:900px){
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:64px}
+  .plate-wrap{justify-self:end;max-width:380px}
+  .hero .cta-row .btn{padding:0 22px}
+}
+@media(max-width:599px){.cta-row .btn{width:100%}}
 
-    /* Masonry */
-    .masonry { columns: 2; column-gap: 6px; }
-    @media (min-width: 540px)  { .masonry { columns: 3; column-gap: 8px; } }
-    @media (min-width: 1024px) { .masonry { columns: 4; column-gap: 10px; } }
+/* =====================================================================
+   2. FRASE QUE SE ENCIENDE
+   ===================================================================== */
+.phrase p{font:400 1.7rem/1.3 var(--ff-d);max-width:none}
+@media(min-width:900px){.phrase p{font-size:clamp(2.4rem,4.4vw,3.5rem);line-height:1.16;max-width:26ch}}
 
-    .masonry-item {
-      break-inside: avoid; margin-bottom: 6px;
-      overflow: hidden; cursor: zoom-in; position: relative;
-    }
-    @media (min-width: 540px)  { .masonry-item { margin-bottom: 8px; } }
-    @media (min-width: 1024px) { .masonry-item { margin-bottom: 10px; } }
+/* =====================================================================
+   3. ESCENAS DEL PROBLEMA
+   ===================================================================== */
+.scenes{display:grid;gap:16px;margin-top:40px}
+.scene{border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:26px 24px;background:rgba(255,255,255,.04)}
+.scene-meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;letter-spacing:.04em;color:rgba(255,255,255,.72)}
+.scene-meta span+span::before{content:"·";margin-right:14px;color:var(--accent)}
+.scene-num{display:block;font:400 clamp(44px,6vw,64px)/1 var(--ff-d);color:var(--accent);margin:18px 0 12px;font-variant-numeric:tabular-nums}
+.scene p{color:rgba(255,255,255,.86)}
+.bridge{margin-top:36px;font:italic 400 clamp(20px,2.4vw,28px)/1.35 var(--ff-d);max-width:34ch;color:#fff}
+@media(min-width:900px){.scenes{grid-template-columns:repeat(3,1fr);gap:20px}}
 
-    .masonry-item img {
-      width: 100%; height: auto; display: block;
-      transition: transform 0.45s var(--ease-silk), opacity 0.4s;
-      opacity: 0;
-    }
-    .masonry-item img.loaded { opacity: 1; }
-    .masonry-item:hover img { transform: scale(1.04); }
+/* =====================================================================
+   4. ANTES Y DESPUÉS
+   ===================================================================== */
+.statement{font-size:clamp(30px,4.6vw,50px);max-width:20ch;margin-inline:auto}
+.statement.is-armed>span{opacity:calc(.16 + var(--w,0)*.84)}
+.statement>span{display:inline-block}
+.cmp{--pos:50%;position:relative;width:100%;max-width:480px;margin:40px auto 0;aspect-ratio:4/5;border-radius:var(--r-md);overflow:hidden;touch-action:pan-y;box-shadow:0 40px 80px -36px rgba(71,6,6,.6)}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.cmp .before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cmp-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:rgba(255,255,255,.92);box-shadow:0 0 16px rgba(255,255,255,.55);pointer-events:none}
+.cmp-knob{position:absolute;top:50%;left:var(--pos);width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:var(--r);display:grid;place-items:center;color:#fff;pointer-events:none;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.7);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 14px 34px -10px rgba(0,0,0,.55)}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
+.cmp:focus-within{outline:3px solid var(--accent);outline-offset:4px}
+.cmp-tag{position:absolute;top:14px;z-index:2;padding:7px 14px;border-radius:var(--r);font:600 13px/1 var(--ff-b);pointer-events:none}
+.cmp-tag.l{left:14px;background:rgba(31,41,55,.78);color:#fff}
+.cmp-tag.r{right:14px;background:var(--primary);color:#fff}
+.cmp-hint{margin-top:18px;font-size:14px;color:var(--muted)}
 
-    /* LIGHTBOX */
-    .lightbox {
-      position: fixed; inset: 0; z-index: 200;
-      background: rgba(8,5,4,0.97);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s var(--ease-silk);
-    }
-    .lightbox.open { opacity: 1; pointer-events: all; }
+/* =====================================================================
+   5. DÓNDE TE VEN
+   ===================================================================== */
+.where{display:grid;gap:0 40px;margin-top:40px}
+.where li{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start;padding:22px 14px;border-top:1px solid var(--hair);border-radius:var(--r);transition:background .4s var(--ease)}
+.where li:last-child{border-bottom:1px solid var(--hair)}
+.where .ico{width:48px;height:48px;display:grid;place-items:center;border:1.5px solid var(--hair);border-radius:var(--r);color:var(--ink);transition:color .4s,border-color .4s,background .4s}
+.where h3{font-size:21px}
+.where p{color:var(--muted);margin-top:4px;font-size:15.5px}
+.where li:hover,.where li.is-active{background:rgba(184,135,0,.07)}
+.where li:hover .ico,.where li.is-active .ico{color:var(--primary);border-color:var(--accent);background:#fff}
+@media(min-width:900px){.where{grid-template-columns:1fr 1fr}.where li:nth-last-child(2){border-bottom:1px solid var(--hair)}}
 
-    .lb-backdrop { position: absolute; inset: 0; cursor: default; }
+/* =====================================================================
+   6. PISTA DE TARJETAS
+   ===================================================================== */
+.track-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+.arrows{display:none;gap:10px}
+.arrows button{width:52px;height:52px;display:grid;place-items:center;border-radius:var(--r);border:1.5px solid rgba(255,255,255,.35);color:#fff;transition:background .3s,border-color .3s,opacity .3s}
+.arrows button:hover:not(:disabled){background:var(--accent);border-color:var(--accent)}
+.arrows button:disabled{opacity:.35;cursor:default}
+.track{--cw:min(84vw,380px);display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:44px calc((100% - var(--cw))/2) 30px;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;perspective:1200px}
+.track::-webkit-scrollbar{display:none}
+.track.is-drag{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.mcard{--d:0;position:relative;flex:0 0 var(--cw);scroll-snap-align:center;border-radius:var(--r);padding:26px 24px 30px;user-select:none;
+  background:linear-gradient(150deg,rgba(255,255,255,.12),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  transform:translate3d(0,calc(var(--d)*var(--d)*22px),0) scale(calc(1 - var(--d)*var(--d)*.08));opacity:calc(1 - var(--d)*var(--d)*.45);transition:border-color .4s}
+.mcard.is-center{border-color:var(--accent)}
+.mcard::after,.price-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(260px circle at var(--mx,30%) var(--my,0%),rgba(255,255,255,.16),transparent 62%);opacity:var(--hl,0);transition:opacity .4s}
+.pill{display:inline-block;padding:5px 12px;border-radius:var(--r);background:var(--accent);color:var(--primary);font:700 12.5px/1.4 var(--ff-b);letter-spacing:.04em}
+.mcard-n{display:block;font:italic 400 52px/1 var(--ff-d);color:rgba(255,255,255,.22);margin:22px 0 10px}
+.mcard h3{font-size:25px}
+.mcard p{color:rgba(255,255,255,.78);margin-top:10px;font-size:15.5px}
+.prog{height:2px;margin:6px auto 0;max-width:560px;background:rgba(255,255,255,.18);border-radius:2px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(var(--pr,.2))}
+@media(min-width:900px){.arrows{display:flex}.track{--cw:380px}}
 
-    .lb-img-wrap {
-      position: relative; z-index: 1;
-      display: flex; align-items: center; justify-content: center;
-      width: calc(100vw - 100px); height: calc(100vh - 100px);
-      max-width: 1200px;
-    }
-    @media (min-width: 768px) {
-      .lb-img-wrap { width: calc(100vw - 160px); height: calc(100vh - 120px); }
-    }
+/* =====================================================================
+   7. POR DENTRO (BENTO)
+   ===================================================================== */
+.bento{display:grid;gap:16px;margin-top:40px}
+.btile{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--hair);background:#fff;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.btile figure{position:relative;margin:0;aspect-ratio:3/2;overflow:hidden;background:#2a0303}
+.btile img{width:100%;height:100%;object-fit:cover}
+.btile figcaption{padding:16px 18px 20px}
+.btile figcaption strong{display:block;font:700 13px/1.3 var(--ff-b);letter-spacing:.06em;text-transform:uppercase;color:var(--primary)}
+.btile figcaption span{display:block;margin-top:4px;color:var(--muted);font-size:15px}
+.tag-ej{position:absolute;z-index:2;left:12px;top:12px;padding:5px 10px;border-radius:var(--r);background:var(--accent);color:var(--primary);font:700 11px/1 var(--ff-b);letter-spacing:.1em;text-transform:uppercase}
+.btile:hover{box-shadow:0 30px 60px -32px rgba(71,6,6,.5)}
+@media(min-width:900px){
+  .bento{grid-template-columns:1fr 1fr;gap:20px}
+  .btile:first-child{grid-column:1/-1}
+  .btile:first-child figure{aspect-ratio:21/9}
+}
 
-    .lb-img-wrap img {
-      max-width: 100%; max-height: 100%;
-      object-fit: contain; display: block;
-      transition: opacity 0.22s var(--ease-silk), transform 0.22s var(--ease-silk);
-      user-select: none; -webkit-user-drag: none; cursor: default;
-    }
-    .lb-img-wrap img.switching { opacity: 0; transform: scale(0.96); }
+/* =====================================================================
+   8. PORTAFOLIO (CARRUSEL)
+   ===================================================================== */
+.rail{display:flex;gap:clamp(14px,2.4vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;padding:44px var(--gutter) 60px;scrollbar-width:none;cursor:grab;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.rail.is-drag{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.tile{position:relative;flex:0 0 clamp(250px,80vw,380px);aspect-ratio:4/5;margin:0;border-radius:36px;overflow:hidden;scroll-snap-align:center;cursor:zoom-in;
+  box-shadow:0 34px 60px -28px rgba(71,6,6,.55),0 70px 90px -60px rgba(31,41,55,.35);transition:translate .6s var(--ease)}
+.tile img{width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.tile:hover{translate:0 -8px}
+@media(min-width:900px){.tile:nth-child(even){margin-top:48px}}
+.lb{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:rgba(20,4,4,.95);opacity:0;transition:opacity .32s var(--ease)}
+.lb[hidden]{display:none}
+.lb.on{opacity:1}
+.lb-stage{display:grid;place-items:center;gap:14px;padding:72px 16px}
+.lb-stage img{max-height:78vh;max-width:min(92vw,820px);width:auto;border-radius:var(--r-md)}
+.lb-meta{display:flex;gap:14px;color:#fff;font-size:14px;max-width:min(92vw,820px);text-align:center}
+.lb-meta span:last-child{color:rgba(255,255,255,.6);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lb-btn{position:absolute;display:grid;place-items:center;width:52px;height:52px;border-radius:var(--r);border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.1);color:#fff;transition:background .3s}
+.lb-btn:hover{background:var(--accent)}
+.lb-close{top:16px;right:16px}.lb-prev{left:12px;top:50%;margin-top:-26px}.lb-next{right:12px;top:50%;margin-top:-26px}
 
-    .lb-close {
-      position: fixed; top: 16px; right: 16px; z-index: 202;
-      width: 44px; height: 44px;
-      background: rgba(245,240,232,0.1); border: 1px solid rgba(245,240,232,0.2);
-      color: var(--ivory); cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .lb-close:hover { background: rgba(245,240,232,0.2); }
-    .lb-close svg { width: 18px; height: 18px; }
+/* =====================================================================
+   9. MAPA DE DOLORES
+   ===================================================================== */
+.chips{display:flex;gap:10px;margin:36px calc(var(--gutter)*-1) 0;padding:4px var(--gutter);overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;max-width:78vw;scroll-snap-align:start;padding:13px 18px;border-radius:var(--r-pill);border:1.5px solid rgba(255,255,255,.35);font:500 15px/1.3 var(--ff-b);color:#fff;text-align:left;transition:background .3s,border-color .3s,color .3s}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:var(--primary);font-weight:700}
+.pain-result{margin:22px auto 0;max-width:720px;padding:28px 26px;border-radius:var(--r);border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);transition:filter .22s ease,opacity .22s ease}
+.pain-result.swap{filter:blur(6px);opacity:.35;transition:none}
+.pain-result small{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.pain-result h3{font-size:clamp(24px,3vw,32px);margin:10px 0 16px}
+.pain-result .link{color:#fff}
+@media(min-width:900px){.chips{flex-wrap:wrap;justify-content:center;overflow:visible;margin-inline:0;padding-inline:0}}
 
-    .lb-nav {
-      position: fixed; top: 50%; transform: translateY(-50%); z-index: 202;
-      width: 44px; height: 44px;
-      background: rgba(245,240,232,0.07); border: 1px solid rgba(245,240,232,0.15);
-      color: var(--ivory); cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .lb-nav:hover { background: rgba(200,169,110,0.15); border-color: var(--gold); }
-    .lb-nav svg { width: 20px; height: 20px; }
-    .lb-prev { left: 8px; }
-    .lb-next { right: 8px; }
-    @media (min-width: 768px) { .lb-prev { left: 20px; } .lb-next { right: 20px; } }
+/* =====================================================================
+   10. FORMAS DE TRABAJAR
+   ===================================================================== */
+.ways{display:grid;gap:18px;margin-top:40px}
+.way{position:relative;border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:22px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14)}
+.fan{position:relative;height:220px;border-radius:var(--r);background:rgba(0,0,0,.18);overflow:hidden}
+.fan img{position:absolute;top:50%;left:50%;width:36%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);border:4px solid #fff;box-shadow:0 18px 30px -16px rgba(0,0,0,.6);transition:transform .8s var(--ease)}
+.fan .f1{transform:translate(-120%,-46%) rotate(-9deg)}
+.fan .f2{transform:translate(-50%,-52%) rotate(2deg);z-index:2}
+.fan .f3{transform:translate(20%,-46%) rotate(10deg)}
+.way:hover .f1,.way.is-active .f1{transform:translate(-142%,-48%) rotate(-14deg)}
+.way:hover .f2,.way.is-active .f2{transform:translate(-50%,-58%) rotate(0deg)}
+.way:hover .f3,.way.is-active .f3{transform:translate(42%,-48%) rotate(14deg)}
+.way-when{position:absolute;z-index:3;left:12px;top:12px;padding:6px 12px;border-radius:var(--r);background:var(--accent);color:var(--primary);font:700 12.5px/1.2 var(--ff-b)}
+.way-body{padding:0 10px 12px;display:flex;flex-direction:column;gap:12px;flex:1}
+.way h3{font-family:var(--ff-d);font-weight:400;font-size:clamp(26px,2.8vw,34px)}
+.way p{color:rgba(255,255,255,.78)}
+.ticks{display:grid;gap:8px;margin:4px 0 8px}
+.ticks li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.45}
+.ticks svg{flex:none;width:22px;height:22px;padding:4px;border-radius:var(--r);background:var(--accent);color:var(--primary);margin-top:-1px}
+.rv.is-armed .ticks path{stroke-dasharray:24;stroke-dashoffset:24}
+.rv.is-armed.is-seen .ticks path{stroke-dashoffset:0;transition:stroke-dashoffset .7s var(--ease) .5s}
+.way .btn{margin-top:auto}
+@media(min-width:900px){.ways{grid-template-columns:repeat(3,1fr);gap:20px}}
 
-    .lb-counter {
-      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); z-index: 202;
-      font-size: 11px; letter-spacing: 0.2em; color: rgba(245,240,232,0.35);
-    }
+/* =====================================================================
+   11. PRECIO CON INTERRUPTOR
+   ===================================================================== */
+.price-card{position:relative;max-width:520px;margin:40px auto 0;padding:30px 26px;border-radius:var(--r);
+  background:linear-gradient(150deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.switch{position:relative;display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:var(--r-pill);background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.16)}
+.switch .thumb{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:var(--r-pill);background:var(--accent);transition:transform .45s var(--ease)}
+.switch[data-mode=anual] .thumb{transform:translateX(100%)}
+.switch button{position:relative;z-index:1;min-height:42px;border-radius:var(--r-pill);font:600 15px/1 var(--ff-b);color:#fff;transition:color .3s}
+.switch button[aria-pressed=true]{color:var(--primary);font-weight:700}
+.plan-name{font-size:24px;margin-top:26px}
+.price-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin-top:12px}
+.price-row del{font:400 24px/1 var(--ff-d);color:rgba(255,255,255,.55)}
+.price-row strong{font:400 clamp(56px,9vw,72px)/1 var(--ff-d);font-variant-numeric:tabular-nums}
+.price-row .per{font-size:15px;color:rgba(255,255,255,.75)}
+.price-note{min-height:1.5em;margin-top:8px;font-size:14.5px;color:var(--accent)}
+.price-card .ticks{margin:22px 0 26px}
+.price-card .micro{text-align:center}
 
-    /* PROMESA */
-    .promesa { background: var(--crimson); text-align: center; }
-    .promesa-inner { max-width: 680px; margin: 0 auto; }
-    .promesa h2 { color: var(--ivory); margin-bottom: 20px; font-size: clamp(26px, 4.5vw, 48px); }
-    .promesa p { font-size: 16px; color: rgba(245,240,232,0.8); line-height: 1.75; margin-bottom: 36px; }
+/* =====================================================================
+   12. PASOS CON LÍNEA
+   ===================================================================== */
+.steps-grid{display:grid;gap:36px}
+.psteps{position:relative;--pp:1}
+.psteps::before,.psteps::after{content:"";position:absolute;left:23px;top:30px;bottom:30px;width:2px}
+.psteps::before{background:rgba(255,255,255,.18)}
+.psteps::after{background:var(--accent);transform-origin:top;transform:scaleY(var(--pp))}
+.pstep{position:relative;display:grid;grid-template-columns:48px 1fr;gap:20px;padding:18px 0}
+.pstep .n{position:relative;z-index:1;width:48px;height:48px;display:grid;place-items:center;border-radius:var(--r);background:var(--primary);border:1.5px solid rgba(255,255,255,.35);font:400 20px/1 var(--ff-d);font-variant-numeric:tabular-nums;transition:background .45s var(--ease),border-color .45s,color .45s}
+.pstep.is-on .n{background:var(--accent);border-color:var(--accent);color:var(--primary)}
+.psteps.is-armed .pstep h3{opacity:calc(.4 + var(--p,0)*.6)}
+.pstep h3{font-family:var(--ff-d);font-weight:400;font-size:clamp(22px,2.6vw,30px);margin-top:6px}
+.pstep p{margin-top:6px;color:rgba(255,255,255,.76)}
+@media(min-width:900px){
+  .steps-grid{grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+  .steps-head{position:sticky;top:96px}
+}
 
-    /* SOBRE MI */
-    .sobre-mi { background: var(--off-white); color: var(--charcoal); }
-    .sobre-inner { max-width: 900px; margin: 0 auto; display: grid; gap: 48px; align-items: start; }
-    @media (min-width: 768px) { .sobre-inner { grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; } }
-    .sobre-img-wrap { position: relative; }
-    .sobre-img-wrap img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
-    .sobre-img-wrap::after {
-      content: ''; position: absolute; bottom: -12px; right: -12px;
-      width: 60%; height: 60%; border: 2px solid var(--crimson); z-index: -1;
-    }
-    .sobre-text .section-label { color: var(--crimson); }
-    .sobre-text h2 { color: var(--charcoal); margin-bottom: 20px; }
-    .sobre-text p { font-size: 15px; color: #5A4A44; line-height: 1.8; margin-bottom: 16px; }
+/* =====================================================================
+   13. OBJECIONES CON HUMOR
+   ===================================================================== */
+.objs{display:grid;gap:14px;margin-top:40px}
+.obj{border:1px solid var(--hair);border-radius:var(--r);background:#fff;transition:border-color .3s,box-shadow .4s}
+.obj.is-open{border-color:var(--accent);box-shadow:0 24px 50px -34px rgba(71,6,6,.45)}
+.obj-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 22px;text-align:left;font:400 clamp(19px,2vw,22px)/1.3 var(--ff-d);color:var(--ink)}
+.obj-q .plus{flex:none;width:36px;height:36px;display:grid;place-items:center;border-radius:var(--r);background:var(--primary);color:#fff;transition:transform .45s var(--ease),background .3s}
+.obj.is-open .plus{transform:rotate(45deg);background:var(--accent);color:var(--primary)}
+.obj-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.obj.is-open .obj-a{grid-template-rows:1fr}
+.obj-a>div{overflow:hidden}
+.obj-a p{padding:0 22px 22px;color:var(--muted);filter:blur(6px);opacity:0;transition:filter .35s ease .08s,opacity .35s ease .08s}
+.obj.is-open .obj-a p{filter:none;opacity:1}
+.obj-cta{border-radius:var(--r);background:var(--primary);color:#fff;padding:28px 24px;display:flex;flex-direction:column;gap:18px}
+.obj-cta p{font:400 clamp(21px,2.4vw,28px)/1.3 var(--ff-d);max-width:30ch}
+@media(min-width:900px){
+  .objs{grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .obj-cta{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;padding:32px 36px}
+}
+@media(max-width:899px){.obj-cta .btn{width:100%}}
 
-    /* CTA FINAL */
-    .cta-final { background: var(--off-white); color: var(--charcoal); text-align: center; }
-    .cta-inner { max-width: 620px; margin: 0 auto; }
-    .cta-inner h2 { color: var(--charcoal); margin-bottom: 16px; }
-    .cta-inner p { font-size: 15px; color: #5A4A44; margin-bottom: 36px; line-height: 1.75; }
-    .btn-primary.dark { background: var(--charcoal); animation: none; opacity: 1; }
-    .btn-primary.dark:hover { background: #2E2220; }
-    .cta-microcopy { display: block; margin-top: 16px; font-size: 12px; color: var(--warm-gray); }
+/* =====================================================================
+   14. SOBRE MÍ EN ARCO
+   ===================================================================== */
+.about{display:grid;gap:40px;align-items:center}
+.arch-wrap{position:relative;max-width:420px;width:100%;justify-self:center}
+.arch{position:relative;aspect-ratio:1/1;border-radius:999px 999px var(--r) var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.2);background:#2a0303}
+.arch img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;z-index:2;left:-6px;bottom:28px;max-width:78%;padding:12px 16px;border-radius:var(--r);background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;font:600 14px/1.35 var(--ff-b);box-shadow:0 18px 40px -18px rgba(0,0,0,.7);animation:float 6s ease-in-out infinite}
+.badge b{display:block;color:var(--accent);font:italic 400 18px/1.2 var(--ff-d)}
+@keyframes float{50%{transform:translateY(-8px)}}
+.about-text p{color:rgba(255,255,255,.82);margin-top:16px;max-width:52ch}
+.creds{display:grid;gap:10px;margin:26px 0 30px}
+.creds li{display:flex;gap:12px;align-items:center;font-size:15.5px}
+.creds svg{flex:none;color:var(--accent)}
+@media(min-width:900px){
+  .about{grid-template-columns:.9fr 1.1fr;gap:72px}
+  .arch{aspect-ratio:4/5}
+}
 
-    /* FOOTER */
-    footer { background: #0E0908; padding: 48px 24px; text-align: center; }
-    footer img { height: 40px; filter: brightness(0) invert(1); opacity: 0.6; margin-bottom: 20px; }
-    .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; flex-wrap: wrap; }
-    .footer-links a {
-      color: rgba(245,240,232,0.4); text-decoration: none;
-      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--gold); }
-    footer p { font-size: 11px; color: rgba(245,240,232,0.25); letter-spacing: 0.05em; }
+/* =====================================================================
+   15. CTA FINAL
+   ===================================================================== */
+.cta-final{text-align:center;color:var(--on-accent);
+  background:radial-gradient(900px 520px at 12% -10%,#d8a520 0,transparent 62%),radial-gradient(800px 560px at 100% 110%,#8f6a00 0,transparent 60%),linear-gradient(160deg,#c3910a,#b88700)}
+.cta-final .h2{max-width:24ch;margin-inline:auto;text-shadow:0 1px 2px rgba(71,6,6,.25)}
+.cta-final .btn{margin-top:32px}
+.cta-final .micro{color:var(--primary);font-weight:600;font-size:14px}
+.slab{position:absolute;z-index:-1;pointer-events:none;border-radius:var(--r-md);background:linear-gradient(145deg,rgba(255,255,255,.4),rgba(255,255,255,0) 70%);border:1px solid rgba(255,255,255,.45);will-change:transform}
+.slab.a{width:220px;height:300px;left:-60px;top:40px;rotate:-8deg}
+.slab.b{width:260px;height:180px;right:-50px;bottom:30px;rotate:6deg}
+.slab.c{width:120px;height:120px;right:18%;top:-30px;rotate:12deg}
+@media(min-width:900px){.cta-final .btn{min-width:320px}}
+@media(max-width:899px){.cta-final .btn{width:100%}}
 
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity 0.7s var(--ease-silk), transform 0.7s var(--ease-silk);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+/* =====================================================================
+   16. FOOTER
+   ===================================================================== */
+.foot{background:var(--primary);color:rgba(255,255,255,.75);padding:44px 0 36px}
+.foot-row{display:flex;flex-direction:column;gap:26px}
+.foot-logo{font:400 26px/1 var(--ff-d);color:#fff;text-decoration:none}
+.foot-links{display:flex;flex-direction:column;gap:14px}
+.foot-links a{color:#fff;font-weight:500;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:4px;transition:text-underline-offset .35s var(--ease)}
+.foot-links a:hover{text-underline-offset:9px}
+.foot small{display:block;margin-top:30px;font-size:13px;color:rgba(255,255,255,.62)}
+@media(min-width:900px){
+  .foot-row{flex-direction:row;align-items:center;justify-content:space-between}
+  .foot-links{flex-direction:row;gap:28px}
+}
 
-    /* WA FLOAT */
-    .wa-float {
-      position: fixed; bottom: 24px; right: 24px; z-index: 99;
-      background: #25D366; width: 52px; height: 52px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
-    .wa-float svg { width: 26px; height: 26px; }
+/* ---------- Movimiento reducido: solo quedan los fundidos ---------- */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-property:opacity,color,background-color,border-color!important}
+  .rv.is-armed{transform:none!important;filter:none!important}
+  .plate,.mcard,.tile,.btile,.slab,.badge{transform:none!important;translate:none!important}
+  .mcard{opacity:1!important}
+  .spot{display:none}
+  .pain-result.swap{filter:none}
+  .obj-a p{filter:none}
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
+/* =====================================================================
+   Bloques propios de Zeta (nav, ticker, problema, proceso, portafolio,
+   promesa, sobre mí, WhatsApp flotante)
+   ===================================================================== */
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:12px var(--gutter);background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-color:var(--hair)}
+.nav-logo img{height:44px;width:auto}
+.nav-links{display:none;gap:30px}
+.nav-links a{font:600 12px/1 var(--ff-b);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);opacity:.8;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:var(--primary)}
+@media(min-width:900px){.nav-links{display:flex}}
+html{scroll-padding-top:72px}
+
+.eyebrow{display:block;font:600 12px/1.3 var(--ff-b);letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:16px}
+.s-primary .eyebrow,.s-dark .eyebrow{color:var(--accent)}
+.eyebrow--ink{color:var(--primary)!important}
+.hero .lead{font-size:clamp(18px,1.8vw,21px)}
+
+.ticker{background:var(--primary);overflow:hidden;white-space:nowrap;padding:12px 0}
+.ticker-inner{display:inline-block;animation:ticker 26s linear infinite;font:600 11px/1 var(--ff-b);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+.narrow{max-width:860px}
+.body-text{font-size:17px;line-height:1.8;color:#4b5563;max-width:62ch;margin-top:26px}
+.quote{margin:40px 0 0;padding-left:24px;border-left:3px solid var(--accent)}
+.quote p{font:italic 400 clamp(20px,2.6vw,28px)/1.45 var(--ff-d);color:var(--primary)}
+
+.proc{display:grid;gap:18px;margin-top:44px}
+.proc-step{border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:28px 24px;background:rgba(255,255,255,.04)}
+.proc-n{display:block;font:italic 400 40px/1 var(--ff-d);color:var(--accent);margin-bottom:16px}
+.proc-step h3{font-size:22px;margin-bottom:10px}
+.proc-step p{color:rgba(255,255,255,.8);font-size:15.5px}
+@media(min-width:900px){.proc{grid-template-columns:repeat(3,1fr);gap:20px}}
+
+.s-dark{background:#2a0303;color:#fff}
+.masonry{columns:2;column-gap:8px;padding:40px var(--gutter) 0;max-width:1400px;margin:0 auto}
+@media(min-width:600px){.masonry{columns:3;column-gap:12px}}
+@media(min-width:1024px){.masonry{columns:4;column-gap:14px}}
+.mitem{break-inside:avoid;margin:0 0 8px;border-radius:var(--r-md);overflow:hidden;cursor:zoom-in;position:relative;background:#3a0606}
+@media(min-width:600px){.mitem{margin-bottom:12px}}
+@media(min-width:1024px){.mitem{margin-bottom:14px}}
+.mitem img{width:100%;height:auto;transition:transform .6s var(--ease)}
+.mitem:hover img{transform:scale(1.04)}
+.mitem:focus-visible{outline-offset:-3px}
+
+.bmedia{aspect-ratio:3/2;overflow:hidden;background:#2a0303}
+.bmedia img{width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.btile:first-child .bmedia{aspect-ratio:21/9}}
+
+.promesa .lead{margin-inline:auto;margin-bottom:32px}
+.promesa .h2{max-width:24ch}
+
+#sobre-mi .arch{border-color:var(--hair);box-shadow:0 40px 70px -36px rgba(71,6,6,.55)}
+#sobre-mi .about-text p{color:#4b5563}
+#sobre-mi .about-text .btn{margin-top:14px}
+
+.cta-p{max-width:52ch;margin:16px auto 0;color:#fff;font-size:17px;line-height:1.7}
+.cta-final .h2{color:#fff}
+
+.foot-logo img{height:40px;width:auto;filter:brightness(0) invert(1)}
+
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.45);transition:transform .25s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px}
+.btn .wa-i{width:18px;height:18px}
+
+@media(prefers-reduced-motion:reduce){.ticker-inner{animation:none!important}.mitem img{transform:none!important}}
+
   </style>
 </head>
 <body>
-
 <!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-logo">
-    <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía">
-  </a>
+<nav class="nav" id="navbar">
+  <a href="#inicio" class="nav-logo"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_300/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía" width="150" height="48"></a>
   <ul class="nav-links">
     <li><a href="#portafolio">Portafolio</a></li>
     <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#sobre-mi">Nosotros</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-eyebrow">Zeta Fotografía · XV Años</span>
-    <h1>Revivé la emoción de sus XV<br>cada vez que <em>mires</em> las fotos</h1>
-    <p class="hero-sub">Dentro de 20 años, tu hija va a abrir esas fotos. ¿Qué va a sentir?</p>
-    <a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="btn-primary">
-      Hablemos antes de que se agenden tus fechas
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-    <span class="hero-microcopy">Sin compromiso · Solo una charla sobre el día más especial de tu hija</span>
+<main>
+<!-- =====================================================================
+     HERO con carrusel tipo Instagram (tus fotos)
+     ===================================================================== -->
+<section class="hero s-light" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Zeta Fotografía · XV Años</span>
+      <h1 id="hero-h1">Revivé la emoción de los XV<br>cada vez que <span class="kw mark">mires</span> las fotos</h1>
+      <p class="lead">Dentro de 20 años, tu hija va a abrir esas fotos. ¿Qué va a sentir?</p>
+      <div class="cta-row">
+        <a class="btn" href="https://wa.me/595985170540?text=Holaaa%21%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener">Hablemos antes de que se agenden mis fechas <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <span class="micro">Sin compromiso · Solo una charla sobre el día más especial de tu hija</span>
+    </div>
+
+    <div class="plate-wrap">
+      <div class="plate" id="plate">
+        <div class="ig-top">
+          <span class="ig-av" aria-hidden="true"><i>Z</i></span>
+          <span class="ig-name">_zetaphoto<small>Hohenau, Itapúa</small></span>
+        </div>
+        <div class="ig-media">
+          <span class="ig-count" id="ig-count" aria-hidden="true">1/4</span>
+          <div class="slides" id="slides">
+            <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782417943/DSC_2641_wuuyex.jpg" alt="Quinceañera retratada por Zeta Fotografía en Hohenau" width="800" height="1000">
+            <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782417412/DSC_3429_p9fbdo.jpg" alt="Quinceañera en su fiesta de XV en Itapúa" width="800" height="1000" loading="lazy">
+            <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="Momento de la fiesta de XV capturado sin poses" width="800" height="1000" loading="lazy">
+            <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Quinceañera con su familia durante la celebración" width="800" height="1000" loading="lazy">
+          </div>
+        </div>
+        <div class="ig-bar">
+          <span class="ig-icons" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 4 10 14M21 4l-7 17-4-7-7-4z"/></svg>
+          </span>
+          <span class="ig-dots" id="ig-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></span>
+        </div>
+        <p class="ig-cap"><b>_zetaphoto</b> Momentos que no vuelven · Fotos que duran toda la vida</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -357,273 +577,718 @@
   </span>
 </div>
 
-<!-- PROBLEMA -->
-<section class="problema" id="problema">
-  <div class="problema-inner reveal">
-    <div class="section-label">El problema real</div>
-    <h2>Muchas mamás terminan el evento felices.<br><em>Pero después llegan las fotos.</em></h2>
-    <p style="margin-top: 28px;">Semanas después del evento, cuando llegan las fotos, algo no está bien. Las poses se ven forzadas. Los momentos más importantes no fueron capturados. Y lo peor: no hay nada que se pueda hacer.</p>
-    <div class="problema-quote">
-      <p>"Ese día no vuelve. Y las fotos son lo único que queda."</p>
+<!-- =====================================================================
+     PROBLEMA
+     ===================================================================== -->
+<section class="s-light" id="problema">
+  <div class="wrap narrow">
+    <span class="eyebrow rv">El problema real</span>
+    <h2 class="h2 rv">Muchas mamás terminan el evento felices.<br><span class="kw">Pero después llegan las fotos.</span></h2>
+    <p class="body-text rv">Semanas después del evento, cuando llegan las fotos, algo no está bien. Las poses se ven forzadas. Los momentos más importantes no fueron capturados. Y lo peor: no hay nada que se pueda hacer.</p>
+    <blockquote class="quote rv"><p>"Ese día no vuelve. Y las fotos son lo único que queda."</p></blockquote>
+  </div>
+</section>
+
+<!-- =====================================================================
+     PROCESO
+     ===================================================================== -->
+<section class="s-primary" id="proceso">
+  <div class="wrap">
+    <span class="eyebrow rv">Cómo trabajo</span>
+    <h2 class="h2 rv">Un proceso pensado para<br><span class="kw">capturar lo real</span></h2>
+    <div class="proc">
+      <article class="proc-step rv" style="--d:0ms"><span class="proc-n">I</span><h3>Antes del evento</h3><p>Me tomo el tiempo de conocerlas — a la quinceañera y a vos — para entender qué momentos no pueden faltar y para que ella llegue al día sin nervios ni vergüenza frente a la cámara.</p></article>
+      <article class="proc-step rv" style="--d:120ms"><span class="proc-n">II</span><h3>Durante el evento</h3><p>No interrumpo, no genero caos, no armo poses robóticas. Capturo lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.</p></article>
+      <article class="proc-step rv" style="--d:240ms"><span class="proc-n">III</span><h3>La edición final</h3><p>Cada foto pasa por un proceso de edición cuidadosa para que el resultado final esté a la altura de lo que ese día significó — porque un recuerdo así merece tiempo y dedicación.</p></article>
     </div>
   </div>
 </section>
 
-<!-- PROCESO -->
-<section class="proceso" id="proceso">
-  <div class="proceso-inner">
-    <div class="section-label reveal">Cómo trabajo</div>
-    <h2 class="reveal">Un proceso pensado para<br><em>capturar lo real</em></h2>
-    <div class="proceso-steps" style="margin-top: 52px;">
-      <div class="step">
-        <span class="step-num">I</span>
-        <div>
-          <h3>Antes del evento</h3>
-          <p>Me tomo el tiempo de conocerlas — a la quinceañera y a vos — para entender qué momentos no pueden faltar y para que ella llegue al día sin nervios ni vergüenza frente a la cámara.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">II</span>
-        <div>
-          <h3>Durante el evento</h3>
-          <p>No interrumpo, no genero caos, no armo poses robóticas. Capturo lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">III</span>
-        <div>
-          <h3>La edición final</h3>
-          <p>Cada foto pasa por un proceso de edición cuidadosa para que el resultado final esté a la altura de lo que ese día significó — porque un recuerdo así merece tiempo y dedicación.</p>
-        </div>
-      </div>
+<!-- =====================================================================
+     ANTES Y DESPUÉS (nuevo)
+     REEMPLAZAR: la foto "Antes" (una foto de celular del mismo momento).
+     ===================================================================== -->
+<section class="s-light grain center" id="comparar" data-spot>
+  <div class="spot" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="statement" id="statement">Misma quinceañera, mismo salón. ¿Cuál vas a querer <span class="kw">guardar</span>?</h2>
+    <div class="cmp" id="cmp">
+      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900,c_fill,ar_4:5/v1782417412/DSC_3429_p9fbdo.jpg" alt="Foto profesional de la quinceañera, con luz cuidada y fondo limpio" width="800" height="1000" loading="lazy">
+      <img class="before" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20800%201000%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23a8a29e%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2357534e%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27800%27%20height%3D%271000%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%27764%27%20height%3D%27964%27%20fill%3D%27none%27%20stroke%3D%27%23e7e5e4%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23f5f5f4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2757%27%20text-anchor%3D%27middle%27%3EAntes%20%28foto%20de%20celular%29%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27565%27%20fill%3D%27%23f5f5f4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2728%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Foto de la quinceañera tomada con celular, con la luz amarilla del salón y el fondo desordenado" width="800" height="1000" loading="lazy">
+      <span class="cmp-tag l">Antes</span>
+      <span class="cmp-tag r">Conmigo</span>
+      <span class="cmp-line" aria-hidden="true"></span>
+      <span class="cmp-knob" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+      <input type="range" id="cmpRange" min="0" max="100" value="50" aria-label="Comparar foto antes y después">
     </div>
+    <p class="cmp-hint">Deslizá la foto y fijate cuál elegirías vos</p>
   </div>
 </section>
 
-<!-- PORTAFOLIO -->
-<section class="portafolio" id="portafolio">
-  <div class="portafolio-header">
-    <div class="section-label">El trabajo habla solo</div>
-    <h2>Portafolio</h2>
+<!-- =====================================================================
+     PORTAFOLIO (tus 13 fotos, con visor)
+     ===================================================================== -->
+<section class="s-dark" id="portafolio">
+  <div class="wrap">
+    <span class="eyebrow rv">El trabajo habla solo</span>
+    <h2 class="h2 rv">Portafolio</h2>
   </div>
-
-  <div class="masonry" id="masonryGrid">
-    <div class="masonry-item" data-index="0">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="1">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="2">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="3">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="4">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="5">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="6">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="7">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="8">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="9">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="10">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782417943/DSC_2641_wuuyex.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="11">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782417412/DSC_3429_p9fbdo.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
-    <div class="masonry-item" data-index="12">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.33_wkmz3y.jpg" alt="Fotografía XV años" loading="lazy">
-    </div>
+  <div class="masonry">
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 1 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 1 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 2 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 2 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 3 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 3 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 4 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 4 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 5 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 5 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 6 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 6 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 7 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 7 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 8 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 8 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 9 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 9 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 10 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 10 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 11 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782417943/DSC_2641_wuuyex.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 11 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 12 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782417412/DSC_3429_p9fbdo.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 12 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 13 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.33_wkmz3y.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 13 del portafolio de Zeta Fotografía" loading="lazy"></figure>
   </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de fotos">
-  <div class="lb-backdrop" id="lbBackdrop"></div>
-  <div class="lb-img-wrap">
-    <img id="lbImg" src="" alt="Foto ampliada">
-  </div>
-  <button class="lb-close" id="lbClose" aria-label="Cerrar visor">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-  </button>
-  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto anterior">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-  </button>
-  <button class="lb-nav lb-next" id="lbNext" aria-label="Foto siguiente">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </button>
-  <div class="lb-counter" id="lbCounter">1 / 13</div>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Visor de fotos">
+  <div class="lb-stage"><img id="lb-img" alt=""><div class="lb-meta"><span id="lb-cap"></span><span id="lb-count"></span></div></div>
+  <button class="lb-btn lb-close" id="lb-close" type="button" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+  <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Foto siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
 </div>
 
-<!-- PROMESA -->
-<section class="promesa">
-  <div class="promesa-inner reveal">
-    <div class="section-label" style="color: rgba(245,240,232,0.6)">La promesa</div>
-    <h2>No solo serán fotos bonitas.<br>Será el recuerdo <em style="color: var(--ivory); text-decoration: underline; text-decoration-color: rgba(245,240,232,0.3);">completo</em></h2>
-    <p>El recuerdo completo de uno de los momentos más importantes de su vida, guardado para siempre con la calidad que ese momento merece.</p>
-    <a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="btn-primary" style="animation: none; opacity: 1; background: var(--ivory); color: var(--crimson);">
-      Hablemos sobre los XV de tu hija
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- SOBRE MÍ -->
-<section class="sobre-mi" id="sobre-mi">
-  <div class="sobre-inner">
-    <div class="sobre-img-wrap reveal">
-      <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226846/WhatsApp_Image_2026-06-23_at_10.32.31_1_ilkbha.jpg" alt="Ezequiel - Zeta Fotografía" loading="lazy">
-    </div>
-    <div class="sobre-text reveal">
-      <div class="section-label">Sobre mí</div>
-      <h2 style="color: var(--charcoal);">Mi mejor carta de presentación <em style="color: var(--crimson);">es el portafolio</em></h2>
-      <p style="margin-top: 20px;">En todas las páginas hay un bloque enorme de texto donde el fotógrafo presume sus títulos o años de experiencia. Pero nadie los lee. ¿Sabés por qué? Porque a nadie le importa.</p>
-      <p>Lo que a vos te importa es saber qué vas a obtener para los XV de tu hija. Y eso está arriba: en cada foto.</p>
-      <p>Lo que sí puedo decirte: trabajo en Hohenau, Itapúa, con dedicación real a cada sesión. Porque un recuerdo así no se entrega apurado.</p>
-      <a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="btn-primary" style="animation: none; opacity: 1; margin-top: 12px;">
-        Agenda tu reunión
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+<!-- =====================================================================
+     LO QUE RECIBÍS (nuevo)
+     REEMPLAZAR: 4 capturas reales. Mientras no sean reales, queda el rótulo "Ejemplo".
+     ===================================================================== -->
+<section class="s-light" id="por-dentro">
+  <div class="wrap">
+    <h2 class="h2 rv">Esto es lo que recibís el día que me contratás</h2>
+    <div class="bento">
+      <figure class="btile rv" data-tilt style="--d:0ms">
+        <div style="position:relative"><span class="tag-ej">Ejemplo</span><div class="bmedia"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201400%20600%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%235e0b0b%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a0303%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%271400%27%20height%3D%27600%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%271364%27%20height%3D%27564%27%20fill%3D%27none%27%20stroke%3D%27%23b88700%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23ead7a4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%3ECaptura%20%C2%B7%20Galer%C3%ADa%20online%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27350%27%20fill%3D%27%23ead7a4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2721%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Galería online privada con las fotos de los XV ordenadas por momento de la noche" width="1400" height="600" loading="lazy"></div></div>
+        <figcaption><strong>Galería online</strong><span>Todas las fotos ordenadas por momento: preparación, entrada, vals, fiesta y brindis.</span></figcaption>
+      </figure>
+      <figure class="btile rv" data-tilt style="--d:90ms">
+        <div style="position:relative"><span class="tag-ej">Ejemplo</span><div class="bmedia"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20900%20600%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%235e0b0b%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a0303%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27900%27%20height%3D%27600%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%27864%27%20height%3D%27564%27%20fill%3D%27none%27%20stroke%3D%27%23b88700%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23ead7a4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%3ECaptura%20%C2%B7%20Cronograma%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27350%27%20fill%3D%27%23ead7a4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2721%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Cronograma de la noche de XV con los momentos clave marcados" width="900" height="600" loading="lazy"></div></div>
+        <figcaption><strong>Cronograma</strong><span>La noche planificada con los momentos marcados para no perder ninguno.</span></figcaption>
+      </figure>
+      <figure class="btile rv" data-tilt style="--d:180ms">
+        <div style="position:relative"><span class="tag-ej">Ejemplo</span><div class="bmedia"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20900%20600%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%235e0b0b%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a0303%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27900%27%20height%3D%27600%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%27864%27%20height%3D%27564%27%20fill%3D%27none%27%20stroke%3D%27%23b88700%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23ead7a4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%3ECaptura%20%C2%B7%20Adelanto%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27350%27%20fill%3D%27%23ead7a4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2721%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Adelanto de fotos de XV en formato vertical para estados de WhatsApp" width="900" height="600" loading="lazy"></div></div>
+        <figcaption><strong>Adelanto</strong><span>Fotos en formato vertical, listas para estados e historias.</span></figcaption>
+      </figure>
+      <figure class="btile rv" data-tilt style="--d:270ms">
+        <div style="position:relative"><span class="tag-ej">Ejemplo</span><div class="bmedia"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20900%20600%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%235e0b0b%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a0303%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27900%27%20height%3D%27600%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%27864%27%20height%3D%27564%27%20fill%3D%27none%27%20stroke%3D%27%23b88700%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23ead7a4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%3ECaptura%20%C2%B7%20%C3%81lbum%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27350%27%20fill%3D%27%23ead7a4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2721%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Vista previa del diseño del álbum impreso de XV, página doble" width="900" height="600" loading="lazy"></div></div>
+        <figcaption><strong>Álbum</strong><span>La vista previa del álbum para que lo apruebes antes de imprimir.</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="cta-final" id="contacto">
-  <div class="cta-inner reveal">
-    <div class="section-label" style="color: var(--crimson);">Próximos pasos</div>
-    <h2>¿Listo para hablar sobre<br><em style="color: var(--crimson);">los XV de tu hija?</em></h2>
-    <p>Las fechas se agendan con tiempo. Escribime hoy y coordinamos una charla sin compromiso para entender lo que soñás para ese día.</p>
-    <a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="btn-primary dark">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Escribime por WhatsApp
-    </a>
-    <span class="cta-microcopy">Respondés en minutos · Sin compromiso</span>
+<!-- =====================================================================
+     TRES FORMAS DE TRABAJAR (nuevo, con tus fotos en el abanico)
+     ===================================================================== -->
+<section class="s-primary" id="formas">
+  <div class="wrap">
+    <h2 class="h2 rv">Tres formas de trabajar conmigo</h2>
+    <div class="ways">
+      <article class="way rv" style="--d:0ms">
+        <div class="fan" aria-hidden="true"><span class="way-when">Antes de la fiesta</span>
+          <img class="f1" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="" loading="lazy"><img class="f2" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782417943/DSC_2641_wuuyex.jpg" alt="" loading="lazy"><img class="f3" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="" loading="lazy">
+        </div>
+        <div class="way-body">
+          <h3>Sesión previa</h3>
+          <p>Para quinceañeras que quieren fotos tranquilas en exteriores, sin el apuro de la noche, en el lugar que elijan.</p>
+          <ul class="ticks"><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Llega a la fiesta sin nervios</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Fotos para la invitación o el video</li></ul>
+          <a class="btn btn--block" href="https://wa.me/595985170540?text=Hola%20Ezequiel%2C%20me%20interesa%20la%20sesi%C3%B3n%20previa%20de%20XV" target="_blank" rel="noopener">Quiero la sesión previa</a>
+        </div>
+      </article>
+      <article class="way rv" style="--d:120ms">
+        <div class="fan" aria-hidden="true"><span class="way-when">El día de los XV</span>
+          <img class="f1" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="" loading="lazy"><img class="f2" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782417412/DSC_3429_p9fbdo.jpg" alt="" loading="lazy"><img class="f3" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="" loading="lazy">
+        </div>
+        <div class="way-body">
+          <h3>Cobertura de la fiesta</h3>
+          <p>Para familias que quieren la noche completa: preparación, entrada, vals, baile y brindis.</p>
+          <ul class="ticks"><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Sin poses robóticas</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Adelanto para compartir</li></ul>
+          <a class="btn btn--block" href="https://wa.me/595985170540?text=Hola%20Ezequiel%2C%20me%20interesa%20la%20cobertura%20de%20la%20fiesta%20de%20XV" target="_blank" rel="noopener">Quiero la cobertura</a>
+        </div>
+      </article>
+      <article class="way rv" style="--d:240ms">
+        <div class="fan" aria-hidden="true"><span class="way-when">Antes y durante</span>
+          <img class="f1" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="" loading="lazy"><img class="f2" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="" loading="lazy"><img class="f3" src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_400,c_fill,ar_4:5/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="" loading="lazy">
+        </div>
+        <div class="way-body">
+          <h3>XV completo</h3>
+          <p>La sesión previa más la cobertura de la fiesta, con el álbum impreso incluido.</p>
+          <ul class="ticks"><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Un solo fotógrafo de principio a fin</li><li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>Álbum impreso incluido</li></ul>
+          <a class="btn btn--block" href="https://wa.me/595985170540?text=Hola%20Ezequiel%2C%20me%20interesa%20el%20XV%20completo" target="_blank" rel="noopener">Quiero el XV completo</a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
+
+<!-- =====================================================================
+     PROMESA
+     ===================================================================== -->
+<section class="s-primary center promesa">
+  <div class="wrap">
+    <span class="eyebrow rv">La promesa</span>
+    <h2 class="h2 rv">No solo serán fotos bonitas.<br>Será el recuerdo <span class="kw">completo</span></h2>
+    <p class="lead rv">El recuerdo completo de uno de los momentos más importantes de su vida, guardado para siempre con la calidad que ese momento merece.</p>
+    <a class="btn rv" href="https://wa.me/595985170540?text=Holaaa%21%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener">Hablemos sobre los XV de tu hija <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SOBRE MÍ
+     ===================================================================== -->
+<section class="s-light" id="sobre-mi">
+  <div class="wrap about">
+    <div class="arch-wrap rv">
+      <div class="arch"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_800/v1782226846/WhatsApp_Image_2026-06-23_at_10.32.31_1_ilkbha.jpg" alt="Ezequiel, fotógrafo de Zeta Fotografía en Hohenau" width="800" height="1000" loading="lazy"></div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow rv">Sobre mí</span>
+      <h2 class="h2 rv">Mi mejor carta de presentación <span class="kw">es el portafolio</span></h2>
+      <p class="rv">En todas las páginas hay un bloque enorme de texto donde el fotógrafo presume sus títulos o años de experiencia. Pero nadie los lee. ¿Sabés por qué? Porque a nadie le importa.</p>
+      <p class="rv">Lo que a vos te importa es saber qué vas a obtener para los XV de tu hija. Y eso está arriba: en cada foto.</p>
+      <p class="rv">Lo que sí puedo decirte: trabajo en Hohenau, Itapúa, con dedicación real a cada sesión. Porque un recuerdo así no se entrega apurado.</p>
+      <a class="btn rv" href="https://wa.me/595985170540?text=Holaaa%21%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener">Agenda tu reunión <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     CTA FINAL
+     ===================================================================== -->
+<section class="cta-final grain" id="contacto">
+  <span class="slab a" data-par="-0.08" aria-hidden="true"></span>
+  <span class="slab b" data-par="0.1" aria-hidden="true"></span>
+  <span class="slab c" data-par="-0.14" aria-hidden="true"></span>
+  <div class="wrap">
+    <span class="eyebrow eyebrow--ink rv">Próximos pasos</span>
+    <h2 class="h2 rv">¿Listo para hablar sobre<br>los XV de tu hija?</h2>
+    <p class="cta-p rv">Las fechas se agendan con tiempo. Escribime hoy y coordinamos una charla sin compromiso para entender lo que soñás para ese día.</p>
+    <a class="btn btn--ink" href="https://wa.me/595985170540?text=Holaaa%21%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener"><svg class="wa-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Escribime por WhatsApp</a>
+    <span class="micro">Respondo en minutos · Sin compromiso</span>
+  </div>
+</section>
+</main>
 
 <!-- FOOTER -->
-<footer>
-  <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía">
-  <div class="footer-links">
-    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
-    <a href="#contacto">Contacto</a>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-row">
+      <a class="foot-logo" href="#inicio"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_300/v1782226845/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_qxa6eq.png" alt="Zeta Fotografía" width="125" height="40"></a>
+      <nav class="foot-links" aria-label="Enlaces del pie">
+        <a href="https://instagram.com/_zetaphoto" target="_blank" rel="noopener">Instagram</a>
+        <!-- TikTok: poné tu usuario y descomentá
+        <a href="https://tiktok.com/@TU_USUARIO" target="_blank" rel="noopener">TikTok</a> -->
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <small>© 2026 Zeta Fotografía · Hohenau, Itapúa, Paraguay · Todos los derechos reservados</small>
   </div>
-  <p>© 2026 Zeta Fotografía · Hohenau, Itapúa, Paraguay · Todos los derechos reservados</p>
 </footer>
 
 <!-- WhatsApp flotante -->
-<a href="https://api.whatsapp.com/send?phone=+595985170540&text=Holaaa!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+<a href="https://wa.me/595985170540?text=Holaaa%21%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp"><svg class="wa-i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 <script>
-  // NAV SCROLL
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  }, { passive: true });
+/* =====================================================================
+   Zeta Fotografía · Landing XV
+   Solo anima: si este archivo falla, todo queda visible y usable.
+   Todo lo que depende del scroll corre en UN solo requestAnimationFrame.
+   ===================================================================== */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var touchOnly = window.matchMedia && matchMedia('(hover:none)').matches;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
+  var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
+  var hasIO = 'IntersectionObserver' in window;
 
-  // HERO BG LOAD
-  setTimeout(() => document.getElementById('heroBg').classList.add('loaded'), 80);
+  /* ---------- Cuadro de scroll único ---------- */
+  var vh = window.innerHeight, ticking = false, frameFns = [];
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  function frame() {
+    ticking = false;
+    var y = window.scrollY;
+    for (var i = 0; i < frameFns.length; i++) { try { frameFns[i](y); } catch (e) {} }
+  }
+  function onFrame(fn) { frameFns.push(fn); }
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', function () { vh = window.innerHeight; req(); });
 
-  // SCROLL REVEAL
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const delay = entry.target.classList.contains('step')
-        ? Array.from(document.querySelectorAll('.step')).indexOf(entry.target) * 120 : 0;
-      setTimeout(() => entry.target.classList.add('visible'), delay);
-      revealObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal, .step').forEach(el => revealObserver.observe(el));
-
-  // MASONRY IMAGE FADE-IN
-  document.querySelectorAll('.masonry-item img').forEach(img => {
-    if (img.complete) img.classList.add('loaded');
-    else img.addEventListener('load', () => img.classList.add('loaded'));
+  /* ---------- Tracking (solo dispara si pegaste los píxeles en el <head>) ---------- */
+  function track(name, params) {
+    try { if (window.fbq) fbq('track', name, params || {}); } catch (e) {}
+    try { if (window.gtag) gtag('event', name, params || {}); } catch (e) {}
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="https://wa.me/"]');
+    if (a) track('Contact', { content_name: (a.textContent || '').trim().slice(0, 60) });
   });
 
-  // LIGHTBOX
+  /* ---------- 1. Revelado al hacer scroll ---------- */
   (function () {
-    const lightbox   = document.getElementById('lightbox');
-    const lbImg      = document.getElementById('lbImg');
-    const lbClose    = document.getElementById('lbClose');
-    const lbPrev     = document.getElementById('lbPrev');
-    const lbNext     = document.getElementById('lbNext');
-    const lbCounter  = document.getElementById('lbCounter');
-    const lbBackdrop = document.getElementById('lbBackdrop');
-
-    const items = Array.from(document.querySelectorAll('.masonry-item'));
-    const srcs  = items.map(el => el.querySelector('img').src);
-    const total = srcs.length;
-    let current = 0;
-
-    function open(index) {
-      current = index;
-      lbImg.src = srcs[current];
-      lbImg.classList.remove('switching');
-      lbCounter.textContent = (current + 1) + ' / ' + total;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function close() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-      setTimeout(() => { lbImg.src = ''; }, 300);
-    }
-
-    function navigate(dir) {
-      lbImg.classList.add('switching');
-      setTimeout(() => {
-        current = (current + dir + total) % total;
-        lbImg.src = srcs[current];
-        lbCounter.textContent = (current + 1) + ' / ' + total;
-        lbImg.classList.remove('switching');
-      }, 200);
-    }
-
-    items.forEach((item, i) => item.addEventListener('click', () => open(i)));
-    lbClose.addEventListener('click', close);
-    lbBackdrop.addEventListener('click', close);
-    lbPrev.addEventListener('click', () => navigate(-1));
-    lbNext.addEventListener('click', () => navigate(1));
-
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape')     close();
-      if (e.key === 'ArrowLeft')  navigate(-1);
-      if (e.key === 'ArrowRight') navigate(1);
-    });
-
-    // Touch swipe en lightbox
-    let touchStartX = 0;
-    lightbox.addEventListener('touchstart', e => {
-      touchStartX = e.touches[0].clientX;
-    }, { passive: true });
-    lightbox.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      if (Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
-    }, { passive: true });
-
-    lbImg.addEventListener('click', e => e.stopPropagation());
+    var rvs = $$('.rv');
+    if (!rvs.length || !hasIO) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-seen'); io.unobserve(en.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px 4% 0px' });
+    rvs.forEach(function (e) { e.classList.add('is-armed'); io.observe(e); });
   })();
+
+  /* ---------- 2. Hero: título palabra por palabra ---------- */
+  (function () {
+    var h1 = $('#hero-h1');
+    if (!h1 || reduce) return;
+    var n = 0;
+    h1.setAttribute('aria-label', (h1.innerText || h1.textContent).replace(/\s+/g, ' ').trim());
+    [].slice.call(h1.childNodes).forEach(function (c) {
+      if (c.nodeType === 3) {
+        var frag = document.createDocumentFragment();
+        c.textContent.split(/(\s+)/).forEach(function (p, pi) {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(' ')); return; }
+          var prev = frag.lastChild || c.previousSibling;
+          // el punto pegado a la palabra clave viaja con ella
+          if (pi === 0 && prev && prev.nodeType === 1 && prev.classList && prev.classList.contains('w') && !/^\s/.test(c.textContent)) { prev.appendChild(document.createTextNode(p)); return; }
+          var s = document.createElement('span'); s.className = 'w'; s.style.setProperty('--i', n++); s.textContent = p; s.setAttribute('aria-hidden', 'true'); frag.appendChild(s);
+        });
+        h1.replaceChild(frag, c);
+      } else if (c.nodeType === 1 && c.tagName === 'BR') {
+        return;
+      } else if (c.nodeType === 1) {
+        var w = document.createElement('span'); w.className = 'w'; w.style.setProperty('--i', n++); w.setAttribute('aria-hidden', 'true');
+        h1.replaceChild(w, c); w.appendChild(c);
+      }
+    });
+    var mark = $('.mark', h1);
+    if (mark) mark.style.setProperty('--md', (n * 65 + 700) + 'ms');
+  })();
+
+  /* ---------- 3. Cifras que cuentan desde 0 ---------- */
+  function countUp(el) {
+    var raw = el.getAttribute('data-count') || '', m = raw.match(/^([^\d]*)(\d+)([^\d]*)$/);
+    if (!m || reduce) { el.textContent = raw; return; }
+    var pre = m[1], target = parseInt(m[2], 10), suf = m[3], start = null, dur = window.innerWidth < 900 ? 900 : 1400;
+    (function f(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + Math.round(target * e) + suf;
+      if (p < 1) requestAnimationFrame(f);
+    })(performance.now());
+  }
+  (function () {
+    var els = $$('[data-count]');
+    if (!els.length || !hasIO || reduce) return;
+    els.forEach(function (e) { e.textContent = e.getAttribute('data-count').replace(/\d+/, '0'); });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (en) { if (en.isIntersecting) { countUp(en.target); io.unobserve(en.target); } });
+    }, { threshold: 0.6 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+
+  /* ---------- 4. Hero: carrusel tipo Instagram ---------- */
+  (function () {
+    var plate = $('#plate'), trk = $('#slides'), dots = $$('#ig-dots i'), count = $('#ig-count');
+    if (!plate || !trk) return;
+    var n = trk.children.length, idx = 0, timer = null, vis = true, sx = null;
+    function go(i) {
+      idx = (i + n) % n;
+      trk.style.transform = 'translateX(' + (-idx * 100) + '%)';
+      dots.forEach(function (d, k) { d.classList.toggle('on', k === idx); });
+      if (count) count.textContent = (idx + 1) + '/' + n;
+    }
+    function play() {
+      clearInterval(timer);
+      if (reduce) return;
+      timer = setInterval(function () { if (vis && !document.hidden) go(idx + 1); }, 3400);
+    }
+    if (hasIO) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }, { threshold: 0.25 }).observe(plate);
+    plate.addEventListener('pointerdown', function (e) { sx = e.clientX; });
+    plate.addEventListener('pointerup', function (e) {
+      if (sx === null) return;
+      var dx = e.clientX - sx; sx = null;
+      if (Math.abs(dx) > 40) { go(idx + (dx < 0 ? 1 : -1)); play(); }
+    });
+    plate.addEventListener('pointercancel', function () { sx = null; });
+    go(0); play();
+  })();
+
+  /* ---------- 5. Hero: inclinación 3D con puntero, dedo, giroscopio y scroll ---------- */
+  (function () {
+    var plate = $('#plate');
+    if (!plate || reduce) return;
+    var hx = 0, hy = 0;
+    window.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      hx = e.clientX / window.innerWidth - 0.5; hy = e.clientY / window.innerHeight - 0.5; req();
+    }, { passive: true });
+    window.addEventListener('deviceorientation', function (e) {
+      if (e.gamma == null) return;
+      hx = clamp(e.gamma / 40, -0.5, 0.5); hy = clamp((e.beta - 50) / 80, -0.5, 0.5); req();
+    }, { passive: true });
+    window.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'touch') { hx = e.clientX / window.innerWidth - 0.5; hy = e.clientY / window.innerHeight - 0.5; req(); }
+    }, { passive: true });
+    onFrame(function (y) {
+      if (y > vh * 1.4) return;
+      var p = clamp(y / vh, 0, 1);
+      plate.style.setProperty('--rx', (p * 10 - hy * 10).toFixed(2) + 'deg');
+      plate.style.setProperty('--ry', (-hx * 14 - p * 5).toFixed(2) + 'deg');
+      plate.style.setProperty('--tx', (hx * -14).toFixed(1) + 'px');
+      plate.style.setProperty('--ty', (p * 40).toFixed(1) + 'px');
+    });
+  })();
+
+  /* ---------- 6. Frase manifiesto: palabras que se encienden con el scroll ---------- */
+  (function () {
+    var st = $('#statement');
+    if (!st || reduce) return;
+    var out = [];
+    st.childNodes.forEach(function (nd) {
+      var hl = nd.nodeType === 1;
+      (nd.textContent || '').trim().split(/\s+/).forEach(function (w) {
+        if (!w) return;
+        if (/^[?.!,;:]+$/.test(w) && out.length) { out[out.length - 1].textContent += w; return; }
+        var sp = document.createElement('span'); if (hl) sp.className = nd.className; sp.textContent = w; out.push(sp);
+      });
+    });
+    var label = st.textContent.replace(/\s+/g, ' ').trim();
+    st.textContent = '';
+    out.forEach(function (sp) { sp.setAttribute('aria-hidden', 'true'); st.appendChild(sp); st.appendChild(document.createTextNode(' ')); });
+    st.setAttribute('aria-label', label);
+    st.classList.add('is-armed');
+    onFrame(function () {
+      var r = st.getBoundingClientRect(), p = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.35), 0, 1);
+      out.forEach(function (w, i) { w.style.setProperty('--w', clamp(p * (out.length + 3) - i, 0, 1).toFixed(3)); });
+    });
+  })();
+
+  /* ---------- 7. Comparador: la línea se mueve con el scroll, el dedo manda si lo tocas ---------- */
+  (function () {
+    var box = $('#cmp'), rng = $('#cmpRange'), manual = false;
+    if (!box || !rng) return;
+    function set(v) { box.style.setProperty('--pos', v + '%'); }
+    rng.addEventListener('input', function () { manual = true; set(rng.value); });
+    if (reduce) return;
+    onFrame(function () {
+      var r = box.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) { manual = false; return; }
+      if (manual) return;
+      var p = clamp((vh * 0.9 - r.top) / (vh * 0.72), 0, 1), v = 92 - 84 * p;
+      rng.value = v; set(v);
+    });
+  })();
+
+  /* ---------- 8. Foco de luz que sigue al puntero ---------- */
+  (function () {
+    var spots = $$('[data-spot]');
+    if (!spots.length || reduce || !fine) return;
+    window.addEventListener('pointermove', function (e) {
+      spots.forEach(function (s) {
+        var r = s.getBoundingClientRect(), sp = $('.spot', s);
+        if (!sp) return;
+        if (e.clientY >= r.top && e.clientY <= r.bottom) {
+          sp.style.setProperty('--sx', (e.clientX - r.left) + 'px');
+          sp.style.setProperty('--sy', (e.clientY - r.top) + 'px');
+          sp.style.setProperty('--so', 1);
+        } else sp.style.setProperty('--so', 0);
+      });
+    }, { passive: true });
+  })();
+
+  /* ---------- 9. Botones magnéticos (solo mouse) ---------- */
+  if (fine && !reduce) $$('.btn').forEach(function (b) {
+    b.addEventListener('pointermove', function (e) {
+      var r = b.getBoundingClientRect();
+      b.style.setProperty('--mx2', (((e.clientX - r.left) / r.width - 0.5) * 8).toFixed(1) + 'px');
+      b.style.setProperty('--my2', (((e.clientY - r.top) / r.height - 0.5) * 6).toFixed(1) + 'px');
+    });
+    b.addEventListener('pointerleave', function () { b.style.removeProperty('--mx2'); b.style.removeProperty('--my2'); });
+  });
+
+  /* ---------- 10. Brillo de vidrio e inclinación al pasar el mouse ---------- */
+  $$('.mcard,.price-card').forEach(function (g) {
+    g.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = g.getBoundingClientRect();
+      g.style.setProperty('--mx', (e.clientX - r.left) + 'px'); g.style.setProperty('--my', (e.clientY - r.top) + 'px'); g.style.setProperty('--hl', 1);
+    });
+    g.addEventListener('pointerleave', function () { g.style.removeProperty('--hl'); });
+  });
+  if (fine && !reduce) $$('[data-tilt]').forEach(function (t) {
+    t.addEventListener('pointermove', function (e) {
+      var r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      t.style.transform = 'perspective(900px) rotateX(' + (-y * 4).toFixed(2) + 'deg) rotateY(' + (x * 5).toFixed(2) + 'deg)';
+    });
+    t.addEventListener('pointerleave', function () { t.style.transform = ''; });
+  });
+
+  /* ---------- 11. Arrastre con mouse + inercia + imán (el dedo usa el scroll nativo) ---------- */
+  function dragScroll(el) {
+    var drag = null, vel = 0, lastX = 0, lastT = 0;
+    el.__moved = false;
+    el.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      drag = { x: e.clientX, s: el.scrollLeft }; el.__moved = false; lastX = e.clientX; lastT = performance.now(); vel = 0;
+      drag.id = e.pointerId;
+    });
+    el.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      var dx = e.clientX - drag.x;
+      // la captura recién empieza cuando hay arrastre real, así un clic simple abre la foto
+      if (Math.abs(dx) > 5 && !el.__moved) {
+        el.__moved = true; el.classList.add('is-drag');
+        try { el.setPointerCapture(drag.id); } catch (er) {}
+      }
+      el.scrollLeft = drag.s - dx;
+      var t = performance.now(); vel = 0.8 * vel + 0.2 * ((e.clientX - lastX) / Math.max(1, t - lastT)); lastX = e.clientX; lastT = t;
+    });
+    function end() {
+      if (!drag) return; drag = null;
+      if (!el.__moved) return;
+      var items = $$('[data-snap]', el), c = el.getBoundingClientRect(), mid = c.left + c.width / 2, base = el.scrollLeft, target = base - vel * 420, best = base, bd = 1e9;
+      items.forEach(function (k) { var r = k.getBoundingClientRect(), ctr = base + (r.left + r.width / 2 - mid), dd = Math.abs(ctr - target); if (dd < bd) { bd = dd; best = ctr; } });
+      el.classList.remove('is-drag');
+      el.scrollTo({ left: best, behavior: reduce ? 'auto' : 'smooth' });
+      setTimeout(function () { el.__moved = false; }, 60);
+    }
+    el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+    el.addEventListener('click', function (e) { if (el.__moved) { e.preventDefault(); e.stopPropagation(); el.__moved = false; } }, true);
+  }
+
+  /* ---------- 12. Pista de tarjetas ---------- */
+  (function () {
+    var trk = $('#track'), cards = $$('[data-card]'), prog = $('#prog'), prev = $('#prev'), next = $('#next');
+    if (!trk || cards.length < 2) return;
+    function step() { return cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left; }
+    if (prev) prev.addEventListener('click', function () { trk.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }); });
+    if (next) next.addEventListener('click', function () { trk.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }); });
+    trk.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next && next.click(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prev && prev.click(); }
+    });
+    dragScroll(trk);
+    trk.addEventListener('scroll', req, { passive: true });
+    onFrame(function () {
+      var c = trk.getBoundingClientRect(), mid = c.left + c.width / 2, best = null, bd = 9;
+      cards.forEach(function (k) {
+        var r = k.getBoundingClientRect(), dd = clamp((r.left + r.width / 2 - mid) / (c.width * 0.62), -1.4, 1.4);
+        if (!reduce) k.style.setProperty('--d', dd.toFixed(3));
+        if (Math.abs(dd) < bd) { bd = Math.abs(dd); best = k; }
+      });
+      cards.forEach(function (k) { k.classList.toggle('is-center', k === best); });
+      var mx = trk.scrollWidth - trk.clientWidth;
+      if (prog) prog.style.setProperty('--pr', (mx > 0 ? 0.2 + 0.8 * trk.scrollLeft / mx : 1).toFixed(3));
+      if (prev) prev.disabled = trk.scrollLeft < 4;
+      if (next) next.disabled = trk.scrollLeft > mx - 4;
+    });
+  })();
+
+  /* ---------- 13. Portafolio: avanza solo, se detiene cuando lo tocas ---------- */
+  var rail = $('#rail');
+  if (rail) {
+    dragScroll(rail);
+    if (!reduce) {
+      var tiles = $$('.tile', rail), ri = 0, inView = false, lastScroll = 0, hold = 0;
+      if (hasIO) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; }, { threshold: 0.4 }).observe(rail);
+      window.addEventListener('scroll', function () { lastScroll = Date.now(); }, { passive: true });
+      ['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(function (ev) { rail.addEventListener(ev, function () { hold = Date.now() + 7000; }, { passive: true }); });
+      var goTile = function (i) { var r = tiles[i].getBoundingClientRect(), c = rail.getBoundingClientRect(); rail.scrollTo({ left: rail.scrollLeft + (r.left + r.width / 2 - (c.left + c.width / 2)), behavior: 'smooth' }); };
+      setInterval(function () {
+        var now = Date.now();
+        if (!inView || now < hold || now - lastScroll < 1200 || document.hidden || !tiles.length) return;
+        ri = (ri + 1) % tiles.length; goTile(ri);
+      }, 3400);
+      rail.addEventListener('scroll', function () {
+        var c = rail.getBoundingClientRect(), m = c.left + c.width / 2, b = 0, bd = 1e9;
+        tiles.forEach(function (t, i) { var r = t.getBoundingClientRect(), dd = Math.abs(r.left + r.width / 2 - m); if (dd < bd) { bd = dd; b = i; } });
+        ri = b;
+      }, { passive: true });
+    }
+  }
+
+  /* ---------- 14. Lightbox ---------- */
+  (function () {
+    var lb = $('#lb'), items = $$('[data-lb]');
+    if (!lb || !items.length) return;
+    var img = $('#lb-img'), cap = $('#lb-cap'), cnt = $('#lb-count'), cur = 0, isOpen = false, lastFocus = null;
+    function paint() { var im = $('img', items[cur]); img.src = im.currentSrc || im.src; img.alt = im.alt; cap.textContent = im.alt; cnt.textContent = (cur + 1) + ' / ' + items.length; }
+    function open(i) {
+      cur = i; lastFocus = document.activeElement; paint();
+      lb.hidden = false; isOpen = true;
+      requestAnimationFrame(function () { lb.classList.add('on'); });
+      document.documentElement.style.overflow = 'hidden';
+      $('#lb-close').focus();
+    }
+    function close() {
+      lb.classList.remove('on'); isOpen = false;
+      document.documentElement.style.overflow = '';
+      setTimeout(function () { lb.hidden = true; }, reduce ? 0 : 320);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    function stepLb(k) { cur = (cur + k + items.length) % items.length; paint(); }
+    items.forEach(function (t, i) {
+      t.addEventListener('click', function () { if (rail && rail.__moved) return; open(i); });
+      t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } });
+    });
+    $('#lb-close').addEventListener('click', close);
+    $('#lb-prev').addEventListener('click', function (e) { e.stopPropagation(); stepLb(-1); });
+    $('#lb-next').addEventListener('click', function (e) { e.stopPropagation(); stepLb(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!isOpen) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') stepLb(1);
+      else if (e.key === 'ArrowLeft') stepLb(-1);
+      else if (e.key === 'Tab') {
+        var f = $$('button', lb), a = f[0], b = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === a) { e.preventDefault(); b.focus(); }
+        else if (!e.shiftKey && document.activeElement === b) { e.preventDefault(); a.focus(); }
+      }
+    });
+    var tx = null;
+    lb.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function (e) { if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 45) stepLb(dx < 0 ? 1 : -1); });
+  })();
+
+  /* ---------- 15. Mapa de dolores ---------- */
+  (function () {
+    var chips = $$('.chip'), box = $('#pain-result'), svc = $('#pain-svc'), link = $('#pain-link');
+    if (!chips.length || !box) return;
+    chips.forEach(function (ch) {
+      ch.addEventListener('click', function () {
+        if (ch.getAttribute('aria-selected') === 'true') return;
+        chips.forEach(function (o) { o.setAttribute('aria-selected', o === ch ? 'true' : 'false'); });
+        box.classList.add('swap');
+        svc.textContent = ch.getAttribute('data-svc');
+        link.textContent = ch.getAttribute('data-txt');
+        link.setAttribute('href', ch.getAttribute('data-href'));
+        void box.offsetWidth;
+        box.classList.remove('swap');
+      });
+      ch.addEventListener('keydown', function (e) {
+        var i = chips.indexOf(ch);
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          var n = chips[(i + (e.key === 'ArrowRight' ? 1 : -1) + chips.length) % chips.length];
+          n.focus(); n.click();
+        }
+      });
+    });
+  })();
+
+  /* ---------- 16. En el celular, la fila que cruza el centro se ilumina sola ---------- */
+  (function () {
+    if (!touchOnly || reduce) return;
+    var els = $$('.where li,.way');
+    if (!els.length) return;
+    onFrame(function () {
+      var mid = vh * 0.52, best = null, bd = 1e9;
+      els.forEach(function (el) {
+        var r = el.getBoundingClientRect(), c = r.top + r.height / 2, dd = Math.abs(c - mid);
+        if (r.top < mid && r.bottom > mid && dd < bd) { bd = dd; best = el; }
+      });
+      els.forEach(function (el) { el.classList.toggle('is-active', el === best); });
+    });
+  })();
+
+  /* ---------- 17. Precio: cuenta hacia abajo + interruptor mensual/anual ---------- */
+  (function () {
+    var card = $('#price-card'), sw = $('#switch'), amt = $('#price-amount'), old = $('#price-old'), per = $('#price-per'), note = $('#price-note'), btn = $('#price-btn');
+    if (!card || !sw || !amt) return;
+    var M = parseInt(amt.getAttribute('data-monthly'), 10), A = parseInt(amt.getAttribute('data-annual'), 10), OLD = 49;
+    var NOTE_ANUAL = 'Pagas 10 meses, 2 gratis'; // REVISAR: nota del anual
+    var cur = M, raf = null;
+    function anim(to, from, dur) {
+      cancelAnimationFrame(raf);
+      if (reduce) { amt.textContent = '$' + to; cur = to; return; }
+      var start = null; from = from == null ? cur : from;
+      (function f(ts) {
+        if (start === null) start = ts;
+        var p = Math.min((ts - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+        cur = Math.round(from + (to - from) * e); amt.textContent = '$' + cur;
+        if (p < 1) raf = requestAnimationFrame(f);
+      })(performance.now());
+    }
+    function setMode(mode) {
+      sw.setAttribute('data-mode', mode);
+      $$('button', sw).forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-mode') === mode ? 'true' : 'false'); });
+      var anual = mode === 'anual';
+      old.textContent = '$' + (anual ? M * 12 : OLD);
+      per.textContent = anual ? 'por año' : 'por mes';
+      note.textContent = anual ? NOTE_ANUAL : '';
+      var msg = btn.getAttribute('data-base') + (anual ? ' (plan anual)' : ' (plan mensual)');
+      btn.setAttribute('href', 'https://wa.me/595985170540?text=' + encodeURIComponent(msg));
+      anim(anual ? A : M, null, 600);
+    }
+    $$('button', sw).forEach(function (b) { b.addEventListener('click', function () { setMode(b.getAttribute('data-mode')); }); });
+    if (hasIO && !reduce) {
+      amt.textContent = '$' + OLD;
+      var io = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting) { anim(sw.getAttribute('data-mode') === 'anual' ? A : M, OLD, 1300); io.disconnect(); }
+      }, { threshold: 0.5 });
+      io.observe(amt);
+    }
+  })();
+
+  /* ---------- 18. Pasos: la línea se llena con el scroll ---------- */
+  (function () {
+    var steps = $('#steps'), els = $$('.pstep');
+    if (!steps || reduce) return;
+    steps.classList.add('is-armed');
+    els.forEach(function (s) { s.classList.remove('is-on'); });
+    onFrame(function () {
+      var sr = steps.getBoundingClientRect();
+      steps.style.setProperty('--pp', clamp((vh * 0.6 - sr.top) / sr.height, 0, 1).toFixed(3));
+      els.forEach(function (s) {
+        var r = s.getBoundingClientRect(), p = clamp((vh * 0.85 - r.top) / (vh * 0.3), 0, 1);
+        s.style.setProperty('--p', p.toFixed(3)); s.classList.toggle('is-on', (vh * 0.6 - r.top) > 20);
+      });
+    });
+  })();
+
+  /* ---------- 19. Objeciones: una abierta a la vez ---------- */
+  (function () {
+    var list = $('#objs');
+    if (!list) return;
+    list.addEventListener('click', function (e) {
+      var q = e.target.closest('.obj-q');
+      if (!q) return;
+      var item = q.closest('.obj'), was = item.classList.contains('is-open');
+      $$('.obj', list).forEach(function (o) { o.classList.remove('is-open'); $('.obj-q', o).setAttribute('aria-expanded', 'false'); });
+      if (!was) { item.classList.add('is-open'); q.setAttribute('aria-expanded', 'true'); }
+    });
+  })();
+
+  /* ---------- 20. Placas de vidrio con paralaje (CTA final) ---------- */
+  (function () {
+    var pars = $$('[data-par]');
+    if (!pars.length || reduce) return;
+    onFrame(function () {
+      pars.forEach(function (e) {
+        var r = e.parentElement.getBoundingClientRect();
+        if (r.bottom < -300 || r.top > vh + 300) return;
+        e.style.transform = 'translate3d(0,' + ((r.top + r.height / 2 - vh / 2) * parseFloat(e.dataset.par)).toFixed(1) + 'px,0)';
+      });
+    });
+  })();
+
+  (function(){var nav=$('#navbar'); if(nav) onFrame(function(y){nav.classList.toggle('scrolled', y>20);});})();
+
+  frame();
+  setTimeout(frame, 400);
+  window.addEventListener('load', req);
+})();
+
 </script>
 </body>
 </html>
