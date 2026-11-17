@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/dicfjqcoc/image/upload/v1782226843/Logo_Nombre_de_Novios_Iniciales_Boda_Elegante_Minimalista_Blanco_y_Negro_1_p8f8jn.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -510,6 +510,102 @@ html{scroll-padding-top:72px}
 
 @media(prefers-reduced-motion:reduce){.ticker-inner{animation:none!important}.mitem img{transform:none!important}}
 
+/* ---- Galería del portafolio: una foto a la vez ---- */
+.gal{position:relative;max-width:1240px;margin:36px auto 0;padding:0 var(--gutter)}
+.gal-holder{position:relative;display:grid;place-items:center;min-height:240px}
+.gal-stage{position:relative;width:min(100%,360px);height:450px;touch-action:pan-y;user-select:none;-webkit-user-select:none;
+  transition:width .75s var(--ease),height .75s var(--ease)}
+.gal-slide{position:absolute;inset:0;margin:0;border-radius:var(--r-md);overflow:hidden;background:#3a0606;cursor:zoom-in;
+  opacity:0;transform:translateX(var(--tx,0));pointer-events:none;
+  transition:opacity .6s var(--ease),transform .75s var(--ease);box-shadow:0 24px 60px -24px rgba(0,0,0,.6)}
+.gal-slide.on{opacity:1;--tx:0px;pointer-events:auto}
+.gal-slide img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none}
+.gal-stage.is-drag .gal-slide.on{transition:none;cursor:grabbing}
+.gal-btn{position:absolute;top:50%;z-index:3;display:grid;place-items:center;width:48px;height:48px;margin-top:-24px;border-radius:var(--r-pill);
+  border:1px solid rgba(255,255,255,.3);background:rgba(20,4,4,.55);color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transition:background .3s,transform .3s var(--ease)}
+.gal-btn:hover{background:var(--accent)}
+.gal-btn:active{transform:scale(.93)}
+.gal-prev{left:8px}.gal-next{right:8px}
+@media(min-width:900px){.gal-btn{width:56px;height:56px;margin-top:-28px}.gal-prev{left:0}.gal-next{right:0}}
+.gal-bar{display:flex;align-items:center;gap:16px;max-width:360px;margin:20px auto 0;color:rgba(255,255,255,.75);font-size:14px;font-variant-numeric:tabular-nums}
+.gal-count{white-space:nowrap;min-width:3.6em}
+.gal-line{flex:1;height:2px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden}
+.gal-line i{display:block;height:100%;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(.08);transition:transform .75s var(--ease)}
+.gal-hint{margin:12px 0 0;text-align:center;font-size:13px;color:rgba(255,255,255,.55)}
+@media(prefers-reduced-motion:reduce){.gal-stage{transition:none}.gal-slide{transform:none!important;transition:opacity .3s}}
+
+/* =====================================================================
+   v3 · HERO que se pela por capas
+   ===================================================================== */
+.peel{--nav:69px;padding:0;position:relative}
+.peel-pin{position:relative;height:calc(100svh - var(--nav));min-height:560px;overflow:hidden;background:#240303}
+.peel-bg{position:absolute;inset:0;transform:scale(var(--z,1)) translate3d(var(--px,0px),var(--py,0px),0);transition:transform 8s var(--ease)}
+.peel-bg i{position:absolute;top:0;bottom:0;left:calc(var(--c)*20%);width:20.3%;overflow:hidden;
+  clip-path:inset(0 0 calc(var(--t,0)*100%) 0);transform:translateY(calc(var(--t,0)*-22%));will-change:transform,clip-path}
+.peel-bg i::before{content:"";position:absolute;top:0;bottom:0;left:calc(var(--c)*-100%);width:492%;background:var(--hero) center top/cover no-repeat}
+.peel-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,8,8,.92) 0%,rgba(26,8,8,.45) 50%,rgba(26,8,8,.15) 100%);opacity:calc(1 - var(--p,0)*.6)}
+.peel-txt{position:absolute;left:0;right:0;bottom:0;padding-bottom:clamp(36px,7vh,72px);max-width:880px;margin-left:max(0px,calc((100% - 1200px)/2));
+  transform:translateY(calc(var(--p,0)*-70px));opacity:calc(1 - var(--p,0)*2.8)}
+.peel-txt h1{font-size:clamp(38px,6vw,68px);line-height:1.04;max-width:16ch;color:#fff}
+.peel-txt .lead{margin-top:18px;max-width:46ch}
+.peel-photos{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:clamp(22px,4vh,40px);padding:0 var(--gutter)}
+.pp-row{display:flex;gap:clamp(8px,2vw,22px);align-items:flex-start}
+.pp-row figure{margin:0;width:clamp(72px,18vw,190px);aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#3a0606;
+  transform:translateY(calc((1 - var(--q,1))*120px + (var(--k) % 2)*clamp(14px,3vw,40px)));opacity:var(--q,1)}
+.pp-row img{width:100%;height:100%;object-fit:cover;display:block}
+.pp-btn{opacity:var(--bq,1);transform:translateY(calc((1 - var(--bq,1))*24px))}
+@media(max-width:599px){.pp-btn{width:100%}}
+.peel.is-pinned{height:calc(100svh - var(--nav) + 70vh)}
+.peel.is-pinned .peel-pin{position:sticky;top:var(--nav)}
+@media(prefers-reduced-motion:reduce){.peel.is-pinned{height:auto}.peel.is-pinned .peel-pin{position:relative}.peel-bg i{clip-path:none;transform:none}.peel-txt,.peel-shade{opacity:1;transform:none}.peel-photos{display:none}}
+
+/* =====================================================================
+   v3 · PORTAFOLIO como mazo de fotos
+   ===================================================================== */
+#portafolio{overflow-x:clip}
+.gal-holder{padding-bottom:clamp(40px,8vw,110px)}
+.gal-word{position:absolute;left:0;right:0;bottom:0;z-index:0;margin:0;text-align:center;font:400 clamp(64px,17vw,250px)/.8 var(--ff-d);
+  color:rgba(232,190,80,.30);letter-spacing:-.02em;pointer-events:none;white-space:nowrap;transform:translateY(var(--wy,0px))}
+.gal-stage{z-index:1}
+.gal-btn{z-index:4}
+.gal-slide{--ty:0px;--r:0deg;--s:1;transform:translate3d(var(--tx,0px),var(--ty),0) rotate(var(--r)) scale(var(--s));
+  transition:opacity .6s var(--ease),transform .85s var(--ease),filter .6s var(--ease)}
+.gal-slide.on{--tx:0px}
+.gal-stage.is-drag .gal-slide.on{transition:none}
+.lb-word{position:absolute;left:0;right:0;bottom:7vh;text-align:center;font:400 clamp(70px,21vw,320px)/.8 var(--ff-d);color:rgba(232,190,80,.2);pointer-events:none;white-space:nowrap}
+.lb-stage{position:relative;z-index:1}
+.lb-stage img{max-height:80vh;max-width:min(94vw,1000px)}
+@media(prefers-reduced-motion:reduce){.gal-slide{transition:opacity .3s}}
+
+/* =====================================================================
+   v3 · PASOS 01 02 03 grandes que se apilan
+   ===================================================================== */
+.proc3{padding-bottom:0}
+.steps3{position:relative;margin-top:clamp(28px,5vw,56px)}
+.st{position:sticky;top:var(--nav,69px);min-height:min(68vh,560px);background:var(--primary);border-top:1px solid rgba(255,255,255,.55);
+  display:flex;align-items:flex-start;padding-top:clamp(20px,4vh,40px);opacity:var(--o,1);transform:scale(var(--sc,1));transform-origin:50% 0}
+.st-in{width:100%;display:grid;gap:24px}
+.st-num h3{font:700 clamp(18px,2.2vw,26px)/1.2 var(--ff-b);color:#fff;margin:0 0 6px}
+.st-num b{display:block;font:800 clamp(120px,30vw,300px)/.8 var(--ff-b);letter-spacing:-.04em;height:.62em;overflow:hidden;
+  background:linear-gradient(#f6f0e4 0%,#f6f0e4 38%,rgba(246,240,228,.08) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  transform:translateY(calc(var(--c,0)*-55px));font-variant-numeric:lining-nums}
+.st-in p{color:rgba(255,255,255,.82);font-size:clamp(15.5px,1.5vw,18px);max-width:46ch;transform:translateY(calc(var(--c,0)*-30px))}
+@media(min-width:760px){.st-in{grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:start}.st-in p{padding-top:clamp(16px,3vw,40px)}}
+@media(prefers-reduced-motion:reduce){.st{position:relative;opacity:1!important;transform:none!important;min-height:0;padding-bottom:40px}.st-num b,.st-in p{transform:none!important}}
+
+/* v3b · galería de formato fijo: solo cambia la foto, no la página */
+.gal{--fs:clamp(64px,17vw,250px)}
+.gal-holder{padding-bottom:calc(var(--fs)*.4)}
+.gal-word{font-size:var(--fs);color:#f6f0e4;opacity:.9;line-height:.8}
+.gal-stage{transition:none!important;width:100%;height:480px}
+.gal-slide{inset:auto;left:50%;bottom:0}
+
+/* v3c · número completo que se desvanece al subir */
+.st{min-height:min(74vh,620px)}
+.st-num b{height:auto;overflow:visible;line-height:.86;padding-bottom:.04em;font-size:clamp(110px,26vw,250px);opacity:var(--nn,1);transform:translateY(calc(var(--c,0)*-40px))}
+@media(prefers-reduced-motion:reduce){.st-num b{opacity:1!important}}
+
   </style>
 </head>
 <body>
@@ -526,56 +622,23 @@ html{scroll-padding-top:72px}
 
 <main>
 <!-- =====================================================================
-     HERO con carrusel tipo Instagram (tus fotos)
+     HERO: tu foto de siempre, que se "pela" por capas al bajar
      ===================================================================== -->
-<section class="hero s-light" id="inicio">
-  <div class="wrap hero-grid">
-    <div>
+<section class="hero peel s-primary" id="inicio" style="--hero:url('https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1600/v1782334683/Gemini_Generated_Image_4cvu724cvu724cvu_h2st4z.jpg')">
+  <div class="peel-pin" id="peel-pin">
+    <div class="peel-bg" id="peel-bg" aria-hidden="true"><i style="--c:0"></i><i style="--c:1"></i><i style="--c:2"></i><i style="--c:3"></i><i style="--c:4"></i></div>
+    <div class="peel-shade" aria-hidden="true"></div>
+    <div class="peel-txt wrap" id="peel-txt">
       <span class="eyebrow">Zeta Fotografía · XV Años</span>
-      <h1 id="hero-h1">Revivé la emoción de los XV<br>cada vez que <span class="kw mark">mires</span> las fotos</h1>
+      <h1 id="hero-h1">Revive la emoción de los XV<br>cada vez que <span class="kw mark">mires</span> las fotos</h1>
       <p class="lead">Dentro de 20 años, tu hija va a abrir esas fotos. ¿Qué va a sentir?</p>
       <div class="cta-row">
         <a class="btn" href="https://wa.me/595985170540?text=Holaaa%21%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener">Hablemos antes de que se agenden mis fechas <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <span class="micro">Sin compromiso · Solo una charla sobre el día más especial de tu hija</span>
     </div>
-
-    <div class="plate-wrap">
-      <div class="plate" id="plate">
-        <div class="ig-top">
-          <span class="ig-av" aria-hidden="true"><i>Z</i></span>
-          <span class="ig-name">_zetaphoto<small>Hohenau, Itapúa</small></span>
-        </div>
-        <div class="ig-media">
-          <span class="ig-count" id="ig-count" aria-hidden="true">1/4</span>
-          <div class="slides" id="slides">
-            <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782417943/DSC_2641_wuuyex.jpg" alt="Quinceañera retratada por Zeta Fotografía en Hohenau" width="800" height="1000">
-            <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782417412/DSC_3429_p9fbdo.jpg" alt="Quinceañera en su fiesta de XV en Itapúa" width="800" height="1000" loading="lazy">
-            <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="Momento de la fiesta de XV capturado sin poses" width="800" height="1000" loading="lazy">
-            <img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Quinceañera con su familia durante la celebración" width="800" height="1000" loading="lazy">
-          </div>
-        </div>
-        <div class="ig-bar">
-          <span class="ig-icons" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 4 10 14M21 4l-7 17-4-7-7-4z"/></svg>
-          </span>
-          <span class="ig-dots" id="ig-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></span>
-        </div>
-        <p class="ig-cap"><b>_zetaphoto</b> Momentos que no vuelven · Fotos que duran toda la vida</p>
-      </div>
-    </div>
   </div>
 </section>
-
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true">
-  <span class="ticker-inner">
-    Fotografía de XV Años &nbsp;·&nbsp; Hohenau, Itapúa &nbsp;·&nbsp; Zeta Fotografía &nbsp;·&nbsp; Momentos que no vuelven &nbsp;·&nbsp; Fotos que duran toda la vida &nbsp;·&nbsp;
-    Fotografía de XV Años &nbsp;·&nbsp; Hohenau, Itapúa &nbsp;·&nbsp; Zeta Fotografía &nbsp;·&nbsp; Momentos que no vuelven &nbsp;·&nbsp; Fotos que duran toda la vida &nbsp;·&nbsp;
-  </span>
-</div>
 
 <!-- =====================================================================
      PROBLEMA
@@ -583,26 +646,42 @@ html{scroll-padding-top:72px}
 <section class="s-light" id="problema">
   <div class="wrap narrow">
     <span class="eyebrow rv">El problema real</span>
-    <h2 class="h2 rv">Muchas mamás terminan el evento felices.<br><span class="kw">Pero después llegan las fotos.</span></h2>
-    <p class="body-text rv">Semanas después del evento, cuando llegan las fotos, algo no está bien. Las poses se ven forzadas. Los momentos más importantes no fueron capturados. Y lo peor: no hay nada que se pueda hacer.</p>
-    <blockquote class="quote rv"><p>"Ese día no vuelve. Y las fotos son lo único que queda."</p></blockquote>
+    <h2 class="h2 rv">El evento sale hermoso.<br><span class="kw">Pero las fotos llegan incompletas.</span></h2>
+    <p class="body-text rv">Muchas familias me cuentan lo mismo: la fiesta fue perfecta, pero cuando llegó el álbum faltaba lo más importante. No estaban los abuelos, ni los tíos, ni los familiares que casi nunca se juntan. Nadie les preguntó antes cómo querían sus fotos y nadie les dio seguimiento. Cuando se dan cuenta, la fiesta ya pasó y no hay cómo repetirla.</p>
+    <blockquote class="quote rv"><p>"Un álbum sin los abuelos no es el álbum que soñaste."</p></blockquote>
   </div>
 </section>
 
 <!-- =====================================================================
      PROCESO
      ===================================================================== -->
-<section class="s-primary" id="proceso">
+<section class="s-primary proc3" id="proceso">
   <div class="wrap">
     <span class="eyebrow rv">Cómo trabajo</span>
     <h2 class="h2 rv">Un proceso pensado para<br><span class="kw">capturar lo real</span></h2>
-    <div class="proc">
-      <article class="proc-step rv" style="--d:0ms"><span class="proc-n">I</span><h3>Antes del evento</h3><p>Me tomo el tiempo de conocerlas — a la quinceañera y a vos — para entender qué momentos no pueden faltar y para que ella llegue al día sin nervios ni vergüenza frente a la cámara.</p></article>
-      <article class="proc-step rv" style="--d:120ms"><span class="proc-n">II</span><h3>Durante el evento</h3><p>No interrumpo, no genero caos, no armo poses robóticas. Capturo lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.</p></article>
-      <article class="proc-step rv" style="--d:240ms"><span class="proc-n">III</span><h3>La edición final</h3><p>Cada foto pasa por un proceso de edición cuidadosa para que el resultado final esté a la altura de lo que ese día significó — porque un recuerdo así merece tiempo y dedicación.</p></article>
-    </div>
+  </div>
+  <div class="steps3" id="steps3">
+    <article class="st">
+      <div class="st-in wrap">
+        <div class="st-num"><h3>Antes del evento</h3><b aria-hidden="true">01</b></div>
+        <p>Me tomo el tiempo de conocerlas — a la quinceañera y a vos — para entender qué momentos no pueden faltar y para que ella llegue al día sin nervios ni vergüenza frente a la cámara.</p>
+      </div>
+    </article>
+    <article class="st">
+      <div class="st-in wrap">
+        <div class="st-num"><h3>Durante el evento</h3><b aria-hidden="true">02</b></div>
+        <p>No interrumpo, no genero caos, no armo poses robóticas. Capturo lo real: la emoción de mamá, la risa entre amigas, la mirada del papá.</p>
+      </div>
+    </article>
+    <article class="st">
+      <div class="st-in wrap">
+        <div class="st-num"><h3>La edición final</h3><b aria-hidden="true">03</b></div>
+        <p>Cada foto pasa por un proceso de edición cuidadosa para que el resultado final esté a la altura de lo que ese día significó — porque un recuerdo así merece tiempo y dedicación.</p>
+      </div>
+    </article>
   </div>
 </section>
+
 
 <!-- =====================================================================
      ANTES Y DESPUÉS (nuevo)
@@ -631,59 +710,40 @@ html{scroll-padding-top:72px}
 <section class="s-dark" id="portafolio">
   <div class="wrap">
     <span class="eyebrow rv">El trabajo habla solo</span>
-    <h2 class="h2 rv">Portafolio</h2>
   </div>
-  <div class="masonry">
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 1 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 1 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 2 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 2 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 3 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 3 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 4 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 4 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 5 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 5 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 6 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 6 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 7 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 7 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 8 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 8 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 9 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 9 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 10 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 10 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 11 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782417943/DSC_2641_wuuyex.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 11 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 12 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782417412/DSC_3429_p9fbdo.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 12 del portafolio de Zeta Fotografía" loading="lazy"></figure>
-    <figure class="mitem" data-lb tabindex="0" role="button" aria-label="Ver foto 13 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_900/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.33_wkmz3y.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 13 del portafolio de Zeta Fotografía" loading="lazy"></figure>
+  <div class="gal" id="gal" role="region" aria-roledescription="galería" aria-label="Portafolio de fotos">
+    <div class="gal-holder">
+      <h2 class="gal-word" id="gal-word">Portafolio</h2>
+      <button class="gal-btn gal-prev" type="button" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <div class="gal-stage" id="gal-stage">
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 1 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_1_n29geg.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 1 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 2 en grande"><img src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226845/WhatsApp_Image_2026-06-23_at_11.37.01_bovyhn.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 2 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 3 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_1_ywssoy.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 3 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 4 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226845/WhatsApp_Image_2026-06-23_at_11.36.46_apk3fc.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 4 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 5 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226844/WhatsApp_Image_2026-06-23_at_10.32.19_uj118h.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 5 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 6 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.14_xydbvb.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 6 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 7 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.08_cjeveg.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 7 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 8 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.21_o09h9b.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 8 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 9 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226845/WhatsApp_Image_2026-06-23_at_10.32.07_lhhmyr.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 9 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 10 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.17_1_lj2fj0.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 10 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 11 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782417943/DSC_2641_wuuyex.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 11 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 12 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782417412/DSC_3429_p9fbdo.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 12 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+        <figure class="gal-slide" data-lb role="button" aria-label="Ver foto 13 en grande"><img data-src="https://res.cloudinary.com/dicfjqcoc/image/upload/f_auto,q_auto,w_1400/v1782226842/WhatsApp_Image_2026-06-23_at_10.32.33_wkmz3y.jpg" alt="Fotografía de XV años en Hohenau, Itapúa – foto 13 del portafolio de Zeta Fotografía" draggable="false" decoding="async"></figure>
+      </div>
+      <button class="gal-btn gal-next" type="button" aria-label="Foto siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="gal-bar" aria-hidden="true"><span class="gal-count" id="gal-count">1 / 13</span><span class="gal-line"><i id="gal-prog"></i></span></div>
+    <p class="gal-hint">Deslizá o usá las flechas · Tocá la foto para verla en grande</p>
   </div>
 </section>
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Visor de fotos">
+  <div class="lb-word" aria-hidden="true">Portafolio</div>
   <div class="lb-stage"><img id="lb-img" alt=""><div class="lb-meta"><span id="lb-cap"></span><span id="lb-count"></span></div></div>
   <button class="lb-btn lb-close" id="lb-close" type="button" aria-label="Cerrar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   <button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Foto anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
   <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Foto siguiente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
 </div>
-
-<!-- =====================================================================
-     LO QUE RECIBÍS (nuevo)
-     REEMPLAZAR: 4 capturas reales. Mientras no sean reales, queda el rótulo "Ejemplo".
-     ===================================================================== -->
-<section class="s-light" id="por-dentro">
-  <div class="wrap">
-    <h2 class="h2 rv">Esto es lo que recibís el día que me contratás</h2>
-    <div class="bento">
-      <figure class="btile rv" data-tilt style="--d:0ms">
-        <div style="position:relative"><span class="tag-ej">Ejemplo</span><div class="bmedia"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201400%20600%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%235e0b0b%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a0303%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%271400%27%20height%3D%27600%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%271364%27%20height%3D%27564%27%20fill%3D%27none%27%20stroke%3D%27%23b88700%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23ead7a4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%3ECaptura%20%C2%B7%20Galer%C3%ADa%20online%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27350%27%20fill%3D%27%23ead7a4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2721%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Galería online privada con las fotos de los XV ordenadas por momento de la noche" width="1400" height="600" loading="lazy"></div></div>
-        <figcaption><strong>Galería online</strong><span>Todas las fotos ordenadas por momento: preparación, entrada, vals, fiesta y brindis.</span></figcaption>
-      </figure>
-      <figure class="btile rv" data-tilt style="--d:90ms">
-        <div style="position:relative"><span class="tag-ej">Ejemplo</span><div class="bmedia"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20900%20600%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%235e0b0b%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a0303%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27900%27%20height%3D%27600%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%27864%27%20height%3D%27564%27%20fill%3D%27none%27%20stroke%3D%27%23b88700%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23ead7a4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%3ECaptura%20%C2%B7%20Cronograma%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27350%27%20fill%3D%27%23ead7a4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2721%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Cronograma de la noche de XV con los momentos clave marcados" width="900" height="600" loading="lazy"></div></div>
-        <figcaption><strong>Cronograma</strong><span>La noche planificada con los momentos marcados para no perder ninguno.</span></figcaption>
-      </figure>
-      <figure class="btile rv" data-tilt style="--d:180ms">
-        <div style="position:relative"><span class="tag-ej">Ejemplo</span><div class="bmedia"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20900%20600%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%235e0b0b%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a0303%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27900%27%20height%3D%27600%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%27864%27%20height%3D%27564%27%20fill%3D%27none%27%20stroke%3D%27%23b88700%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23ead7a4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%3ECaptura%20%C2%B7%20Adelanto%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27350%27%20fill%3D%27%23ead7a4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2721%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Adelanto de fotos de XV en formato vertical para estados de WhatsApp" width="900" height="600" loading="lazy"></div></div>
-        <figcaption><strong>Adelanto</strong><span>Fotos en formato vertical, listas para estados e historias.</span></figcaption>
-      </figure>
-      <figure class="btile rv" data-tilt style="--d:270ms">
-        <div style="position:relative"><span class="tag-ej">Ejemplo</span><div class="bmedia"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20900%20600%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%235e0b0b%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232a0303%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%27900%27%20height%3D%27600%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Crect%20x%3D%2718%27%20y%3D%2718%27%20width%3D%27864%27%20height%3D%27564%27%20fill%3D%27none%27%20stroke%3D%27%23b88700%27%20stroke-opacity%3D%27.5%27%20stroke-dasharray%3D%276%208%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20fill%3D%27%23ead7a4%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%3ECaptura%20%C2%B7%20%C3%81lbum%3C%2Ftext%3E%3Ctext%20x%3D%2750%25%27%20y%3D%27350%27%20fill%3D%27%23ead7a4%27%20fill-opacity%3D%27.7%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2721%27%20letter-spacing%3D%273%27%20text-anchor%3D%27middle%27%3EFOTO%20PENDIENTE%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Vista previa del diseño del álbum impreso de XV, página doble" width="900" height="600" loading="lazy"></div></div>
-        <figcaption><strong>Álbum</strong><span>La vista previa del álbum para que lo apruebes antes de imprimir.</span></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
 
 <!-- =====================================================================
      TRES FORMAS DE TRABAJAR (nuevo, con tus fotos en el abanico)
@@ -751,11 +811,11 @@ html{scroll-padding-top:72px}
     </div>
     <div class="about-text">
       <span class="eyebrow rv">Sobre mí</span>
-      <h2 class="h2 rv">Mi mejor carta de presentación <span class="kw">es el portafolio</span></h2>
-      <p class="rv">En todas las páginas hay un bloque enorme de texto donde el fotógrafo presume sus títulos o años de experiencia. Pero nadie los lee. ¿Sabés por qué? Porque a nadie le importa.</p>
-      <p class="rv">Lo que a vos te importa es saber qué vas a obtener para los XV de tu hija. Y eso está arriba: en cada foto.</p>
-      <p class="rv">Lo que sí puedo decirte: trabajo en Hohenau, Itapúa, con dedicación real a cada sesión. Porque un recuerdo así no se entrega apurado.</p>
-      <a class="btn rv" href="https://wa.me/595985170540?text=Holaaa%21%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener">Agenda tu reunión <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <h2 class="h2 rv">Hago esto porque escuché <span class="kw">la misma queja</span> muchas veces</h2>
+      <p class="rv">Familias que me contaban que las fotos no llegaron como las querían. Que faltaban los abuelos y los familiares más importantes. Que nadie se tomó el tiempo de conocerlas antes ni de preguntarles cómo querían su sesión.</p>
+      <p class="rv">Por eso trabajo distinto: antes de la fiesta nos reunimos para conocernos y definir quiénes no pueden faltar. Durante el evento voy atento a cada detalle, y después te acompaño hasta que tengas tu álbum completo, con todos los que importan.</p>
+      <p class="rv">Trabajo en Hohenau, Itapúa, con dedicación real a cada sesión. Porque un recuerdo así no se entrega apurado.</p>
+      <a class="btn rv" href="https://wa.me/595985170540?text=Holaaa%21%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20fotografia" target="_blank" rel="noopener">Agendá tu reunión <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -920,6 +980,46 @@ html{scroll-padding-top:72px}
     });
     plate.addEventListener('pointercancel', function () { sx = null; });
     go(0); play();
+  })();
+
+  /* ---------- 4b. Hero: la foto se pela por capas al bajar ---------- */
+  (function () {
+    var sec = $('#inicio'), bg = $('#peel-bg'); if (!sec || !bg || reduce) return;
+    var cols = $$('i', bg), figs = $$('.pp-row figure', sec), btn = $('.pp-btn', sec);
+    sec.classList.add('is-pinned');
+    figs.forEach(function (f) { f.style.setProperty('--q', 0); }); if (btn) btn.style.setProperty('--bq', 0);
+    setTimeout(function () { bg.style.setProperty('--z', 1); }, 60); bg.style.setProperty('--z', 1.05);
+    var hx = 0, hy = 0;
+    window.addEventListener('pointermove', function (e) { if (e.pointerType === 'touch') return; hx = e.clientX / window.innerWidth - 0.5; hy = e.clientY / window.innerHeight - 0.5; req(); }, { passive: true });
+    window.addEventListener('deviceorientation', function (e) { if (e.gamma == null) return; hx = clamp(e.gamma / 40, -0.5, 0.5); hy = clamp((e.beta - 50) / 80, -0.5, 0.5); req(); }, { passive: true });
+    var ease = function (t) { return t * t * (3 - 2 * t); };
+    onFrame(function (y) {
+      var top = sec.offsetTop, len = sec.offsetHeight - vh;
+      var p = clamp((y - top + 69) / Math.max(1, len), 0, 1);
+      if (y > top + sec.offsetHeight) return;
+      sec.style.setProperty('--p', p.toFixed(4));
+      cols.forEach(function (c, i) { c.style.setProperty('--t', ease(clamp((p - i * 0.045) / 0.74, 0, 1)).toFixed(4)); });
+      figs.forEach(function (f, i) { f.style.setProperty('--q', ease(clamp((p - 0.4 - i * 0.06) / 0.28, 0, 1)).toFixed(4)); });
+      if (btn) btn.style.setProperty('--bq', ease(clamp((p - 0.68) / 0.22, 0, 1)).toFixed(4));
+      if (p < 0.5) { bg.style.setProperty('--px', (hx * -14).toFixed(1) + 'px'); bg.style.setProperty('--py', (hy * -10).toFixed(1) + 'px'); }
+    });
+  })();
+
+  /* ---------- 18b. Pasos 01 02 03: se apilan y el anterior se va ---------- */
+  (function () {
+    var wrap = $('#steps3'); if (!wrap || reduce) return;
+    var st = $$('.st', wrap); if (st.length < 2) return;
+    onFrame(function () {
+      var T = parseFloat(getComputedStyle(st[0]).top) || 69;
+      for (var i = 0; i < st.length; i++) {
+        var h = st[i].offsetHeight || 1, nx = (i < st.length - 1) ? st[i + 1].getBoundingClientRect().top : wrap.getBoundingClientRect().bottom;
+        var c = clamp(1 - (nx - T) / h, 0, 1);
+        st[i].style.setProperty('--c', c.toFixed(3));
+        st[i].style.setProperty('--nn', clamp(1 - c * 1.7, 0, 1).toFixed(3));
+        st[i].style.setProperty('--o', (1 - c * 0.92).toFixed(3));
+        st[i].style.setProperty('--sc', (1 - c * 0.04).toFixed(3));
+      }
+    });
   })();
 
   /* ---------- 5. Hero: inclinación 3D con puntero, dedo, giroscopio y scroll ---------- */
@@ -1116,6 +1216,88 @@ html{scroll-padding-top:72px}
     }
   }
 
+  /* ---------- 13b. Galería del portafolio (una foto a la vez) ---------- */
+  (function () {
+    var stage = $('#gal-stage'); if (!stage) return;
+    var slides = $$('.gal-slide', stage), n = slides.length, cur = 0;
+    var holder = stage.parentNode, count = $('#gal-count'), prog = $('#gal-prog');
+    var prev = $('.gal-prev'), next = $('.gal-next'), ratios = [];
+    function load(i) { var im = $('img', slides[(i + n) % n]); if (im && !im.src && im.getAttribute('data-src')) { im.addEventListener('load', function () { ratios[(i + n) % n] = im.naturalWidth / im.naturalHeight; fit(); }); im.src = im.getAttribute('data-src'); } }
+    function fit() {
+      var availW = holder.clientWidth - (window.innerWidth >= 900 ? 150 : 0);
+      var H = Math.max(340, Math.min(window.innerHeight * 0.7, 720)), W = Math.min(availW, 1000);
+      stage.style.width = Math.round(W) + 'px'; stage.style.height = Math.round(H) + 'px';
+      slides.forEach(function (sl, i) {
+        var r = ratios[i] || 0.8, w = Math.min(W, H * r), h = w / r;
+        sl.style.width = Math.round(w) + 'px'; sl.style.height = Math.round(h) + 'px'; sl.style.marginLeft = (-Math.round(w) / 2) + 'px';
+      });
+    }
+    var intro = !reduce && hasIO, armedIntro = intro;
+    function pose(s, d) {
+      var on = d === 0, out = d === n - 1, st = s.style;
+      var tx = '0px', ty = '0px', r = '0deg', sc = 1, op = 0, z = 1, br = 1;
+      if (armedIntro) {                       /* arranque: fila de fotos que luego se junta en mazo */
+        if (d <= 3) { tx = (d * 106) + '%'; op = 1; z = 9 - d; }
+        else if (out) { tx = '-106%'; op = 1; z = 9; }
+      } else if (on) { op = 1; z = 8; }
+      else if (d === 1) { tx = '16px'; ty = '8px'; r = '5deg'; sc = .97; op = 1; z = 7; br = .8; }
+      else if (d === 2) { tx = '-16px'; ty = '14px'; r = '-6deg'; sc = .94; op = 1; z = 6; br = .62; }
+      else if (out) { tx = '-125%'; r = '-14deg'; op = 0; z = 9; }
+      else { ty = '16px'; sc = .9; z = 1; }
+      st.setProperty('--tx', tx); st.setProperty('--ty', ty); st.setProperty('--r', r); st.setProperty('--s', sc);
+      st.opacity = String(op); st.zIndex = z; st.filter = br < 1 ? 'brightness(' + br + ')' : '';
+      st.transitionDelay = (intro && !armedIntro && !s.__d) ? (d * 70) + 'ms' : '';
+    }
+    function paint(dir) {
+      slides.forEach(function (s, i) {
+        var d = (i - cur + n) % n, on = d === 0;
+        s.classList.toggle('on', on && !armedIntro);
+        s.setAttribute('aria-hidden', on ? 'false' : 'true');
+        s.tabIndex = on ? 0 : -1;
+        pose(s, d);
+      });
+      if (count) count.textContent = (cur + 1) + ' / ' + n;
+      if (prog) prog.style.transform = 'scaleX(' + ((cur + 1) / n) + ')';
+      [cur - 1, cur, cur + 1, cur + 2, cur + 3].forEach(load);
+      fit();
+    }
+    if (intro) {
+      new IntersectionObserver(function (es, o) {
+        if (es[0].isIntersecting) { o.disconnect(); setTimeout(function () { armedIntro = false; paint(0); setTimeout(function () { slides.forEach(function (s) { s.style.transitionDelay = ''; }); }, 1200); }, 250); }
+      }, { threshold: 0.35 }).observe(stage);
+    }
+    var gw = $('#gal-word');
+    if (gw && !reduce) onFrame(function () { var r = holder.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return; gw.style.setProperty('--wy', ((r.top + r.height / 2 - vh / 2) * -0.06).toFixed(1) + 'px'); });
+    function go(k) { cur = (cur + k + n) % n; paint(k); }
+    window.__galGoto = function (i) { cur = i; paint(0); };
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    $('#gal').addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); } else if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    });
+    slides.forEach(function (s) { var im = $('img', s); im.addEventListener('load', function () { var i = slides.indexOf(s); ratios[i] = im.naturalWidth / im.naturalHeight; fit(); }); });
+    /* arrastre / swipe */
+    var sx = 0, dx = 0, down = false, moved = false, t0 = 0;
+    stage.addEventListener('pointerdown', function (e) { if (e.button > 0) return; down = true; moved = false; sx = e.clientX; dx = 0; t0 = Date.now(); });
+    stage.addEventListener('pointermove', function (e) {
+      if (!down) return;
+      dx = e.clientX - sx;
+      if (!moved && Math.abs(dx) > 6) { moved = true; window.__galMoved = true; stage.classList.add('is-drag'); try { stage.setPointerCapture(e.pointerId); } catch (_) {} }
+      if (moved) { var a = slides[cur], w = stage.clientWidth || 1; a.style.setProperty('--tx', dx + 'px'); a.style.setProperty('--r', (dx / w * 10).toFixed(2) + 'deg'); a.style.opacity = String(Math.max(0.2, 1 - Math.abs(dx) / (w * 1.1))); }
+    });
+    function end() {
+      if (!down) return; down = false;
+      if (!moved) { window.__galMoved = false; return; }
+      stage.classList.remove('is-drag');
+      var fast = Math.abs(dx) / Math.max(1, Date.now() - t0) > 0.45;
+      if (Math.abs(dx) > 55 || (fast && Math.abs(dx) > 20)) go(dx < 0 ? 1 : -1); else paint(0);
+      setTimeout(function () { window.__galMoved = false; }, 60);
+    }
+    stage.addEventListener('pointerup', end); stage.addEventListener('pointercancel', end);
+    var rz; window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(fit, 120); });
+    paint(0);
+  })();
+
   /* ---------- 14. Lightbox ---------- */
   (function () {
     var lb = $('#lb'), items = $$('[data-lb]');
@@ -1133,11 +1315,12 @@ html{scroll-padding-top:72px}
       lb.classList.remove('on'); isOpen = false;
       document.documentElement.style.overflow = '';
       setTimeout(function () { lb.hidden = true; }, reduce ? 0 : 320);
+      if (window.__galGoto) window.__galGoto(cur);
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
     function stepLb(k) { cur = (cur + k + items.length) % items.length; paint(); }
     items.forEach(function (t, i) {
-      t.addEventListener('click', function () { if (rail && rail.__moved) return; open(i); });
+      t.addEventListener('click', function () { if ((rail && rail.__moved) || window.__galMoved) return; open(i); });
       t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } });
     });
     $('#lb-close').addEventListener('click', close);
